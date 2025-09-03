@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "iSNdGaoPecg=",
+  "success": true,
+  "projectFilePath": "/home/augustoviegascs/Documents/dotnet/api_external_scrapper/api_external_scrapper.csproj",
+  "expectedPackageFiles": [
+    "/root/.nuget/packages/microsoft.dotnet.ilcompiler/8.0.19/microsoft.dotnet.ilcompiler.8.0.19.nupkg.sha512",
+    "/root/.nuget/packages/microsoft.net.illink.tasks/8.0.19/microsoft.net.illink.tasks.8.0.19.nupkg.sha512",
+    "/root/.nuget/packages/runtime.linux-x64.microsoft.dotnet.ilcompiler/8.0.19/runtime.linux-x64.microsoft.dotnet.ilcompiler.8.0.19.nupkg.sha512"
+  ],
+  "logs": []
+}

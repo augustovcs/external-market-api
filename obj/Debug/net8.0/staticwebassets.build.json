@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "+ryzPsE0jn4aM6i1gdLrydRJ232t8d3OBwn5o0coVlk=",
+  "Source": "api_external_scrapper",
+  "BasePath": "_content/api_external_scrapper",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
