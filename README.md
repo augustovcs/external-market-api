@@ -1,2 +1,1 @@
-# external-market-api
-# external-market-api
+# STOCK & CRYPTO MARKET ANALYSIS 
