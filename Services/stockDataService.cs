@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Net;
+using System.Runtime.InteropServices.JavaScript;
 using api_external_scrapper.DTO;
 using CsvHelper;
 
@@ -36,12 +37,26 @@ public class stockDataService
         
         //IMPLEMENT PREVENTION FOR MULTIPLE CALCULATIONS 
         // CHECK CSV CURRENTLY DATE ALREADY EXISTS.
-        if (!File.Exists(@"/home/augustoviegascs/Documents/dotnet/api_external_scrapper" + dateTime + ".csv"))
+        string fileName = $"stockData-{dateTime}.csv";
+        string fullPath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
+        
+        string currentDir = Directory.GetCurrentDirectory();
+        string archiveDir = Path.Combine(Directory.GetCurrentDirectory(), "data_archives");
+        
+        if (!Directory.Exists(archiveDir))
         {
-            File.WriteAllText(@"stockData.csv" + dateTime + ".csv", data_client);
+            Directory.CreateDirectory(archiveDir);
+        }
+        
+        string fullPath_archived = Path.Combine(archiveDir, fileName);
+        
+        if (!File.Exists(fullPath_archived + dateTime + ".csv"))
+        {
+            File.WriteAllText(fullPath_archived, data_client);
         }
 
-        using (StreamReader reader = new StreamReader(@"/home/augustoviegascs/Documents/dotnet/api_external_scrapper"))
+  
+        using (StreamReader reader = new StreamReader(fullPath_archived))
         using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
         {
             List<StockData> stockDataList = new List<StockData>();
@@ -52,43 +67,44 @@ public class stockDataService
             {
                 StockData stockData = new StockData
                 {
-                    AdjustedClose = csv.GetField<double>("AdjustedClose"),
-                    Date = DateTime.Parse(csv.GetField<string>("timestamp")).ToString("MM/dd/yyyy"),
+                    //AdjustedClose = csv.GetField<double>("adjusted_close"),
+                    Date = DateTime.Parse(csv.GetField<string>("timestamp")),
                     Symbol = symbol,
-                    Open = csv.GetField<double>("Open"),
-                    High = csv.GetField<double>("High"),
-                    Low = csv.GetField<double>("Low"),
-                    Close = csv.GetField<double>("Close"),
-                    Volume = csv.GetField<int>("Volume"),
-                    DividendAmount = csv.GetField<double>("dividendAmount"),
+                    Open = csv.GetField<double>("open"),
+                    High = csv.GetField<double>("high"),
+                    Low = csv.GetField<double>("low"),
+                    Close = csv.GetField<double>("close"),
+                    Volume = csv.GetField<int>("volume"),
+                    //DividendAmount = csv.GetField<double>("DividendAmount"),
                 };
 
-                stockdata100days += stockData.AdjustedClose;
-                dayCount++;
 
-
-                if (dayCount == 20)
+                DateTime limit = DateTime.Now.AddMonths(-3);
+                if (stockData.Date >= limit && !stockDataList.Any(s => s.Date == stockData.Date))
                 {
-                    stockdata20days = stockdata100days;
-                }
-
-                if (dayCount == 50)
-                {
-                    stockdata50days = stockdata100days;
+                    stockDataList.Add(stockData);
+                    
                 }
                 
-                stockDataList.Add(stockData);
 
-                foreach (var item in stockDataList)
-                {
-                    Console.WriteLine($"{item.Open.ToString("0.00")}{printOutSpacer}");
-                    
-                }
-                    
+             
                 
             }
+            foreach (var item in stockDataList)
+            {
+                Console.WriteLine($"Open: {item.Open.ToString("0.00")}{printOutSpacer}" + 
+                                  $"High: {item.High.ToString("0.00")}{printOutSpacer}" +
+                                  $"Low: {item.Low.ToString("0.00")}{printOutSpacer}" +
+                                  $"Close: {item.Close.ToString("0.00")}{printOutSpacer}" +
+                                  $"Volume: {item.Volume}{printOutSpacer}" +
+                                  $"Date: {item.Date}{printOutSpacer}");
+                    
+            }
+
         }
+        
     }
 
 
 }
+

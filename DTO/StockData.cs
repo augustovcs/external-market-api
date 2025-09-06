@@ -3,7 +3,7 @@ namespace api_external_scrapper.DTO;
 public class StockData
 {
     public double AdjustedClose { get; set; }
-    public string Date { get; set; }
+    public DateTime Date { get; set; }
     public string Symbol { get; set; }
     
     public double Open { get; set; }

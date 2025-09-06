@@ -7,8 +7,16 @@ builder.Services.ConfigureHttpJsonOptions(options =>
     
 });
 
+builder.Services.AddSingleton<stockDataService>();
+
+
 
 var app = builder.Build();
 
+var service01 = app.Services.GetRequiredService<stockDataService>();
+service01.parametersStock();
+
+
 app.Run();
+
 
