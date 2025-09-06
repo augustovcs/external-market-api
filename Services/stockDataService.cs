@@ -1,4 +1,7 @@
+using System.Globalization;
 using System.Net;
+using api_external_scrapper.DTO;
+using CsvHelper;
 
 namespace api_external_scrapper.Services;
 
@@ -33,8 +36,58 @@ public class stockDataService
         
         //IMPLEMENT PREVENTION FOR MULTIPLE CALCULATIONS 
         // CHECK CSV CURRENTLY DATE ALREADY EXISTS.
-        File.WriteAllText(@"stockData.csv" + dateTime + ".csv", data_client);
-        
+        if (!File.Exists(@"/home/augustoviegascs/Documents/dotnet/api_external_scrapper" + dateTime + ".csv"))
+        {
+            File.WriteAllText(@"stockData.csv" + dateTime + ".csv", data_client);
+        }
+
+        using (StreamReader reader = new StreamReader(@"/home/augustoviegascs/Documents/dotnet/api_external_scrapper"))
+        using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+        {
+            List<StockData> stockDataList = new List<StockData>();
+
+            csv.Read();
+            csv.ReadHeader();
+            while (csv.Read())
+            {
+                StockData stockData = new StockData
+                {
+                    AdjustedClose = csv.GetField<double>("AdjustedClose"),
+                    Date = DateTime.Parse(csv.GetField<string>("timestamp")).ToString("MM/dd/yyyy"),
+                    Symbol = symbol,
+                    Open = csv.GetField<double>("Open"),
+                    High = csv.GetField<double>("High"),
+                    Low = csv.GetField<double>("Low"),
+                    Close = csv.GetField<double>("Close"),
+                    Volume = csv.GetField<int>("Volume"),
+                    DividendAmount = csv.GetField<double>("dividendAmount"),
+                };
+
+                stockdata100days += stockData.AdjustedClose;
+                dayCount++;
+
+
+                if (dayCount == 20)
+                {
+                    stockdata20days = stockdata100days;
+                }
+
+                if (dayCount == 50)
+                {
+                    stockdata50days = stockdata100days;
+                }
+                
+                stockDataList.Add(stockData);
+
+                foreach (var item in stockDataList)
+                {
+                    Console.WriteLine($"{item.Open.ToString("0.00")}{printOutSpacer}");
+                    
+                }
+                    
+                
+            }
+        }
     }
 
 

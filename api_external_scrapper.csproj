@@ -12,4 +12,8 @@
       <Folder Include="Controllers\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="CsvHelper" Version="33.1.0" />
+    </ItemGroup>
+
 </Project>
