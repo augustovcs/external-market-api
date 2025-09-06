@@ -9,12 +9,16 @@ namespace api_external_scrapper.Services;
 public class stockDataService
 {
     private readonly IConfiguration _configuration;
-
+    
+    
+    
     public stockDataService(IConfiguration configuration)
     {
         _configuration = configuration;
     }
     
+
+
     public void parametersStock()
     {
         double stockdata100days = 0;
@@ -28,34 +32,35 @@ public class stockDataService
         string symbol = "IBM";
 
         string API_KEY = _configuration.GetValue<string>("API_ALPHA");
-        string queryURL = $"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={API_KEY}&datatype=csv";
+        string queryURL =
+            $"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={API_KEY}&datatype=csv";
 
         WebClient clientService = new WebClient();
         string data_client = clientService.DownloadString(queryURL);
-        
+
         string dateTime = symbol + "-" + DateTime.Now.ToString("dd-MM-yyyy");
-        
+
         //IMPLEMENT PREVENTION FOR MULTIPLE CALCULATIONS 
         // CHECK CSV CURRENTLY DATE ALREADY EXISTS.
         string fileName = $"stockData-{dateTime}.csv";
         string fullPath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
-        
+
         string currentDir = Directory.GetCurrentDirectory();
         string archiveDir = Path.Combine(Directory.GetCurrentDirectory(), "data_archives");
-        
+
         if (!Directory.Exists(archiveDir))
         {
             Directory.CreateDirectory(archiveDir);
         }
-        
+
         string fullPath_archived = Path.Combine(archiveDir, fileName);
-        
+
         if (!File.Exists(fullPath_archived + dateTime + ".csv"))
         {
             File.WriteAllText(fullPath_archived, data_client);
         }
 
-  
+
         using (StreamReader reader = new StreamReader(fullPath_archived))
         using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
         {
@@ -83,27 +88,34 @@ public class stockDataService
                 if (stockData.Date >= limit && !stockDataList.Any(s => s.Date == stockData.Date))
                 {
                     stockDataList.Add(stockData);
-                    
-                }
-                
+                    StockDataList.Add(stockData);
 
-             
-                
+                }
+
+
+
+
             }
+
             foreach (var item in stockDataList)
             {
-                Console.WriteLine($"Open: {item.Open.ToString("0.00")}{printOutSpacer}" + 
+                Console.WriteLine($"STOCK NAME: {symbol}{printOutSpacer}" +
+                                  $"Open: {item.Open.ToString("0.00")}{printOutSpacer}" +
                                   $"High: {item.High.ToString("0.00")}{printOutSpacer}" +
                                   $"Low: {item.Low.ToString("0.00")}{printOutSpacer}" +
                                   $"Close: {item.Close.ToString("0.00")}{printOutSpacer}" +
                                   $"Volume: {item.Volume}{printOutSpacer}" +
                                   $"Date: {item.Date}{printOutSpacer}");
-                    
+
             }
 
+
         }
-        
+
     }
+
+    public List<StockData> StockDataList { get; private set; } = new List<StockData>();
+
 
 
 }
