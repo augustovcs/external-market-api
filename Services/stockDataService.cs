@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Net;
 using System.Runtime.InteropServices.JavaScript;
+using System.Text;
 using api_external_scrapper.DTO;
 using CsvHelper;
 using api_external_scrapper.Interfaces;
@@ -18,6 +19,8 @@ public class stockDataService : IStockDataService
     private string volumeVariable;
     private string dateVariable;
     private string allVariables;
+    private StringBuilder stringBuilder;
+    public List<StockData> stockDataList { get; private set; } = new List<StockData>();
 
 
     public stockDataService(IConfiguration configuration)
@@ -25,7 +28,10 @@ public class stockDataService : IStockDataService
         _configuration = configuration;
     }
 
-
+    public List<StockData> GetStockData()
+    {
+        return StockDataList;
+    }
 
     public async Task<string> parametersStock()
     {
@@ -76,7 +82,7 @@ public class stockDataService : IStockDataService
             File.WriteAllText(fullPath_archived, data_client);
         }
 
-        List<StockData> stockDataList = new List<StockData>();
+       stockDataList = new List<StockData>();
 
         using (StreamReader reader = new StreamReader(fullPath_archived))
         using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
@@ -110,17 +116,18 @@ public class stockDataService : IStockDataService
 
             }
 
+
+            stringBuilder = new StringBuilder();
             foreach (var item in stockDataList)
             {
-                stockName = $"STOCK NAME: {symbol}{printOutSpacer}";
-                openVariable = $"Open: {item.Open.ToString("0.00")}{printOutSpacer}";
-                highVariable = $"High: {item.High.ToString("0.00")}{printOutSpacer}";
-                lowVariable = $"Low: {item.Low.ToString("0.00")}{printOutSpacer}";
-                closeVariable = $"Close: {item.Close.ToString("0.00")}{printOutSpacer}";
-                volumeVariable = $"Volume: {item.Volume}{printOutSpacer}";
-                dateVariable = $"Date: {item.Date}{printOutSpacer}";
-                
-                allVariables = stockName + openVariable + highVariable + lowVariable + closeVariable + volumeVariable + dateVariable;
+                stringBuilder.AppendLine(
+                $"STOCK NAME: {symbol}{printOutSpacer}" +
+                $"Open: {item.Open.ToString("0.00")}{printOutSpacer}" +
+                $"High: {item.High.ToString("0.00")}{printOutSpacer}" +
+                $"Low: {item.Low.ToString("0.00")}{printOutSpacer}" +
+                 $"Close: {item.Close.ToString("0.00")}{printOutSpacer}" +
+                $"Volume: {item.Volume}{printOutSpacer}" +
+                $"Date: {item.Date}{printOutSpacer}");
                 
                 /*Console.WriteLine($"STOCK NAME: {symbol}{printOutSpacer}" +
                                   $"Open: {item.Open.ToString("0.00")}{printOutSpacer}" +
@@ -135,7 +142,7 @@ public class stockDataService : IStockDataService
         }
 
 
-        return allVariables;
+        return stringBuilder.ToString();
 
 
 

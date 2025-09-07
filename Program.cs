@@ -10,8 +10,8 @@ builder.Services.ConfigureHttpJsonOptions(options =>
     
 });
 
-builder.Services.AddAuthorization();
-builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddControllers();
+
 builder.Services.AddSwaggerGen();
 
 

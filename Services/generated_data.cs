@@ -9,7 +9,7 @@ namespace api_external_scrapper.Services;
 
 public class generated_data : IGeneratedData
 {
-    public readonly stockDataService _stockDataService;
+    public readonly IStockDataService _stockDataService;
     public readonly IConfiguration _configuration;
 
     
@@ -38,7 +38,7 @@ public class generated_data : IGeneratedData
     private string brokenMid30days;
 
 
-    public generated_data(stockDataService stockDataService, IConfiguration configuration)
+    public generated_data(IStockDataService stockDataService, IConfiguration configuration)
     {
         _stockDataService = stockDataService;
         _configuration = configuration;
@@ -46,10 +46,10 @@ public class generated_data : IGeneratedData
 
     
     
-    public async Task<bool> stock_calculus_base() 
+    public async Task<bool> stock_calculus_base()
     {
 
-        List<StockData> list_data = _stockDataService.StockDataList;
+        List<StockData> list_data = _stockDataService.GetStockData();
 
         open_value = list_data.Where(x => x.Open > 1);
         close_value = list_data.Where(x => x.Close > 1);
