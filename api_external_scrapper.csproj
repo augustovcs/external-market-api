@@ -9,12 +9,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
       <Folder Include="data_archives\" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="CsvHelper" Version="33.1.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="9.0.4" />
+      <PackageReference Include="System.Linq" Version="4.3.0" />
+      <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
     </ItemGroup>
 
 </Project>

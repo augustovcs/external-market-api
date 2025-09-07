@@ -28,3 +28,8 @@
 /home/augustoviegascs/Documents/dotnet/api_external_scrapper/obj/Debug/net8.0/api_external_scrapper.csproj.AssemblyReference.cache
 /home/augustoviegascs/Documents/dotnet/api_external_scrapper/obj/Debug/net8.0/api_external_scrapper.sourcelink.json
 /home/augustoviegascs/Documents/dotnet/api_external_scrapper/obj/Debug/net8.0/api_exte.9EFDCCF0.Up2Date
+/home/augustoviegascs/Documents/dotnet/api_external_scrapper/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/home/augustoviegascs/Documents/dotnet/api_external_scrapper/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/augustoviegascs/Documents/dotnet/api_external_scrapper/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/augustoviegascs/Documents/dotnet/api_external_scrapper/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/augustoviegascs/Documents/dotnet/api_external_scrapper/obj/Debug/net8.0/api_external_scrapper.MvcApplicationPartsAssemblyInfo.cs

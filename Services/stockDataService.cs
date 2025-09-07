@@ -3,23 +3,31 @@ using System.Net;
 using System.Runtime.InteropServices.JavaScript;
 using api_external_scrapper.DTO;
 using CsvHelper;
+using api_external_scrapper.Interfaces;
 
 namespace api_external_scrapper.Services;
 
-public class stockDataService
+public class stockDataService : IStockDataService
 {
     private readonly IConfiguration _configuration;
-    
-    
-    
+    private string stockName;
+    private string openVariable;
+    private string highVariable;
+    private string lowVariable;
+    private string closeVariable;
+    private string volumeVariable;
+    private string dateVariable;
+    private string allVariables;
+
+
     public stockDataService(IConfiguration configuration)
     {
         _configuration = configuration;
     }
-    
 
 
-    public void parametersStock()
+
+    public async Task<string> parametersStock()
     {
         double stockdata100days = 0;
         double stockdata50days = 0;
@@ -37,6 +45,14 @@ public class stockDataService
 
         WebClient clientService = new WebClient();
         string data_client = clientService.DownloadString(queryURL);
+        if (!string.IsNullOrEmpty(data_client))
+        {
+            //RUN THE OFFLINE BASE API
+
+
+
+        }
+
 
         string dateTime = symbol + "-" + DateTime.Now.ToString("dd-MM-yyyy");
 
@@ -60,11 +76,11 @@ public class stockDataService
             File.WriteAllText(fullPath_archived, data_client);
         }
 
+        List<StockData> stockDataList = new List<StockData>();
 
         using (StreamReader reader = new StreamReader(fullPath_archived))
         using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
         {
-            List<StockData> stockDataList = new List<StockData>();
 
             csv.Read();
             csv.ReadHeader();
@@ -92,31 +108,39 @@ public class stockDataService
 
                 }
 
-
-
-
             }
 
             foreach (var item in stockDataList)
             {
-                Console.WriteLine($"STOCK NAME: {symbol}{printOutSpacer}" +
+                stockName = $"STOCK NAME: {symbol}{printOutSpacer}";
+                openVariable = $"Open: {item.Open.ToString("0.00")}{printOutSpacer}";
+                highVariable = $"High: {item.High.ToString("0.00")}{printOutSpacer}";
+                lowVariable = $"Low: {item.Low.ToString("0.00")}{printOutSpacer}";
+                closeVariable = $"Close: {item.Close.ToString("0.00")}{printOutSpacer}";
+                volumeVariable = $"Volume: {item.Volume}{printOutSpacer}";
+                dateVariable = $"Date: {item.Date}{printOutSpacer}";
+                
+                allVariables = stockName + openVariable + highVariable + lowVariable + closeVariable + volumeVariable + dateVariable;
+                
+                /*Console.WriteLine($"STOCK NAME: {symbol}{printOutSpacer}" +
                                   $"Open: {item.Open.ToString("0.00")}{printOutSpacer}" +
                                   $"High: {item.High.ToString("0.00")}{printOutSpacer}" +
                                   $"Low: {item.Low.ToString("0.00")}{printOutSpacer}" +
                                   $"Close: {item.Close.ToString("0.00")}{printOutSpacer}" +
                                   $"Volume: {item.Volume}{printOutSpacer}" +
-                                  $"Date: {item.Date}{printOutSpacer}");
-
+                                  $"Date: {item.Date}{printOutSpacer}");*/
             }
 
 
         }
 
+
+        return allVariables;
+
+
+
+
     }
 
     public List<StockData> StockDataList { get; private set; } = new List<StockData>();
-
-
-
 }
-
