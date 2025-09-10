@@ -51,6 +51,7 @@ public class generated_data : IGeneratedData
     public async Task<string> stock_calculus_base()
     {
 
+        var init_charger = await _stockDataService.parametersStock();
         List<StockData> list_data = _stockDataService.GetStockData();
 
         open_value = list_data.Where(x => x.Open > 1);
@@ -188,9 +189,9 @@ public class generated_data : IGeneratedData
         foreach (var item in volatilities_list)
         {
             stringBuilder.AppendLine(
-                $"Volatility 3 days: {item.Volatility3Days}" +
-                $"Volatility 7 days: {item.Volatility7Days}" +
-                $"Volatility 15 days:  {item.Volatility15Days}" +
+                $"Volatility 3 days: {item.Volatility3Days}" + "\n" +
+                $"Volatility 7 days: {item.Volatility7Days}" + "\n" +
+                $"Volatility 15 days:  {item.Volatility15Days}" + "\n" +
                 $"Volatility 30 days:  {item.Volatility30Days}"
             );
         }
