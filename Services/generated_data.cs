@@ -3,6 +3,7 @@ using api_external_scrapper.DTO;
 using api_external_scrapper.Services;
 using CsvHelper;
 using System.Linq;
+using System.Text;
 using api_external_scrapper.Interfaces;
 
 namespace api_external_scrapper.Services;
@@ -36,6 +37,7 @@ public class generated_data : IGeneratedData
     private string positiveMid30days;
     private string negativeMid30days;
     private string brokenMid30days;
+  
 
 
     public generated_data(IStockDataService stockDataService, IConfiguration configuration)
@@ -44,9 +46,9 @@ public class generated_data : IGeneratedData
         _configuration = configuration;
     }
 
-    
-    
-    public async Task<bool> stock_calculus_base()
+
+
+    public async Task<string> stock_calculus_base()
     {
 
         List<StockData> list_data = _stockDataService.GetStockData();
@@ -57,7 +59,10 @@ public class generated_data : IGeneratedData
         low_value = list_data.Where(x => x.Low > 1);
         high_value = list_data.Where(x => x.High > 1);
 
-
+        /*if (!close_value.Any())
+        {
+            throw new Exception("close_value null");;
+        }*/
         // max and min values in 3 months
         var max_reach = list_data.Max(x => x.Close);
         var min_reach = list_data.Min(x => x.Close);
@@ -165,11 +170,34 @@ public class generated_data : IGeneratedData
         positiveMid30days = $"Positive status: {mid30days_value}";
         negativeMid30days = $"Negative status: {mid30days_value}";
         brokenMid30days = $"Broken status: {mid30days_value}";
+        
+        
+        // all list item
+        List<GeneralCalculusData> volatilities_list = new List<GeneralCalculusData>();
 
+        GeneralCalculusData volatilityData = new GeneralCalculusData
+        {
+            Volatility3Days = volatility_3days,
+            Volatility7Days = volatility_7days,
+            Volatility15Days = volatility_15days,
+            Volatility30Days = volatility30Days
+        };
+        
+        volatilities_list.Add(volatilityData);
+        var stringBuilder = new StringBuilder();
+        foreach (var item in volatilities_list)
+        {
+            stringBuilder.AppendLine(
+                $"Volatility 3 days: {item.Volatility3Days}" +
+                $"Volatility 7 days: {item.Volatility7Days}" +
+                $"Volatility 15 days:  {item.Volatility15Days}" +
+                $"Volatility 30 days:  {item.Volatility30Days}"
+            );
+        }
+        
 
+        return stringBuilder.ToString();
 
-        return true;
     }
-
-
+    
 }

@@ -10,5 +10,5 @@ public interface IStockDataService
 
 public interface IGeneratedData
 {
-    public Task<bool> stock_calculus_base(); 
+    public Task<string> stock_calculus_base(); 
 }

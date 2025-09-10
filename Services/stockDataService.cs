@@ -11,27 +11,17 @@ namespace api_external_scrapper.Services;
 public class stockDataService : IStockDataService
 {
     private readonly IConfiguration _configuration;
-    private string stockName;
-    private string openVariable;
-    private string highVariable;
-    private string lowVariable;
-    private string closeVariable;
-    private string volumeVariable;
-    private string dateVariable;
-    private string allVariables;
     private StringBuilder stringBuilder;
-    public List<StockData> stockDataList { get; private set; } = new List<StockData>();
+    public List<StockData> stockDataList { get; private set; }
 
 
     public stockDataService(IConfiguration configuration)
     {
         _configuration = configuration;
+        stockDataList = new List<StockData>();
     }
 
-    public List<StockData> GetStockData()
-    {
-        return StockDataList;
-    }
+
 
     public async Task<string> parametersStock()
     {
@@ -63,7 +53,7 @@ public class stockDataService : IStockDataService
         string dateTime = symbol + "-" + DateTime.Now.ToString("dd-MM-yyyy");
 
         //IMPLEMENT PREVENTION FOR MULTIPLE CALCULATIONS 
-        // CHECK CSV CURRENTLY DATE ALREADY EXISTS.
+        // CHECK CSV CURRENTLY DATE ALREADY EXISTS. ezzzzz
         string fileName = $"stockData-{dateTime}.csv";
         string fullPath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
 
@@ -110,7 +100,7 @@ public class stockDataService : IStockDataService
                 if (stockData.Date >= limit && !stockDataList.Any(s => s.Date == stockData.Date))
                 {
                     stockDataList.Add(stockData);
-                    StockDataList.Add(stockData);
+                    //StockDataList.Add(stockData);
 
                 }
 
@@ -148,6 +138,9 @@ public class stockDataService : IStockDataService
 
 
     }
-
-    public List<StockData> StockDataList { get; private set; } = new List<StockData>();
+    
+    public List<StockData> GetStockData()
+    {
+        return stockDataList;
+    }
 }

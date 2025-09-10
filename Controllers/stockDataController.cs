@@ -29,6 +29,14 @@ public class stockDataController : ControllerBase
         
         
     }
+
+    [HttpGet("/get/all_calc_data")]
+    public async Task<IActionResult> GetAllCalcData()
+    {
+        var response = await _generated_data.stock_calculus_base();
+        return Ok(response);
+        
+    }
     
     
     
