@@ -215,9 +215,9 @@ public class generated_data : IGeneratedData
         // close date_x - close date_y / close date_y * 100
         percentualDaily = (closeDaily.First() - closeYesterday.Last()) / closeYesterday.Last() * 100;
         percentual7Days = (closeDaily.First() - closeWeekly.Last()) / closeWeekly.Last() * 100;
-        percentual14Days = (closeDaily.First() - close90Days.Last()) / close14Days.Last() * 100;
-        percentual30Days = (closeDaily.First() - close90Days.Last()) / close30Days.Last() * 100;
-        percentual60Days = (closeDaily.First() - close90Days.Last()) / close60Days.Last() * 100;
+        percentual14Days = (closeDaily.First() - close14Days.Last()) / close14Days.Last() * 100;
+        percentual30Days = (closeDaily.First() - close30Days.Last()) / close30Days.Last() * 100;
+        percentual60Days = (closeDaily.First() - close60Days.Last()) / close60Days.Last() * 100;
         percentual90Days = (closeDaily.First() - close90Days.Last()) / close90Days.Last() * 100;
 
         PercentualReturnData percentualreturnData = new PercentualReturnData()
