@@ -39,7 +39,13 @@ public class generated_data : IGeneratedData
     private string positiveMid30days;
     private string negativeMid30days;
     private string brokenMid30days;
-  
+    private IEnumerable<double> close90Days;
+    private IEnumerable<double> close60Days;
+    private IEnumerable<double> close30Days;
+    private IEnumerable<double> close14Days;
+    private IEnumerable<double> closeWeekly;
+    private IEnumerable<double> closeYesterday;
+    private IEnumerable<double> closeDaily;
 
 
     public generated_data(IStockDataService stockDataService, IConfiguration configuration)
@@ -100,44 +106,44 @@ public class generated_data : IGeneratedData
 
 
         // closes
-        var close_daily = list_data
+        closeDaily = list_data
             .OrderByDescending(x => x.Date)
             .Where(x => x.Close > 1)
             .Take(1)
             .Select(x => x.Close);
 
-        var close_yesterday = list_data
+        closeYesterday = list_data
             .OrderByDescending(x => x.Date)
             .Where(x => x.Close > 1)
             .Skip(1)
             .Take(1)
             .Select(x => x.Close);
 
-        var close_weekly = list_data
+        closeWeekly = list_data
             .OrderByDescending(x => x.Date)
             .Where(x => x.Close > 1)
             .Take(7)
             .Select(x => x.Close);
 
-        var close_14days = list_data
+        close14Days = list_data
             .OrderByDescending(x => x.Date)
             .Where(x => x.Close > 1)
             .Take(14)
             .Select(x => x.Close);
 
-        var close_30days = list_data
+        close30Days = list_data
             .OrderByDescending(x => x.Date)
             .Where(x => x.Close > 1)
             .Take(30)
             .Select(x => x.Close);
 
-        var close_60days = list_data
+        close60Days = list_data
             .OrderByDescending(x => x.Date)
             .Where(x => x.Close > 1)
             .Take(60)
             .Select(x => x.Close);
 
-        var close_90days = list_data
+        close90Days = list_data
             .OrderByDescending(x => x.Date)
             .Where(x => x.Close > 1)
             .Take(90)
@@ -152,12 +158,12 @@ public class generated_data : IGeneratedData
 
         // percentual return in x period
         // close date_x - close date_y / close date_y * 100
-        percentualDaily = (close_daily.First() - close_yesterday.Last()) / close_yesterday.Last() * 100;
-        percentual7Days = (close_daily.First() - close_weekly.Last()) / close_weekly.Last() * 100;
-        percentual14Days = (close_daily.First() - close_14days.Last()) / close_14days.Last() * 100;
-        percentual30Days = (close_daily.First() - close_30days.Last()) / close_30days.Last() * 100;
-        percentual60Days = (close_daily.First() - close_60days.Last()) / close_60days.Last() * 100;
-        percentual90Days = (close_daily.First() - close_90days.Last()) / close_90days.Last() * 100;
+        percentualDaily = (closeDaily.First() - closeYesterday.Last()) / closeYesterday.Last() * 100;
+        percentual7Days = (closeDaily.First() - closeWeekly.Last()) / closeWeekly.Last() * 100;
+        percentual14Days = (closeDaily.First() - close14Days.Last()) / close14Days.Last() * 100;
+        percentual30Days = (closeDaily.First() - close30Days.Last()) / close30Days.Last() * 100;
+        percentual60Days = (closeDaily.First() - close60Days.Last()) / close60Days.Last() * 100;
+        percentual90Days = (closeDaily.First() - close90Days.Last()) / close90Days.Last() * 100;
 
         // 30 last days mid 
 
@@ -167,7 +173,7 @@ public class generated_data : IGeneratedData
             .Take(30)
             .Average(x => x.Close);
 
-        var mid30days_value = close_daily.First() - mid30days;
+        var mid30days_value = closeDaily.First() - mid30days;
 
         positiveMid30days = $"Positive status: {mid30days_value}";
         negativeMid30days = $"Negative status: {mid30days_value}";
@@ -201,5 +207,39 @@ public class generated_data : IGeneratedData
         return volatilities_list;
 
     }
+
+    public async Task<List<PercentualReturnData>> CalcPercentualReturn()
+    {
+        
+        // percentual return in x period
+        // close date_x - close date_y / close date_y * 100
+        percentualDaily = (closeDaily.First() - closeYesterday.Last()) / closeYesterday.Last() * 100;
+        percentual7Days = (closeDaily.First() - closeWeekly.Last()) / closeWeekly.Last() * 100;
+        percentual14Days = (closeDaily.First() - close90Days.Last()) / close14Days.Last() * 100;
+        percentual30Days = (closeDaily.First() - close90Days.Last()) / close30Days.Last() * 100;
+        percentual60Days = (closeDaily.First() - close90Days.Last()) / close60Days.Last() * 100;
+        percentual90Days = (closeDaily.First() - close90Days.Last()) / close90Days.Last() * 100;
+
+        PercentualReturnData percentualreturnData = new PercentualReturnData()
+        {
+            
+            
+            PercentualReturn = percentualDaily,
+            PercentualReturn7Days = percentual7Days,
+            PercentualReturn14Days = percentual14Days,
+            PercentualReturn30Days = percentual30Days,
+            PercentualReturn60Days = percentual60Days,
+            PercentualReturn90Days = percentual90Days
+        };
+        
+        List<PercentualReturnData> percentualreturn_list = new List<PercentualReturnData>();
+        percentualreturn_list.Add(percentualreturnData);
+
+
+        return percentualreturn_list;
+
+
+    }
+    
     
 }

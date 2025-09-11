@@ -32,10 +32,23 @@ public class printDataService : IPrintDataService
 
     }
 
-    /*public async Task<StockData> GetPercentualReturn()
+    public async Task<List<PercentualReturnData>> GetPercentualReturn()
     {
         
-    }*/
+        List<PercentualReturnData> percentualreturn_list = new List<PercentualReturnData>();
+        var loader = await _geneneratedData.stock_calculus_base();
+        percentualreturn_list = await  _geneneratedData.CalcPercentualReturn();
+        
+        List<PercentualReturnData> percentual_total = new List<PercentualReturnData>();
+        foreach (var item in percentualreturn_list)
+        {
+            percentual_total.Add(item);
+        }
+        
+        return percentual_total;
+        
+        
+    }
     
     
     

@@ -46,6 +46,12 @@ public class stockDataController : ControllerBase
         var response = await _printdataservice.GetVolatility();
         return Ok(response);
     }
-    
+
+    [HttpGet("/get/percentual_return")]
+    public async Task<IActionResult> GetPercentualReturn()
+    {
+        var response = await _printdataservice.GetPercentualReturn();
+        return Ok(response);
+    }
     
 }
