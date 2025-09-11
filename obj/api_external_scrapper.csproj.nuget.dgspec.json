@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[33.1.0, )"
             },
+            "CsvToJson": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.DotNet.ILCompiler": {
               "suppressParent": "All",
               "target": "Package",

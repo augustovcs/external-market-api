@@ -10,5 +10,11 @@ public interface IStockDataService
 
 public interface IGeneratedData
 {
-    public Task<string> stock_calculus_base(); 
+    public Task<List<GeneralCalculusData>> stock_calculus_base(); 
+}
+
+public interface IPrintDataService
+{
+    public Task<List<GeneralCalculusData>> GetVolatility();
+    //public Task<StockData> GetPercentualReturn();
 }

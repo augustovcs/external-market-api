@@ -15,6 +15,12 @@
           }
         }
       },
+      "CsvToJson/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        }
+      },
       "Microsoft.DotNet.ILCompiler/8.0.19": {
         "type": "package",
         "build": {
@@ -66,6 +72,19 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -473,6 +492,18 @@
         "lib/netstandard2.1/CsvHelper.xml"
       ]
     },
+    "CsvToJson/1.0.0": {
+      "sha512": "ox86qXGuJnvcbGOxlJ4m/ZihvDljHvl5/tMGBXARIi37NURLVg9HotVJjBOYW3jr7AtDJZMIKgI1cK1HkGU+HA==",
+      "type": "package",
+      "path": "csvtojson/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/CsvToJson/ConvertToJson.cs",
+        "csvtojson.1.0.0.nupkg.sha512",
+        "csvtojson.nuspec"
+      ]
+    },
     "Microsoft.DotNet.ILCompiler/8.0.19": {
       "sha512": "NS8a5mXZzJDU+GvbZbdT75lgvB+s/IZ+7UPi9UOLKnpNqV4w3eDNlCRxa14/iQ6s/UjKAF0+wTrEG/mSbCuwGg==",
       "type": "package",
@@ -659,6 +690,37 @@
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
         "microsoft.openapi.1.6.25.nupkg.sha512",
         "microsoft.openapi.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "Swashbuckle.AspNetCore/9.0.4": {
@@ -2056,6 +2118,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "CsvHelper >= 33.1.0",
+      "CsvToJson >= 1.0.0",
       "Microsoft.DotNet.ILCompiler >= 8.0.19",
       "Microsoft.NET.ILLink.Tasks >= 8.0.19",
       "Swashbuckle.AspNetCore >= 9.0.4",
@@ -2109,6 +2172,10 @@
           "CsvHelper": {
             "target": "Package",
             "version": "[33.1.0, )"
+          },
+          "CsvToJson": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "Microsoft.DotNet.ILCompiler": {
             "suppressParent": "All",

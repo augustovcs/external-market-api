@@ -11,7 +11,6 @@ namespace api_external_scrapper.Services;
 public class generated_data : IGeneratedData
 {
     public readonly IStockDataService _stockDataService;
-    public readonly IConfiguration _configuration;
 
     
     //variables scoped class
@@ -25,9 +24,12 @@ public class generated_data : IGeneratedData
     private DateTime newest_date;
     private int date_30days_count;
     private int date_15days_count;
-    private int date_7days_count;
+    public int date_7days_count;
     private int date_3days_count;
     private double volatility30Days;
+    private double volatility15Days;
+    private double volatility7Days;
+    private double volatility3Days;
     private double percentualDaily;
     private double percentual7Days;
     private double percentual14Days;
@@ -43,15 +45,14 @@ public class generated_data : IGeneratedData
     public generated_data(IStockDataService stockDataService, IConfiguration configuration)
     {
         _stockDataService = stockDataService;
-        _configuration = configuration;
     }
 
 
 
-    public async Task<string> stock_calculus_base()
+    public async Task<List<GeneralCalculusData>> stock_calculus_base()
     {
 
-        var init_charger = await _stockDataService.parametersStock();
+        var init_loader = await _stockDataService.parametersStock();
         List<StockData> list_data = _stockDataService.GetStockData();
 
         open_value = list_data.Where(x => x.Open > 1);
@@ -145,9 +146,9 @@ public class generated_data : IGeneratedData
 
         // volatilities 
         volatility30Days = (max_reach - min_reach) / date_30days_count;
-        var volatility_15days = (max_reach - min_reach) / date_15days_count;
-        var volatility_7days = (max_reach - min_reach) / date_7days_count;
-        var volatility_3days = (max_reach - min_reach) / date_3days_count;
+        volatility15Days = (max_reach - min_reach) / date_15days_count;
+        volatility7Days = (max_reach - min_reach) / date_7days_count;
+        volatility3Days = (max_reach - min_reach) / date_3days_count;
 
         // percentual return in x period
         // close date_x - close date_y / close date_y * 100
@@ -178,9 +179,9 @@ public class generated_data : IGeneratedData
 
         GeneralCalculusData volatilityData = new GeneralCalculusData
         {
-            Volatility3Days = volatility_3days,
-            Volatility7Days = volatility_7days,
-            Volatility15Days = volatility_15days,
+            Volatility3Days = volatility3Days,
+            Volatility7Days = volatility7Days,
+            Volatility15Days = volatility15Days,
             Volatility30Days = volatility30Days
         };
         
@@ -195,9 +196,9 @@ public class generated_data : IGeneratedData
                 $"Volatility 30 days:  {item.Volatility30Days}"
             );
         }
-        
 
-        return stringBuilder.ToString();
+
+        return volatilities_list;
 
     }
     

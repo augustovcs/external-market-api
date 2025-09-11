@@ -1,22 +1,25 @@
-using System.Text.Json.Serialization;
+using api_external_scrapper.Classes;
 using api_external_scrapper.Services;
-using Swashbuckle.AspNetCore;
 using api_external_scrapper.Interfaces;
 
-var builder = WebApplication.CreateSlimBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.ConfigureHttpJsonOptions(options =>
-{
-    
-});
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+	.AddJsonOptions(options =>
+	{
+		options.JsonSerializerOptions.TypeInfoResolver = AppJsonContext.Default;
+	});
+
 
 builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddScoped<IStockDataService, stockDataService>();
 builder.Services.AddScoped<IGeneratedData, generated_data>();
+builder.Services.AddScoped<IPrintDataService, printDataService>();
+
+
 
 
 
@@ -45,6 +48,7 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseHttpsRedirection();
+
 
 
 app.Run();

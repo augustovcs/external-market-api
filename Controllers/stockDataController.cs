@@ -10,11 +10,13 @@ public class stockDataController : ControllerBase
 {
     private IStockDataService _stockdataservice;
     private IGeneratedData _generated_data;
+    private IPrintDataService _printdataservice;
     
-    public stockDataController(IStockDataService stockdataservice, IGeneratedData generatedData)
+    public stockDataController(IStockDataService stockdataservice, IGeneratedData generatedData, IPrintDataService printDataService)
     {
         _stockdataservice = stockdataservice;
         _generated_data = generatedData;
+        _printdataservice = printDataService;
         
     }
     
@@ -37,8 +39,13 @@ public class stockDataController : ControllerBase
         return Ok(response);
         
     }
-    
-    
+
+    [HttpGet("/get/volatilities/")]
+    public async Task<IActionResult> GetVolatilities()
+    {
+        var response = await _printdataservice.GetVolatility();
+        return Ok(response);
+    }
     
     
 }
