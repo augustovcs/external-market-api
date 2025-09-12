@@ -27,7 +27,35 @@ public class PercentualReturnData
 }
 
 //last 30 days mid 
+
+public class Mid30DaysData
+{
     
+    public double Mid30Days { get; set; }
+    
+    
+    
+}
+
+public class Mid30DaysDataInfo : Mid30DaysData
+{
+    public double CloseDaily { get; set; }
+    public List<StockData> Last30Days { get; set; }
+    
+    
+}
+
 // closes
+
+public class Closes
+{
+    
+}
     
 // last x days
+
+
+public class LastXDays
+{
+    
+}
