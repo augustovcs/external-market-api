@@ -14,7 +14,6 @@ public class stockDataService : IStockDataService
     private StringBuilder stringBuilder;
     public List<StockData> stockDataList { get; private set; }
 
-
     public stockDataService(IConfiguration configuration)
     {
         _configuration = configuration;
@@ -143,4 +142,5 @@ public class stockDataService : IStockDataService
     {
         return stockDataList;
     }
+    
 }

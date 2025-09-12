@@ -49,6 +49,25 @@ public class printDataService : IPrintDataService
         
         
     }
+
+    public async Task<List<Mid30DaysData>> GetMid30Days()
+    {
+        
+        List<Mid30DaysData> mid30_days_list = new List<Mid30DaysData>();
+        var loader =  await _geneneratedData.stock_calculus_base();
+        mid30_days_list = await  _geneneratedData.CalcMid30Days();
+        
+        List<Mid30DaysData> mid30_days = new List<Mid30DaysData>();
+        foreach (var item in mid30_days_list)
+        {
+            mid30_days.Add(item);
+        }
+
+        return mid30_days;
+        
+        
+        
+    }
     
     
     

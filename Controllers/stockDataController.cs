@@ -53,5 +53,13 @@ public class stockDataController : ControllerBase
         var response = await _printdataservice.GetPercentualReturn();
         return Ok(response);
     }
+
+    [HttpGet("/get/mid30days")]
+    public async Task<IActionResult> GetMid30Days()
+    {
+        var response = await _printdataservice.GetMid30Days();
+        return Ok(response);
+
+    }
     
 }
