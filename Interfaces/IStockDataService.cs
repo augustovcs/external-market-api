@@ -6,8 +6,8 @@ public interface IStockDataService
 {
 
     public string GetRawCSV(string symbol);
-    public string SaveRawCSV(string symbol, string content);
-    public string ParsingRaw(string symbol, string csv);
+    public string SaveRawCSV(string symbol);
+    public List<StockData> ParsingRaw();
     public Task<List<StockData>> parametersStock();
     public Task <List<StockData>> GetStockData();
     //List<ClosesStockData> GetClosesStockData();
