@@ -2,8 +2,10 @@ using System.Text.Json.Serialization;
 
 namespace api_external_scrapper.DTO;
 
-public class GeneralCalculusData
+
+public class VolatilityData
 {
+    
     // VOLATILITY
     
     public double Volatility3Days { get; set; }
@@ -58,4 +60,14 @@ public class Closes
 public class LastXDays
 {
     
+}
+
+
+//  FULL DATA CALCULUS
+
+public class FullData
+{
+    public List<VolatilityData> Full_Volatility { get; set; }
+    public List<PercentualReturnData> Full_PercentualReturn { get; set; }
+    public List<Mid30DaysData> Mid30Days { get; set; }
 }

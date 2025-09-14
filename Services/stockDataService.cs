@@ -22,7 +22,7 @@ public class stockDataService : IStockDataService
 
 
 
-    public async Task<string> parametersStock()
+    public async Task<List<StockData>> parametersStock()
     {
         double stockdata100days = 0;
         double stockdata50days = 0;
@@ -71,12 +71,11 @@ public class stockDataService : IStockDataService
             File.WriteAllText(fullPath_archived, data_client);
         }
 
-       stockDataList = new List<StockData>();
+        stockDataList = new List<StockData>();
 
         using (StreamReader reader = new StreamReader(fullPath_archived))
         using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
         {
-
             csv.Read();
             csv.ReadHeader();
             while (csv.Read())
@@ -98,6 +97,8 @@ public class stockDataService : IStockDataService
                 DateTime limit = DateTime.Now.AddMonths(-3);
                 if (stockData.Date >= limit && !stockDataList.Any(s => s.Date == stockData.Date))
                 {
+                    
+                    //????
                     stockDataList.Add(stockData);
                     //StockDataList.Add(stockData);
 
@@ -105,40 +106,13 @@ public class stockDataService : IStockDataService
 
             }
 
-
-            stringBuilder = new StringBuilder();
-            foreach (var item in stockDataList)
-            {
-                stringBuilder.AppendLine(
-                $"STOCK NAME: {symbol}{printOutSpacer}" +
-                $"Open: {item.Open.ToString("0.00")}{printOutSpacer}" +
-                $"High: {item.High.ToString("0.00")}{printOutSpacer}" +
-                $"Low: {item.Low.ToString("0.00")}{printOutSpacer}" +
-                 $"Close: {item.Close.ToString("0.00")}{printOutSpacer}" +
-                $"Volume: {item.Volume}{printOutSpacer}" +
-                $"Date: {item.Date}{printOutSpacer}");
-                
-                /*Console.WriteLine($"STOCK NAME: {symbol}{printOutSpacer}" +
-                                  $"Open: {item.Open.ToString("0.00")}{printOutSpacer}" +
-                                  $"High: {item.High.ToString("0.00")}{printOutSpacer}" +
-                                  $"Low: {item.Low.ToString("0.00")}{printOutSpacer}" +
-                                  $"Close: {item.Close.ToString("0.00")}{printOutSpacer}" +
-                                  $"Volume: {item.Volume}{printOutSpacer}" +
-                                  $"Date: {item.Date}{printOutSpacer}");*/
-            }
-
-
         }
-
-
-        return stringBuilder.ToString();
-
-
-
+        
+        return stockDataList;
 
     }
     
-    public List<StockData> GetStockData()
+    public async Task <List<StockData>> GetStockData()
     {
         return stockDataList;
     }

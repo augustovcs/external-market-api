@@ -49,6 +49,10 @@ public class generated_data : IGeneratedData
     private double mid30daysValue;
     private double mid30days;
     private List<StockData> mid30daysList;
+    private List<Mid30DaysData> mid30days_list;
+    private List<VolatilityData> volatilitiesList;
+    private PercentualReturnData percentualreturnData;
+    private List<PercentualReturnData> percentualreturnList;
 
 
     public generated_data(IStockDataService stockDataService, IConfiguration configuration)
@@ -58,11 +62,11 @@ public class generated_data : IGeneratedData
 
 
 
-    public async Task<List<GeneralCalculusData>> stock_calculus_base()
+    public async Task<List<VolatilityData>> stock_calculus_base()
     {
 
         var loader = await _stockDataService.parametersStock();
-        List<StockData> list_data = _stockDataService.GetStockData();
+        List<StockData> list_data = await _stockDataService.GetStockData();
 
         open_value = list_data.Where(x => x.Open > 1);
         close_value = list_data.Where(x => x.Close > 1);
@@ -193,9 +197,9 @@ public class generated_data : IGeneratedData
         
         
         // all list item
-        List<GeneralCalculusData> volatilities_list = new List<GeneralCalculusData>();
+        volatilitiesList = new List<VolatilityData>();
 
-        GeneralCalculusData volatilityData = new GeneralCalculusData
+        VolatilityData volatilityData = new VolatilityData
         {
             Volatility3Days = volatility3Days,
             Volatility7Days = volatility7Days,
@@ -203,9 +207,9 @@ public class generated_data : IGeneratedData
             Volatility30Days = volatility30Days
         };
         
-        volatilities_list.Add(volatilityData);
+        volatilitiesList.Add(volatilityData);
         var stringBuilder = new StringBuilder();
-        foreach (var item in volatilities_list)
+        foreach (var item in volatilitiesList)
         {
             stringBuilder.AppendLine(
                 $"Volatility 3 days: {item.Volatility3Days}" + "\n" +
@@ -215,7 +219,7 @@ public class generated_data : IGeneratedData
             );
         }
         
-        return volatilities_list;
+        return volatilitiesList;
 
     }
 
@@ -231,7 +235,7 @@ public class generated_data : IGeneratedData
         percentual60Days = (closeDaily.First() - close60Days.Last()) / close60Days.Last() * 100;
         percentual90Days = (closeDaily.First() - close90Days.Last()) / close90Days.Last() * 100;
 
-        PercentualReturnData percentualreturnData = new PercentualReturnData()
+        percentualreturnData = new PercentualReturnData()
         {
             
             
@@ -243,10 +247,10 @@ public class generated_data : IGeneratedData
             PercentualReturn90Days = percentual90Days
         };
         
-        List<PercentualReturnData> percentualreturn_list = new List<PercentualReturnData>();
-        percentualreturn_list.Add(percentualreturnData);
+        percentualreturnList = new List<PercentualReturnData>();
+        percentualreturnList.Add(percentualreturnData);
         
-        return percentualreturn_list;
+        return percentualreturnList;
 
     }
 
@@ -260,11 +264,29 @@ public class generated_data : IGeneratedData
             
         };
 
-        List<Mid30DaysData> mid30days_list = new List<Mid30DaysData>();
+        mid30days_list = new List<Mid30DaysData>();
         mid30days_list.Add(mid30daysData);
         
         return mid30days_list;
 
+    }
+
+    public async Task<List<FullData>> CalcFullData()
+    {
+        FullData fullData = new FullData()
+        {
+            Full_Volatility = volatilitiesList,
+            Full_PercentualReturn = percentualreturnList,
+            Mid30Days = mid30days_list
+
+        };
+        
+        var fullDataList = new List<FullData>();
+        fullDataList.Add(fullData);
+        
+        return fullDataList;
+        
+        
     }
     
     

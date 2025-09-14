@@ -7,27 +7,55 @@ public class printDataService : IPrintDataService
 
 {
     public readonly IGeneratedData _geneneratedData;
+    public readonly IStockDataService _stockDataService;
     
-    
-    public printDataService(IGeneratedData geneneratedData)
+    public printDataService(IGeneratedData geneneratedData, IStockDataService stockDataService)
     {
         _geneneratedData = geneneratedData;
+        _stockDataService = stockDataService;
+
+    }
+
+
+    public async Task<List<StockData>> GetCrudeData()
+    {
+        
+        List<StockData> StockDataList = new List<StockData>();
+        StockDataList = await _stockDataService.GetStockData();
+
+
+        return StockDataList;
         
     }
 
-    public async Task<List<GeneralCalculusData>> GetVolatility()
+    public async Task<List<FullData>> GetAllCalculus()
     {
-        List<GeneralCalculusData> volatilities_list = new List<GeneralCalculusData>();
+        
+        List<FullData> fullDataList = new List<FullData>();
+        var loader = await _stockDataService.parametersStock();
+
+        
+        fullDataList = await _geneneratedData.CalcFullData();
+        
+        return fullDataList;
+        
+    }
+    
+
+    public async Task<List<VolatilityData>> GetVolatility()
+    {
+        List<VolatilityData> volatilities_list = new List<VolatilityData>();
         volatilities_list = await  _geneneratedData.stock_calculus_base();
 
-        List<GeneralCalculusData> volatility_total = new List<GeneralCalculusData>();
+        /*
+        List<VolatilityData> volatility_total = new List<VolatilityData>();
         foreach (var item in volatilities_list)
         {
             volatility_total.Add(item);
 
-        }
+        }*/
 
-        return volatility_total;
+        return volatilities_list;
 
 
     }
@@ -39,13 +67,13 @@ public class printDataService : IPrintDataService
         var loader = await _geneneratedData.stock_calculus_base();
         percentualreturn_list = await  _geneneratedData.CalcPercentualReturn();
         
-        List<PercentualReturnData> percentual_total = new List<PercentualReturnData>();
+        /*List<PercentualReturnData> percentual_total = new List<PercentualReturnData>();
         foreach (var item in percentualreturn_list)
         {
             percentual_total.Add(item);
-        }
+        }*/
         
-        return percentual_total;
+        return percentualreturn_list;
         
         
     }
@@ -57,13 +85,13 @@ public class printDataService : IPrintDataService
         var loader =  await _geneneratedData.stock_calculus_base();
         mid30_days_list = await  _geneneratedData.CalcMid30Days();
         
-        List<Mid30DaysData> mid30_days = new List<Mid30DaysData>();
+        /*List<Mid30DaysData> mid30_days = new List<Mid30DaysData>();
         foreach (var item in mid30_days_list)
         {
             mid30_days.Add(item);
-        }
+        }*/
 
-        return mid30_days;
+        return mid30_days_list;
         
         
         

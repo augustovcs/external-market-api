@@ -25,17 +25,16 @@ public class stockDataController : ControllerBase
     public async Task<IActionResult> GetCrudeData()
     {
         
-        var response = await _stockdataservice.parametersStock();
+        var response = await _printdataservice.GetCrudeData();
         return Ok(response);
         
-        
-        
     }
-
+    
     [HttpGet("/get/all_calc_data")]
-    public async Task<IActionResult> GetAllCalcData()
+    public async Task<IActionResult> GetAllCalculus()
     {
-        var response = await _generated_data.stock_calculus_base();
+        
+        var response = await _printdataservice.GetAllCalculus();
         return Ok(response);
         
     }
@@ -43,8 +42,10 @@ public class stockDataController : ControllerBase
     [HttpGet("/get/volatilities/")]
     public async Task<IActionResult> GetVolatilities()
     {
+        
         var response = await _printdataservice.GetVolatility();
         return Ok(response);
+        
     }
 
     [HttpGet("/get/percentual_return")]
