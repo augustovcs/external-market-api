@@ -8,14 +8,14 @@ public interface IStockDataService
     public string GetRawCSV(string symbol);
     public string SaveRawCSV(string symbol);
     public List<StockData> ParsingRaw();
-    public Task<List<StockData>> parametersStock();
+    public List<StockData> parametersStock();
     public Task <List<StockData>> GetStockData();
     //List<ClosesStockData> GetClosesStockData();
 }
 
 public interface IGeneratedData
 {
-    public Task<List<VolatilityData>> stock_calculus_base(); 
+    public Task<List<VolatilityData>> VolatilityData(); 
     public Task<List<PercentualReturnData>> CalcPercentualReturn();
     //public Task<List<GeneralCalculusData>> CalcVolatility();
     public Task<List<Mid30DaysData>> CalcMid30Days();

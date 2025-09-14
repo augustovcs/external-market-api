@@ -32,7 +32,7 @@ public class printDataService : IPrintDataService
     {
         
         List<FullData> fullDataList = new List<FullData>();
-        var loader = await _stockDataService.parametersStock();
+        var loader =  _stockDataService.parametersStock();
         var loader_mid30days = await _geneneratedData.CalcMid30Days();
         var loader_percentualreturn = await _geneneratedData.CalcPercentualReturn();
 
@@ -47,7 +47,7 @@ public class printDataService : IPrintDataService
     public async Task<List<VolatilityData>> GetVolatility()
     {
         List<VolatilityData> volatilities_list = new List<VolatilityData>();
-        volatilities_list = await  _geneneratedData.stock_calculus_base();
+        volatilities_list = await  _geneneratedData.VolatilityData();
 
         /*
         List<VolatilityData> volatility_total = new List<VolatilityData>();
@@ -66,7 +66,7 @@ public class printDataService : IPrintDataService
     {
         
         List<PercentualReturnData> percentualreturn_list = new List<PercentualReturnData>();
-        var loader = await _geneneratedData.stock_calculus_base();
+        var loader = await _geneneratedData.VolatilityData();
         percentualreturn_list = await  _geneneratedData.CalcPercentualReturn();
         
         /*List<PercentualReturnData> percentual_total = new List<PercentualReturnData>();
@@ -84,7 +84,7 @@ public class printDataService : IPrintDataService
     {
         
         List<Mid30DaysData> mid30_days_list = new List<Mid30DaysData>();
-        var loader =  await _geneneratedData.stock_calculus_base();
+        var loader =  await _geneneratedData.VolatilityData();
         mid30_days_list = await  _geneneratedData.CalcMid30Days();
         
         /*List<Mid30DaysData> mid30_days = new List<Mid30DaysData>();

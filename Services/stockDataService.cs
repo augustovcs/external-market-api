@@ -41,9 +41,7 @@ public class stockDataService : IStockDataService
     //to implement
     public string SaveRawCSV(string symbol = "IBM")
     {
-
-        //IMPLEMENT PREVENTION FOR MULTIPLE CALCULATIONS 
-        // CHECK CSV CURRENTLY DATE ALREADY EXISTS. ezzzzz
+        
         string content = "";
         string dateTime = symbol + "-" + DateTime.Now.ToString("dd-MM-yyyy");
         string fileName = $"stockData-{dateTime}.csv";
@@ -62,7 +60,7 @@ public class stockDataService : IStockDataService
 
         else
         {
-            Console.WriteLine("Nothing changed");
+            Console.WriteLine("API DATA DOWNLOADED OFFLINE!! NO API REQUEST NEEDED :)");
         }
 
         return content;
@@ -102,17 +100,17 @@ public class stockDataService : IStockDataService
         return stockDataList;
     }
 
-    public async Task<List<StockData>> parametersStock()
+    public List<StockData> parametersStock()
     {
         
-        var response = ParsingRaw();
+        var response =  ParsingRaw();
         return response;
 
     }
     
     public async Task <List<StockData>> GetStockData()
     {
-        var loader = await parametersStock();
+        var loader =  parametersStock();
         return stockDataList;
     }
     

@@ -62,10 +62,9 @@ public class generated_data : IGeneratedData
 
 
 
-    public async Task<List<VolatilityData>> stock_calculus_base()
+    public async Task<List<VolatilityData>> VolatilityData()
     {
 
-        var loader = await _stockDataService.parametersStock();
         List<StockData> list_data = await _stockDataService.GetStockData();
 
         open_value = list_data.Where(x => x.Open > 1);
