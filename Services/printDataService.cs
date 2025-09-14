@@ -33,6 +33,8 @@ public class printDataService : IPrintDataService
         
         List<FullData> fullDataList = new List<FullData>();
         var loader = await _stockDataService.parametersStock();
+        var loader_mid30days = await _geneneratedData.CalcMid30Days();
+        var loader_percentualreturn = await _geneneratedData.CalcPercentualReturn();
 
         
         fullDataList = await _geneneratedData.CalcFullData();

@@ -114,6 +114,7 @@ public class stockDataService : IStockDataService
     
     public async Task <List<StockData>> GetStockData()
     {
+        var loader = await parametersStock();
         return stockDataList;
     }
     

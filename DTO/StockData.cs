@@ -8,7 +8,7 @@ namespace api_external_scrapper.DTO;
 
 public class StockData  // :  ClosesStockData
 {
-    public double AdjustedClose { get; set; }
+    //public double AdjustedClose { get; set; }
     public DateTime Date { get; set; }
     public string Symbol { get; set; }
     
@@ -16,7 +16,7 @@ public class StockData  // :  ClosesStockData
     public double High { get; set; }
     public double Low { get; set; }
     public double Close { get; set; }
-    public double DividendAmount { get; set; }
+    //public double DividendAmount { get; set; }
     public int Volume { get; set; }
 }
 

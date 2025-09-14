@@ -281,6 +281,8 @@ public class generated_data : IGeneratedData
 
         };
         
+        
+        //var loader = await _stockDataService.parametersStock();
         var fullDataList = new List<FullData>();
         fullDataList.Add(fullData);
         
