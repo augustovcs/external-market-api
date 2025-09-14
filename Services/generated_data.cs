@@ -53,7 +53,7 @@ public class generated_data : IGeneratedData
     private List<VolatilityData> volatilitiesList;
     private PercentualReturnData percentualreturnData;
     private List<PercentualReturnData> percentualreturnList;
-
+ 
 
     public generated_data(IStockDataService stockDataService, IConfiguration configuration)
     {
@@ -61,10 +61,9 @@ public class generated_data : IGeneratedData
     }
 
 
-
-    public async Task<List<VolatilityData>> VolatilityData()
+    public async Task<List<StockData>> BasicValuesData()
     {
-
+        
         List<StockData> list_data = await _stockDataService.GetStockData();
 
         open_value = list_data.Where(x => x.Open > 1);
@@ -78,8 +77,16 @@ public class generated_data : IGeneratedData
             throw new Exception("close_value null");;
         }*/
         // max and min values in 3 months
-        var max_reach = list_data.Max(x => x.Close);
-        var min_reach = list_data.Min(x => x.Close);
+        max_reach = list_data.Max(x => x.Close);
+        min_reach = list_data.Min(x => x.Close);
+        
+        return list_data;
+    }
+
+    public async Task<List<StockData>> DateValuesData()
+    {
+        
+        List<StockData> list_data = await _stockDataService.GetStockData();
 
         // max and min date
         oldest_date = list_data.Min(x => x.Date);
@@ -110,7 +117,14 @@ public class generated_data : IGeneratedData
             .ToList();
         date_3days_count = date_3days.Count;
 
+        return list_data;
+    }
 
+    public async Task<List<StockData>> CloseValuesData()
+    {
+        List<StockData> list_data = await _stockDataService.GetStockData();
+
+        
         // closes
         closeDaily = list_data
             .OrderByDescending(x => x.Date)
@@ -154,23 +168,17 @@ public class generated_data : IGeneratedData
             .Where(x => x.Close > 1)
             .Take(90)
             .Select(x => x.Close);
+        
+        
+        return list_data;
+    }
 
+    public async Task<List<StockData>> Mid30DaysData()
+    {
 
-        // volatilities 
-        volatility30Days = (max_reach - min_reach) / date_30days_count;
-        volatility15Days = (max_reach - min_reach) / date_15days_count;
-        volatility7Days = (max_reach - min_reach) / date_7days_count;
-        volatility3Days = (max_reach - min_reach) / date_3days_count;
-
-        // percentual return in x period
-        // close date_x - close date_y / close date_y * 100
-        percentualDaily = (closeDaily.First() - closeYesterday.Last()) / closeYesterday.Last() * 100;
-        percentual7Days = (closeDaily.First() - closeWeekly.Last()) / closeWeekly.Last() * 100;
-        percentual14Days = (closeDaily.First() - close14Days.Last()) / close14Days.Last() * 100;
-        percentual30Days = (closeDaily.First() - close30Days.Last()) / close30Days.Last() * 100;
-        percentual60Days = (closeDaily.First() - close60Days.Last()) / close60Days.Last() * 100;
-        percentual90Days = (closeDaily.First() - close90Days.Last()) / close90Days.Last() * 100;
-
+        var loaderClose = await CloseValuesData();
+        List<StockData> list_data = await _stockDataService.GetStockData();
+        
         // 30 last days mid 
 
         mid30days = list_data
@@ -187,12 +195,42 @@ public class generated_data : IGeneratedData
             .Take(30)
             .ToList();
         
-
         mid30daysValue = closeDaily.First() - mid30days;
 
-        positiveMid30days = $"Positive status: {mid30daysValue}";
-        negativeMid30days = $"Negative status: {mid30daysValue}";
-        brokenMid30days = $"Broken status: {mid30daysValue}";
+        return list_data;
+    }
+
+    public async Task<List<StockData>> PercentualData()
+    {
+
+        var loaderClose = await CloseValuesData();
+        List<StockData> list_data = await _stockDataService.GetStockData();
+        
+        // percentual return in x period
+        // close date_x - close date_y / close date_y * 100
+        percentualDaily = (closeDaily.First() - closeYesterday.Last()) / closeYesterday.Last() * 100;
+        percentual7Days = (closeDaily.First() - closeWeekly.Last()) / closeWeekly.Last() * 100;
+        percentual14Days = (closeDaily.First() - close14Days.Last()) / close14Days.Last() * 100;
+        percentual30Days = (closeDaily.First() - close30Days.Last()) / close30Days.Last() * 100;
+        percentual60Days = (closeDaily.First() - close60Days.Last()) / close60Days.Last() * 100;
+        percentual90Days = (closeDaily.First() - close90Days.Last()) / close90Days.Last() * 100;
+        
+        
+        return list_data;
+    }
+
+    public async Task<List<VolatilityData>> VolatilityData()
+    {
+        var loaderBasic = await BasicValuesData();
+        var loaderData = await DateValuesData();
+        
+        List<StockData> list_data = await _stockDataService.GetStockData();
+        
+        // volatilities 
+        volatility30Days = (max_reach - min_reach) / date_30days_count;
+        volatility15Days = (max_reach - min_reach) / date_15days_count;
+        volatility7Days = (max_reach - min_reach) / date_7days_count;
+        volatility3Days = (max_reach - min_reach) / date_3days_count;
         
         
         // all list item
@@ -207,23 +245,13 @@ public class generated_data : IGeneratedData
         };
         
         volatilitiesList.Add(volatilityData);
-        var stringBuilder = new StringBuilder();
-        foreach (var item in volatilitiesList)
-        {
-            stringBuilder.AppendLine(
-                $"Volatility 3 days: {item.Volatility3Days}" + "\n" +
-                $"Volatility 7 days: {item.Volatility7Days}" + "\n" +
-                $"Volatility 15 days:  {item.Volatility15Days}" + "\n" +
-                $"Volatility 30 days:  {item.Volatility30Days}"
-            );
-        }
-        
         return volatilitiesList;
 
     }
 
     public async Task<List<PercentualReturnData>> CalcPercentualReturn()
     {
+        var loaderClose = await CloseValuesData();
         
         // percentual return in x period
         // close date_x - close date_y / close date_y * 100
@@ -255,6 +283,8 @@ public class generated_data : IGeneratedData
 
     public async Task<List<Mid30DaysData>> CalcMid30Days()
     {
+        var loaderMid30Days = await Mid30DaysData();
+        
         Mid30DaysData mid30daysData = new Mid30DaysData()
         {
             Mid30Days = mid30daysValue,
@@ -272,6 +302,7 @@ public class generated_data : IGeneratedData
 
     public async Task<List<FullData>> CalcFullData()
     {
+        
         FullData fullData = new FullData()
         {
             Full_Volatility = volatilitiesList,
@@ -279,7 +310,6 @@ public class generated_data : IGeneratedData
             Mid30Days = mid30days_list
 
         };
-        
         
         //var loader = await _stockDataService.parametersStock();
         var fullDataList = new List<FullData>();

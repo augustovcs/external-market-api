@@ -9,6 +9,7 @@ public class printDataService : IPrintDataService
     public readonly IGeneratedData _geneneratedData;
     public readonly IStockDataService _stockDataService;
     
+    
     public printDataService(IGeneratedData geneneratedData, IStockDataService stockDataService)
     {
         _geneneratedData = geneneratedData;
@@ -32,7 +33,9 @@ public class printDataService : IPrintDataService
     {
         
         List<FullData> fullDataList = new List<FullData>();
-        var loader =  _stockDataService.parametersStock();
+        var loader =  _stockDataService.GetStockData();
+        
+        var loader_volatility = _geneneratedData.VolatilityData();
         var loader_mid30days = await _geneneratedData.CalcMid30Days();
         var loader_percentualreturn = await _geneneratedData.CalcPercentualReturn();
 
