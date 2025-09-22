@@ -83,7 +83,7 @@ public class generated_data : IGeneratedData
         }*/
         // max and min values in 3, 2 and 1 months
         max_reach90days = list_data.Max(x => x.Close);
-        max_reach90days = list_data.Min(x => x.Close);
+        min_reach90days = list_data.Min(x => x.Close);
 
         max_reach60days = list_data
             .Where(x => x.Close > 1)
@@ -102,7 +102,7 @@ public class generated_data : IGeneratedData
            // .OrderDescending()
             .Max(x => x.Close);
         
-        max_reach30days = list_data
+        min_reach30days = list_data
             .Where(x => x.Close > 1)
             .Take(30)
             //.OrderDescending()
@@ -270,7 +270,7 @@ public class generated_data : IGeneratedData
 
     public async Task<List<VolatilityData>> VolatilityData()
     {
-        var loaderBasic = await BasicValuesData();
+        var loaderBasic = await MinMaxDataValues();
         var loaderData = await DateValuesData();
         
         List<StockData> list_data = await _stockDataService.GetStockData();
