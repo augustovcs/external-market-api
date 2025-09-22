@@ -28,7 +28,7 @@ public class stockDataService : IStockDataService
         
         string API_KEY = _configuration.GetValue<string>("API_ALPHA");
         string queryURL =
-            $"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={API_KEY}&datatype=csv";
+            $"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={API_KEY}&datatype=csv&outputsize=full";
         
         WebClient clientService = new WebClient();
         string dataClient = clientService.DownloadString(queryURL);
