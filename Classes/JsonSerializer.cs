@@ -10,4 +10,5 @@ namespace api_external_scrapper.Classes;
 [JsonSerializable(typeof(List<Mid30DaysData>))]
 [JsonSerializable(typeof(List<Mid30DaysDataInfo>))]
 [JsonSerializable(typeof(List<FullData>))]
+[JsonSerializable(typeof(List<MinMaxData>))]
 public partial class AppJsonContext : JsonSerializerContext { }

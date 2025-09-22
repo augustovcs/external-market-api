@@ -70,5 +70,5 @@ public class FullData
     public List<VolatilityData> Full_Volatility { get; set; }
     public List<PercentualReturnData> Full_PercentualReturn { get; set; }
     public List<Mid30DaysData> Mid30Days { get; set; }
-    public List<StockData> BasicValuesData { get; set; }
+    public List<MinMaxData> BasicValuesData { get; set; }
 }

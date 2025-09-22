@@ -16,7 +16,8 @@ public interface IStockDataService
 public interface IGeneratedData
 {
     public Task<List<VolatilityData>> VolatilityData();
-    public Task<List<StockData>> BasicValuesData3Month();
+    public Task<List<MinMaxData>> MinMaxDataValues();
+    public Task<List<StockData>> BasicValuesData();
     public Task<List<StockData>> DateValuesData();
     public Task<List<StockData>> CloseValuesData();
     public Task<List<StockData>> Mid30DaysData();

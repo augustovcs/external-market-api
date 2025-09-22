@@ -48,7 +48,7 @@ public class generated_data : IGeneratedData
     private IEnumerable<double> closeDaily;
     private double mid30daysValue;
     private double mid30days;
-    private List<BasicValuesData> basicValueList;
+    private List<MinMaxData> basicValueList;
     private List<StockData> mid30daysList;
     private List<Mid30DaysData> mid30days_list;
     private List<VolatilityData> volatilitiesList;
@@ -61,8 +61,8 @@ public class generated_data : IGeneratedData
         _stockDataService = stockDataService;
     }
 
-
-    public async Task<List<StockData>> BasicValuesData3Month()
+    
+    public async Task<List<MinMaxData>> MinMaxDataValues()
     {
         
         List<StockData> list_data = await _stockDataService.GetStockData();
@@ -82,14 +82,20 @@ public class generated_data : IGeneratedData
         min_reach = list_data.Min(x => x.Close);
 
 
-        BasicValuesData basicValue = new BasicValuesData() 
+        MinMaxData basicValue = new MinMaxData()
         {
-            MaxReach = max_reach,
-            MinReach = min_reach
-            
-        }
+            MaxReach90Days = max_reach,
+            MinReach90Days = min_reach
+        };
+        basicValueList = new List<MinMaxData>();
         basicValueList.Add(basicValue);
+        
         return basicValueList;
+    }
+
+    public async Task<List<StockData>> BasicValuesData()
+    {
+        throw new NotImplementedException();
     }
 
     public async Task<List<StockData>> DateValuesData()
@@ -232,7 +238,7 @@ public class generated_data : IGeneratedData
 
     public async Task<List<VolatilityData>> VolatilityData()
     {
-        var loaderBasic = await BasicValuesData3Month();
+        var loaderBasic = await BasicValuesData();
         var loaderData = await DateValuesData();
         
         List<StockData> list_data = await _stockDataService.GetStockData();

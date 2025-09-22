@@ -38,7 +38,7 @@ public class printDataService : IPrintDataService
         var loader_volatility = _geneneratedData.VolatilityData();
         var loader_mid30days = await _geneneratedData.CalcMid30Days();
         var loader_percentualreturn = await _geneneratedData.CalcPercentualReturn();
-        var loader_basicData = await _geneneratedData.BasicValuesData3Month();
+        var loader_basicData = await _geneneratedData.MinMaxDataValues();
         
         fullDataList = await _geneneratedData.CalcFullData();
         
