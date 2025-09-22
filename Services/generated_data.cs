@@ -48,6 +48,7 @@ public class generated_data : IGeneratedData
     private IEnumerable<double> closeDaily;
     private double mid30daysValue;
     private double mid30days;
+    private List<BasicValuesData> basicValueList;
     private List<StockData> mid30daysList;
     private List<Mid30DaysData> mid30days_list;
     private List<VolatilityData> volatilitiesList;
@@ -79,8 +80,16 @@ public class generated_data : IGeneratedData
         // max and min values in 3 months
         max_reach = list_data.Max(x => x.Close);
         min_reach = list_data.Min(x => x.Close);
-        
-        return list_data;
+
+
+        BasicValuesData basicValue = new BasicValuesData() 
+        {
+            MaxReach = max_reach,
+            MinReach = min_reach
+            
+        }
+        basicValueList.Add(basicValue);
+        return basicValueList;
     }
 
     public async Task<List<StockData>> DateValuesData()
@@ -309,7 +318,9 @@ public class generated_data : IGeneratedData
         {
             Full_Volatility = volatilitiesList,
             Full_PercentualReturn = percentualreturnList,
-            Mid30Days = mid30days_list
+            Mid30Days = mid30days_list,
+            BasicValuesData = basicValueList
+            
 
         };
         

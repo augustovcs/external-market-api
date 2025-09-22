@@ -20,3 +20,8 @@ public class StockData  // :  ClosesStockData
     public int Volume { get; set; }
 }
 
+public class BasicValuesData
+{
+    public double MaxReach { get; set; }
+    public double MinReach { get; set; }
+}
