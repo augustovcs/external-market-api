@@ -61,7 +61,7 @@ public class generated_data : IGeneratedData
     }
 
 
-    public async Task<List<StockData>> BasicValuesData()
+    public async Task<List<StockData>> BasicValuesData3Month()
     {
         
         List<StockData> list_data = await _stockDataService.GetStockData();
@@ -200,6 +200,8 @@ public class generated_data : IGeneratedData
         return list_data;
     }
 
+ 
+    
     public async Task<List<StockData>> PercentualData()
     {
 
@@ -221,7 +223,7 @@ public class generated_data : IGeneratedData
 
     public async Task<List<VolatilityData>> VolatilityData()
     {
-        var loaderBasic = await BasicValuesData();
+        var loaderBasic = await BasicValuesData3Month();
         var loaderData = await DateValuesData();
         
         List<StockData> list_data = await _stockDataService.GetStockData();
