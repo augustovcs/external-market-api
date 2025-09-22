@@ -18,8 +18,12 @@ public class generated_data : IGeneratedData
     private IEnumerable<StockData> close_value;
     private IEnumerable<StockData> low_value;
     private IEnumerable<StockData> high_value;
-    private double max_reach;
-    private double min_reach;
+    private double max_reach90days;
+    private double min_reach90days;
+    private double max_reach60days;
+    private double min_reach60days;
+    private double max_reach30days;
+    private double min_reach30days;
     private DateTime oldest_date;
     private DateTime newest_date;
     private int date_30days_count;
@@ -77,15 +81,43 @@ public class generated_data : IGeneratedData
         {
             throw new Exception("close_value null");;
         }*/
-        // max and min values in 3 months
-        max_reach = list_data.Max(x => x.Close);
-        min_reach = list_data.Min(x => x.Close);
+        // max and min values in 3, 2 and 1 months
+        max_reach90days = list_data.Max(x => x.Close);
+        max_reach90days = list_data.Min(x => x.Close);
+
+        max_reach60days = list_data
+            .Where(x => x.Close > 1)
+            .Take(60)
+            .Max(x => x.Close);
+        
+        min_reach60days = list_data
+            .Where(x => x.Close > 1)
+            .Take(60)
+            //.OrderDescending()
+            .Min(x => x.Close);
+        
+        max_reach30days = list_data
+            .Where(x => x.Close > 1)
+            .Take(30)
+           // .OrderDescending()
+            .Max(x => x.Close);
+        
+        max_reach30days = list_data
+            .Where(x => x.Close > 1)
+            .Take(30)
+            //.OrderDescending()
+            .Min(x => x.Close);
+
 
 
         MinMaxData basicValue = new MinMaxData()
         {
-            MaxReach90Days = max_reach,
-            MinReach90Days = min_reach
+            MaxReach90Days = max_reach90days,
+            MinReach90Days = min_reach90days,
+            MaxReach60Days = max_reach60days,
+            MinReach60Days = min_reach60days,
+            MaxReach30Days = max_reach30days,
+            MinReach30Days = min_reach30days
         };
         basicValueList = new List<MinMaxData>();
         basicValueList.Add(basicValue);
@@ -244,10 +276,10 @@ public class generated_data : IGeneratedData
         List<StockData> list_data = await _stockDataService.GetStockData();
         
         // volatilities 
-        volatility30Days = (max_reach - min_reach) / date_30days_count;
-        volatility15Days = (max_reach - min_reach) / date_15days_count;
-        volatility7Days = (max_reach - min_reach) / date_7days_count;
-        volatility3Days = (max_reach - min_reach) / date_3days_count;
+        volatility30Days = (max_reach90days - min_reach90days) / date_30days_count;
+        volatility15Days = (max_reach90days - min_reach90days) / date_15days_count;
+        volatility7Days = (max_reach90days - min_reach90days) / date_7days_count;
+        volatility3Days = (max_reach90days - min_reach90days) / date_3days_count;
         
         
         // all list item

@@ -24,4 +24,8 @@ public class MinMaxData
 {
     public double MaxReach90Days { get; set; }
     public double MinReach90Days { get; set; }
+    public double MaxReach60Days { get; set; }
+    public double MinReach60Days { get; set; }
+    public double MaxReach30Days { get; set; }
+    public double MinReach30Days { get; set; }
 }
