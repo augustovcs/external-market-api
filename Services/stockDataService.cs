@@ -89,7 +89,7 @@ public class stockDataService : IStockDataService
                     Volume = csv.GetField<int>("volume"),
                 };
                 
-                DateTime limit = DateTime.Now.AddMonths(-3);
+                DateTime limit = DateTime.Now.AddMonths(-60);
                 if (stockData.Date >= limit && !stockDataList.Any(s => s.Date == stockData.Date))
                 {
                     stockDataList.Add(stockData);
