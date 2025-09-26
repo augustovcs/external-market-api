@@ -57,13 +57,13 @@ def get_websites():
     
         if choice_01 == "2":
             for i in tqdm(range(len_website), desc="Loading... ", colour='green', total=len_website):
-                time.sleep(0.00006)
+                time.sleep(0.00001)
             for url in yahoo_url_list[:]:
                 print(url)
                 
         if choice_01 == "3":
             for i in tqdm(range(len_website), desc="Loading... ", colour='green', total=len_website):
-                time.sleep(0.00003)
+                time.sleep(0.00001)
             print(f"\nFULL STOCK LIST SYMBOLS: {website_url}")
         
         if choice_01 == "5":
