@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("api_external_scrapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b6bc55d67a720196369b98faed8c2129f719c06")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+017a4e4f547b4f8b8570770c11e8e3d8dc715d8e")]
 [assembly: System.Reflection.AssemblyProductAttribute("api_external_scrapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("api_external_scrapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
