@@ -11,6 +11,8 @@ public interface IStockDataService
     public List<StockData> parametersStock();
     public Task <List<StockData>> GetStockData();
     //List<ClosesStockData> GetClosesStockData();
+    public string SaveStockListSymbol();
+
 }
 
 public interface IGeneratedData

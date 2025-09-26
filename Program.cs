@@ -25,6 +25,7 @@ builder.Services.AddScoped<IPrintDataService, printDataService>();
 
 var app = builder.Build();
 
+
 /*
 var service01 = app.Services.GetRequiredService<stockDataService>();
 service01.parametersStock();
@@ -49,7 +50,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
+using (var scope = app.Services.CreateScope())
+{
+	var service = scope.ServiceProvider.GetRequiredService<IStockDataService>();
+	service.SaveStockListSymbol();
+}
 
 app.Run();
 

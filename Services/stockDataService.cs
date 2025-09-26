@@ -22,10 +22,10 @@ public class stockDataService : IStockDataService
     }
 
     
+    
     // to implement
     public string GetRawCSV(string symbol = "IBM")
     {
-        
         string API_KEY = _configuration.GetValue<string>("API_ALPHA");
         string queryURL =
             $"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={API_KEY}&datatype=csv&outputsize=full";
@@ -38,7 +38,37 @@ public class stockDataService : IStockDataService
         
     }
 
-    //to implement
+    public string SaveStockListSymbol()
+    {
+        string API_KEY = _configuration.GetValue<string>("API_ALPHA");
+        string queryURL = $"https://www.alphavantage.co/query?function=LISTING_STATUS&apikey={API_KEY}&datatype=json";
+        
+        WebClient clientService = new WebClient();
+        
+        string content = "";
+        string fileName = $"StockSymbolList.csv";
+        string archiveDir = Path.Combine(Directory.GetCurrentDirectory());
+
+        if (!Directory.Exists(archiveDir))
+        {
+            Directory.CreateDirectory(archiveDir);
+        }
+
+        content = Path.Combine(archiveDir, fileName);
+        if (!File.Exists(content))
+        {
+            File.WriteAllText(content, clientService.DownloadString(queryURL));
+        }
+        
+        else
+        {
+            Console.WriteLine(" SYMBOL LIST ALREADY DOWNLOADED! :D ");
+        }
+
+        return content;
+    }
+    
+
     public string SaveRawCSV(string symbol = "IBM")
     {
         
