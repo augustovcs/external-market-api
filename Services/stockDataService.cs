@@ -45,7 +45,6 @@ public class stockDataService : IStockDataService
         
         WebClient clientService = new WebClient();
         
-        string content = "";
         string fileName = $"StockSymbolList.csv";
         string archiveDir = Path.Combine(Directory.GetCurrentDirectory());
 
@@ -53,11 +52,12 @@ public class stockDataService : IStockDataService
         {
             Directory.CreateDirectory(archiveDir);
         }
-
-        content = Path.Combine(archiveDir, fileName);
-        if (!File.Exists(content))
+            
+        string content_path = Path.Combine(archiveDir, fileName);
+        
+        if (!File.Exists(content_path))
         {
-            File.WriteAllText(content, clientService.DownloadString(queryURL));
+            File.WriteAllText(content_path, clientService.DownloadString(queryURL));
         }
         
         else
@@ -65,7 +65,7 @@ public class stockDataService : IStockDataService
             Console.WriteLine(" SYMBOL LIST ALREADY DOWNLOADED! :D ");
         }
 
-        return content;
+        return content_path;
     }
     
 
