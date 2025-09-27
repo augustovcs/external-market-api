@@ -3,6 +3,7 @@ import ast
 from selenium import webdriver
 from selenium.webdriver.common.by import By 
 from csv import reader
+import pandas as pd
 import time
 from tqdm import tqdm
 
@@ -83,29 +84,52 @@ def scrape():
     
     driver_firefox.get(yahoo_website[0])
     time.sleep(5.5)
-    
-    data_list = {}
+
+    """
+    date_history = 0
+    open_price = 0
+    high_price = 0
+    low_price = 0
+    close_price = 0
+    volume_total = 0 """
+
     
     rows_added = driver_firefox.find_elements(By.XPATH, '//table[contains(@class, "yf-1jecxey")]//tr')
+    stock_symbol = driver_firefox.find_element(By.CLASS_NAME, "yf-4vbjci").text
+    
+        
+    data_list = {
+        "STOCK SYMBOL": stock_symbol,
+        "DATE": {}
+    }
+    
     for row in rows_added[:30]:
         cols = row.find_elements(By.TAG_NAME, 'td')
         if len(cols) > 5:
-            data = cols[0].text
-            open_price =cols[1].text
+            date_history = cols[0].text
+            open_price = cols[1].text
             high_price = cols[2].text
             low_price = cols[3].text
             close_price = cols[4].text
             volume_total = cols[6].text
-            data_list.update({
-                "DATE": data,
-              "OPEN PRICE": open_price,
-              "HIGH PRICE": high_price,
-              "LOW PRICE": low_price,
-              "CLOSE PRICE": close_price,
-              "VOLUME": volume_total
-                              })
+
+
+            data_list["DATE"][date_history] = {
+                "OPEN": open_price,
+                "HIGH": high_price,
+                "LOW": low_price,
+                "CLOSE": close_price,
+                "VOLUME": volume_total
+            }
+
+
+
+    dictionary_frame = pd.DataFrame.from_dict(data_list["DATE"], orient='index')
+    dictionary_frame.index.name = "DATE"
+    dictionary_frame.to_csv("data_test.csv")
             
-            print(data_list)
+    dictionary_frame = pd.read_csv("data_test.csv")
+    
             
     driver_firefox.quit()
     
