@@ -1,9 +1,8 @@
 import ast
 
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from csv import reader, writer
+from selenium.webdriver.common.by import By 
+from csv import reader
 import time
 from tqdm import tqdm
 
@@ -38,7 +37,8 @@ def get_websites():
     yahoo_url_list = [f"https://finance.yahoo.com/quote/{symbol}/history/" for symbol in website_index_list]
     
     
-    loop_true = True
+    
+    loop_true = False
     while loop_true:
 
         print("\n --- EM SCRAPPER API MENU 1.1.2 --- ")
@@ -69,10 +69,46 @@ def get_websites():
         if choice_01 == "5":
             loop_true = False
             
+        
+    return yahoo_url_list
+            
        
 
 
-def scrape(url):
-    driver = webdriver.Firefox
-    driver_reserve = webdriver.Chrome
+def scrape():
+    driver_firefox = webdriver.Firefox()
+    yahoo_website = get_websites()
+    print(yahoo_website[0])
+
+    
+    driver_firefox.get(yahoo_website[0])
+    time.sleep(5.5)
+    
+    data_list = {}
+    
+    rows_added = driver_firefox.find_elements(By.XPATH, '//table[contains(@class, "yf-1jecxey")]//tr')
+    for row in rows_added[:30]:
+        cols = row.find_elements(By.TAG_NAME, 'td')
+        if len(cols) > 5:
+            data = cols[0].text
+            open_price =cols[1].text
+            high_price = cols[2].text
+            low_price = cols[3].text
+            close_price = cols[4].text
+            volume_total = cols[6].text
+            data_list.update({
+                "DATE": data,
+              "OPEN PRICE": open_price,
+              "HIGH PRICE": high_price,
+              "LOW PRICE": low_price,
+              "CLOSE PRICE": close_price,
+              "VOLUME": volume_total
+                              })
+            
+            print(data_list)
+            
+    driver_firefox.quit()
+    
+    driver_chrome = webdriver.Chrome
+    
     
