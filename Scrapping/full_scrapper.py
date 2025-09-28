@@ -21,7 +21,7 @@ def get_websites():
         next(reader_line)  
         for row in reader_line:
             website_url.append(row[0])
-    print(f"\nFULL STOCK LIST SYMBOLS: {website_url}")
+    """print(f"\nFULL STOCK LIST SYMBOLS: {website_url}")"""
     
     website_index_list = []
     
@@ -29,8 +29,8 @@ def get_websites():
         elements = [item.strip().strip("'") for item in line.split(',')]
         website_index_list.extend(elements)
         
-    print(f"\nSYMBOL SELECTED: {website_index_list[1]}")
-    print(f"SYMBOLS AVAILABLE: {len(website_index_list)}")
+    """print(f"\nSYMBOL SELECTED: {website_index_list[1]}")"""
+    """print(f"SYMBOLS AVAILABLE: {len(website_index_list)}")"""
     
     len_website = len(website_index_list)
 
@@ -130,9 +130,12 @@ def scrape():
             
     dictionary_frame = pd.read_csv("data_test.csv")
     
+    print(data_list)
+    
             
     driver_firefox.quit()
-    
     driver_chrome = webdriver.Chrome
+    
+    
     
     
