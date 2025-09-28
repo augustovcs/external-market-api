@@ -3,7 +3,9 @@ import ast
 from selenium import webdriver
 from selenium.webdriver.common.by import By 
 from csv import reader
+import pandas as pd
 import time
+import datetime
 from tqdm import tqdm
 
 """
@@ -20,7 +22,7 @@ def get_websites():
         next(reader_line)  
         for row in reader_line:
             website_url.append(row[0])
-    print(f"\nFULL STOCK LIST SYMBOLS: {website_url}")
+    """print(f"\nFULL STOCK LIST SYMBOLS: {website_url}")"""
     
     website_index_list = []
     
@@ -28,13 +30,13 @@ def get_websites():
         elements = [item.strip().strip("'") for item in line.split(',')]
         website_index_list.extend(elements)
         
-    print(f"\nSYMBOL SELECTED: {website_index_list[1]}")
-    print(f"SYMBOLS AVAILABLE: {len(website_index_list)}")
+    """print(f"\nSYMBOL SELECTED: {website_index_list[1]}")"""
+    """print(f"SYMBOLS AVAILABLE: {len(website_index_list)}")"""
     
     len_website = len(website_index_list)
 
 
-    yahoo_url_list = [f"https://finance.yahoo.com/quote/{symbol}/history/" for symbol in website_index_list]
+    yahoo_url_list = [f"https://finance.yahoo.com/quote/{symbol}/history/?period1=1601252877&period2=1759012790" for symbol in website_index_list]
     
     
     
@@ -83,32 +85,63 @@ def scrape():
     
     driver_firefox.get(yahoo_website[0])
     time.sleep(5.5)
-    
-    data_list = {}
+
+    """
+    date_history = 0
+    open_price = 0
+    high_price = 0
+    low_price = 0
+    close_price = 0
+    volume_total = 0 """
+
     
     rows_added = driver_firefox.find_elements(By.XPATH, '//table[contains(@class, "yf-1jecxey")]//tr')
-    for row in rows_added[:30]:
+    stock_symbol = driver_firefox.find_element(By.CLASS_NAME, "yf-4vbjci").text
+    
+        
+    data_list = {
+        "STOCK SYMBOL": stock_symbol,
+        "timestamp": {}
+    }
+    
+    for row in rows_added:
         cols = row.find_elements(By.TAG_NAME, 'td')
         if len(cols) > 5:
-            data = cols[0].text
-            open_price =cols[1].text
+            date_history = cols[0].text
+            open_price = cols[1].text
             high_price = cols[2].text
             low_price = cols[3].text
             close_price = cols[4].text
             volume_total = cols[6].text
-            data_list.update({
-                "DATE": data,
-              "OPEN PRICE": open_price,
-              "HIGH PRICE": high_price,
-              "LOW PRICE": low_price,
-              "CLOSE PRICE": close_price,
-              "VOLUME": volume_total
-                              })
             
-            print(data_list)
+            date_history = datetime.datetime.strptime(date_history, "%b %d, %Y")
+            date_history = date_history.strftime("%Y-%m-%d")
+            
+            volume_total = volume_total.replace('"', '')
+            
+
+            data_list["timestamp"][date_history] = {
+                "open": open_price,
+                "high": high_price,
+                "low": low_price,
+                "close": close_price,
+                "volume": volume_total
+            }
+
+
+
+    dictionary_frame = pd.DataFrame.from_dict(data_list["timestamp"], orient='index')
+    dictionary_frame.index.name = "timestamp"
+    dictionary_frame.to_csv("data_test.csv")
+            
+    dictionary_frame = pd.read_csv("data_test.csv")
+    
+    print(data_list)
+    
             
     driver_firefox.quit()
-    
     driver_chrome = webdriver.Chrome
+    
+    
     
     
