@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from csv import reader
 import pandas as pd
 import time
+import datetime
 from tqdm import tqdm
 
 """
@@ -35,7 +36,7 @@ def get_websites():
     len_website = len(website_index_list)
 
 
-    yahoo_url_list = [f"https://finance.yahoo.com/quote/{symbol}/history/" for symbol in website_index_list]
+    yahoo_url_list = [f"https://finance.yahoo.com/quote/{symbol}/history/?period1=1601252877&period2=1759012790" for symbol in website_index_list]
     
     
     
@@ -100,10 +101,10 @@ def scrape():
         
     data_list = {
         "STOCK SYMBOL": stock_symbol,
-        "DATE": {}
+        "timestamp": {}
     }
     
-    for row in rows_added[:30]:
+    for row in rows_added:
         cols = row.find_elements(By.TAG_NAME, 'td')
         if len(cols) > 5:
             date_history = cols[0].text
@@ -112,20 +113,25 @@ def scrape():
             low_price = cols[3].text
             close_price = cols[4].text
             volume_total = cols[6].text
+            
+            date_history = datetime.datetime.strptime(date_history, "%b %d, %Y")
+            date_history = date_history.strftime("%Y-%m-%d")
+            
+            volume_total = volume_total.replace('"', '')
+            
 
-
-            data_list["DATE"][date_history] = {
-                "OPEN": open_price,
-                "HIGH": high_price,
-                "LOW": low_price,
-                "CLOSE": close_price,
-                "VOLUME": volume_total
+            data_list["timestamp"][date_history] = {
+                "open": open_price,
+                "high": high_price,
+                "low": low_price,
+                "close": close_price,
+                "volume": volume_total
             }
 
 
 
-    dictionary_frame = pd.DataFrame.from_dict(data_list["DATE"], orient='index')
-    dictionary_frame.index.name = "DATE"
+    dictionary_frame = pd.DataFrame.from_dict(data_list["timestamp"], orient='index')
+    dictionary_frame.index.name = "timestamp"
     dictionary_frame.to_csv("data_test.csv")
             
     dictionary_frame = pd.read_csv("data_test.csv")
