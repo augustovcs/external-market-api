@@ -14,7 +14,7 @@ public class stockDataService : IStockDataService
     private StringBuilder stringBuilder;
     private string symbol = "IBM";
     public List<StockData> stockDataList { get; private set; }
-
+    private string fileName_scrapping;
     public stockDataService(IConfiguration configuration)
     {
         _configuration = configuration;
@@ -84,7 +84,7 @@ public class stockDataService : IStockDataService
 
         content = Path.Combine(archiveDir, fileName);
         
-        //List<SymbolData> symbolDataList = new List<SymbolData>();
+        List<SymbolData> symbolDataList = new List<SymbolData>();
         
         using (StreamReader streamReader = new StreamReader(Directory.GetCurrentDirectory() + "/" + "StockSymbolList.csv", Encoding.UTF8))
         using (CsvReader csv = new CsvReader(streamReader, CultureInfo.InvariantCulture))
@@ -99,12 +99,14 @@ public class stockDataService : IStockDataService
                     Name = csv.GetField<string>("name")
                 };
                 
-                //symbolDataList.Add(symbolData);
-                
+                symbolDataList.Add(symbolData);
+                fileName_scrapping = $"{symbolData.Name} ({symbolData.Symbol}).csv";
+
                 //Console.WriteLine($"{symbolData.Name} ({symbolData.Symbol})");
-                
+
             }
         }
+        
 
         /*foreach (var value in symbolDataList)
         {
@@ -115,9 +117,10 @@ public class stockDataService : IStockDataService
         
         string dateTime_scrapping = DateTime.Now.ToString("yyyy-MM-dd");
         string archiveDir_scrapping = Path.Combine(Directory.GetCurrentDirectory(), $"Scrapping/StockData/{dateTime_scrapping}");
-        string fileName_scrapping = $"";
-
-        string content_scrapping = Path.Combine(archiveDir_scrapping, fileName_scrapping);
+        
+        
+        Console.WriteLine(fileName_scrapping);
+        string content_scrapping = Path.Combine(archiveDir_scrapping, $"{fileName_scrapping}");
         
         
         if (!File.Exists(content))
