@@ -124,6 +124,8 @@ public class stockDataService : IStockDataService
         string content_scrapping = Path.Combine(archiveDir_scrapping, $"{fileName_scrapping[0]}");
         Console.WriteLine(content_scrapping);
         
+        File.WriteAllText("testing", content_scrapping);
+        
         
         if (!File.Exists(content))
         {
