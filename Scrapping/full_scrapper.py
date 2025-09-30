@@ -1,12 +1,15 @@
 import ast
+import os
 
 from selenium import webdriver
-from selenium.webdriver.common.by import By 
+from selenium.webdriver.common.by import By
+from selenium.webdriver.firefox.options import Options
 from csv import reader
 import pandas as pd
 import time
 import datetime
 from tqdm import tqdm
+import os as operations
 
 """
 URL FONTS
@@ -14,14 +17,17 @@ URL FONTS
 
 def get_websites():
     
-    symbol_list = reader(open('/home/augustoviegascs/Documents/dotnet/api_external_scrapper/StockSymbolList.csv', 'r'))
     website_url = []
 
-    with open('/home/augustoviegascs/Documents/dotnet/api_external_scrapper/StockSymbolList.csv', 'r') as f:
-        reader_line = reader(f)
-        next(reader_line)  
-        for row in reader_line:
-            website_url.append(row[0])
+    try:
+        with open('/home/augustoviegascs/Documents/dotnet/api_external_scrapper/StockSymbolList.csv', 'r') as f:
+            reader_line = reader(f)
+            next(reader_line)  
+            for row in reader_line:
+                website_url.append(row[0])
+    
+    except FileNotFoundError:
+        print("File not found/Error generic 102")
     """print(f"\nFULL STOCK LIST SYMBOLS: {website_url}")"""
     
     website_index_list = []
@@ -37,7 +43,6 @@ def get_websites():
 
 
     yahoo_url_list = [f"https://finance.yahoo.com/quote/{symbol}/history/?period1=1601252877&period2=1759012790" for symbol in website_index_list]
-    
     
     
     loop_true = False
@@ -78,7 +83,11 @@ def get_websites():
 
 
 def scrape():
-    driver_firefox = webdriver.Firefox()
+
+    options = Options()
+    options.add_argument("--headless") 
+    
+    driver_firefox = webdriver.Firefox(options=options)
     yahoo_website = get_websites()
     print(yahoo_website[0])
 
@@ -98,7 +107,8 @@ def scrape():
     rows_added = driver_firefox.find_elements(By.XPATH, '//table[contains(@class, "yf-1jecxey")]//tr')
     stock_symbol = driver_firefox.find_element(By.CLASS_NAME, "yf-4vbjci").text
     
-        
+
+    
     data_list = {
         "STOCK SYMBOL": stock_symbol,
         "timestamp": {}
@@ -128,15 +138,17 @@ def scrape():
                 "volume": volume_total
             }
 
-
+ 
 
     dictionary_frame = pd.DataFrame.from_dict(data_list["timestamp"], orient='index')
     dictionary_frame.index.name = "timestamp"
-    dictionary_frame.to_csv("data_test.csv")
-            
-    dictionary_frame = pd.read_csv("data_test.csv")
     
-    print(data_list)
+    create_dir = operations.makedirs(f'StockData/{datetime.date.today()}', exist_ok=True)
+    if create_dir == False:
+        print(f'Directory creation failed! {OSError}')
+    
+    dictionary_frame.to_csv(f"StockData/{datetime.date.today()}/{stock_symbol[0]}.csv")
+            
     
             
     driver_firefox.quit()

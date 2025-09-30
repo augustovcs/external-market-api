@@ -10,6 +10,7 @@
 
     <ItemGroup>
       <Folder Include="data_archives\" />
+      <Folder Include="Scrapping\StockData\" />
     </ItemGroup>
 
     <ItemGroup>

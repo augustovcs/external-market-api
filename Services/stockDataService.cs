@@ -83,6 +83,43 @@ public class stockDataService : IStockDataService
         }
 
         content = Path.Combine(archiveDir, fileName);
+        
+        //List<SymbolData> symbolDataList = new List<SymbolData>();
+        
+        using (StreamReader streamReader = new StreamReader(Directory.GetCurrentDirectory() + "/" + "StockSymbolList.csv", Encoding.UTF8))
+        using (CsvReader csv = new CsvReader(streamReader, CultureInfo.InvariantCulture))
+        {
+            csv.Read();
+            csv.ReadHeader();
+            while (csv.Read())
+            {
+                SymbolData symbolData = new SymbolData()
+                {
+                    Symbol = csv.GetField<string>("symbol"),
+                    Name = csv.GetField<string>("name")
+                };
+                
+                //symbolDataList.Add(symbolData);
+                
+                //Console.WriteLine($"{symbolData.Name} ({symbolData.Symbol})");
+                
+            }
+        }
+
+        /*foreach (var value in symbolDataList)
+        {
+            Console.WriteLine(value.Symbol);
+        }*/
+
+        
+        
+        string dateTime_scrapping = DateTime.Now.ToString("yyyy-MM-dd");
+        string archiveDir_scrapping = Path.Combine(Directory.GetCurrentDirectory(), $"Scrapping/StockData/{dateTime_scrapping}");
+        string fileName_scrapping = $"";
+
+        string content_scrapping = Path.Combine(archiveDir_scrapping, fileName_scrapping);
+        
+        
         if (!File.Exists(content))
         {
             File.WriteAllText(content, GetRawCSV());
@@ -95,6 +132,8 @@ public class stockDataService : IStockDataService
 
         return content;
     }
+    
+    
 
     public List<StockData> ParsingRaw()
     {
