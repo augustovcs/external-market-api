@@ -16,6 +16,7 @@ public class stockDataService : IStockDataService
     public List<StockData> stockDataList { get; private set; }
     private string fileName_scrapping;
     private List<SymbolData> symbolDataList;
+    private SymbolData symbolData;
 
     public stockDataService(IConfiguration configuration)
     {
@@ -82,29 +83,36 @@ public class stockDataService : IStockDataService
             csv.ReadHeader();
             while (csv.Read())
             {
-                SymbolData symbolData = new SymbolData()
+                symbolData = new SymbolData()
                 {
-                    Symbol = csv.GetField<string>("symbol"),
-                    Name = csv.GetField<string>("name")
+                    Symbol = csv.GetField("symbol"),
+                    Name = csv.GetField("name")
                 };
-                
-                symbolDataList.Add(symbolData);
-                fileName_scrapping = $"{symbolData.Name} ({symbolData.Symbol}).csv";
+
                 //Console.WriteLine($"{symbolData.Name} ({symbolData.Symbol})");
-                
+                symbolDataList.Add(symbolData);
             }
         }
+
+        foreach (var item in symbolDataList)
+        {
+            Console.WriteLine(item.Name + " " + item.Symbol);
+            
+        }
         
+        File.WriteAllLines("all_symbols.txt", symbolDataList.Select(s => $"{s.Name} {s.Symbol}"));
+        
+        
+        fileName_scrapping = $"{symbolDataList[0].Name} ({symbolDataList[0].Symbol})";
+        Console.WriteLine(fileName_scrapping);
         string dateTime_scrapping = DateTime.Now.ToString("yyyy-MM-dd");
         string archiveDir_scrapping = Path.Combine(Directory.GetCurrentDirectory(), $"Scrapping/StockData/{dateTime_scrapping}");
         
         //Console.WriteLine(fileName_scrapping);
-        
-        string content_scrapping = Path.Combine(archiveDir_scrapping, $"{fileName_scrapping[0]}");
+        string content_scrapping = Path.Combine(archiveDir_scrapping, $"{fileName_scrapping}");
         //Console.WriteLine(content_scrapping);
         
         File.WriteAllText("testing", content_scrapping);
-
 
         return content_scrapping;
     }
