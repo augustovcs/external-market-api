@@ -4,6 +4,8 @@ using System.Runtime.InteropServices.JavaScript;
 using System.Text;
 using api_external_scrapper.DTO;
 using CsvHelper;
+using CsvHelper.Configuration;
+using CsvHelper.TypeConversion;
 using api_external_scrapper.Interfaces;
 
 namespace api_external_scrapper.Services;
@@ -23,8 +25,33 @@ public class stockDataService : IStockDataService
         _configuration = configuration;
         stockDataList = new List<StockData>();
     }
+    
 
     
+public class IntWithCommasConverter : Int32Converter
+{
+    public override object ConvertFromString(string text, IReaderRow row, MemberMapData memberMapData)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+            return 0;
+        text = text.Replace(",", "");
+        return base.ConvertFromString(text, row, memberMapData);
+    }
+}
+    
+public sealed class StockMap : ClassMap<StockData>
+{
+    public StockMap()
+    {
+        Map(m => m.Date).Name("timestamp");
+        Map(m => m.Open).Name("open");
+        Map(m => m.High).Name("high");
+        Map(m => m.Low).Name("low");
+        Map(m => m.Close).Name("close");
+        Map(m => m.Volume).TypeConverter<IntWithCommasConverter>().Name("volume");
+    }
+}
+
     
     // to implement
     public string GetRawCSV(string symbol = "IBM")
@@ -87,33 +114,40 @@ public class stockDataService : IStockDataService
                 {
                     Symbol = csv.GetField("symbol"),
                     Name = csv.GetField("name")
+                    
+                    
                 };
-
+        
                 //Console.WriteLine($"{symbolData.Name} ({symbolData.Symbol})");
+                
                 symbolDataList.Add(symbolData);
             }
         }
-
-        foreach (var item in symbolDataList)
-        {
-            Console.WriteLine(item.Name + " " + item.Symbol);
-            
-        }
-        
-        File.WriteAllLines("all_symbols.txt", symbolDataList.Select(s => $"{s.Name} {s.Symbol}"));
         
         
-        fileName_scrapping = $"{symbolDataList[0].Name} ({symbolDataList[0].Symbol})";
+        //test if the symbols are downloading
+        //File.WriteAllLines("all_symbols.txt", symbolDataList.Select(s => $"{s.Name} {s.Symbol}"));
+        
+        
+        fileName_scrapping = $"{symbolDataList[0].Symbol}";
         Console.WriteLine(fileName_scrapping);
         string dateTime_scrapping = DateTime.Now.ToString("yyyy-MM-dd");
         string archiveDir_scrapping = Path.Combine(Directory.GetCurrentDirectory(), $"Scrapping/StockData/{dateTime_scrapping}");
         
         //Console.WriteLine(fileName_scrapping);
-        string content_scrapping = Path.Combine(archiveDir_scrapping, $"{fileName_scrapping}");
+        string content_scrapping = Path.Combine(archiveDir_scrapping, $"{fileName_scrapping}.csv");
         //Console.WriteLine(content_scrapping);
         
-        File.WriteAllText("testing", content_scrapping);
+        if (!File.Exists(content_scrapping))
+        {
+            Console.WriteLine("INTERN API LOADED!!");
+        }
 
+        else
+        {
+            Console.WriteLine("INTERN API DATA DOWNLOADED OFFLINE!! NO API REQUEST NEEDED :)");
+        }
+        
         return content_scrapping;
     }
 
@@ -151,18 +185,40 @@ public class stockDataService : IStockDataService
     {
 
         stockDataList = new List<StockData>();
-
-        using (StreamReader reader = new StreamReader(SaveRawCSV()))
+        
+        //using (StreamReader reader = new StreamReader(SaveRawCSV()))
+        using (StreamReader reader = new StreamReader(GenerateCSV()))
         using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
         {
-            csv.Read();
+            
+            csv.Context.RegisterClassMap<StockMap>();
+            var records = csv.GetRecords<StockData>();
+            foreach (var record in records)
+            {
+                StockData stockData = new StockData()
+                {
+                    Date = record.Date,
+                    Open = record.Open,
+                    High = record.High,
+                    Low = record.Low,
+                    Close = record.Close,
+                    Volume = record.Volume,
+                };
+                
+                stockDataList.Add(stockData);
+            }
+            
+            /*csv.Read();
             csv.ReadHeader();
             while (csv.Read())
             {
+                
+                
                 StockData stockData = new StockData
                 {
+                    
                     Date = DateTime.Parse(csv.GetField<string>("timestamp")),
-                    Symbol = symbol,
+                    //Symbol = symbol,
                     Open = csv.GetField<double>("open"),
                     High = csv.GetField<double>("high"),
                     Low = csv.GetField<double>("low"),
@@ -175,7 +231,7 @@ public class stockDataService : IStockDataService
                 {
                     stockDataList.Add(stockData);
                 }
-            }
+            }*/
         }
         
         return stockDataList;

@@ -4,7 +4,8 @@ namespace api_external_scrapper.Interfaces;
 
 public interface IStockDataService
 {
-
+    
+    
     public string GetRawCSV(string symbol);
     public string GenerateCSV();
     public string SaveRawCSV(string symbol);
