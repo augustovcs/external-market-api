@@ -15,6 +15,8 @@ public class stockDataService : IStockDataService
     private string symbol = "IBM";
     public List<StockData> stockDataList { get; private set; }
     private string fileName_scrapping;
+    private List<SymbolData> symbolDataList;
+
     public stockDataService(IConfiguration configuration)
     {
         _configuration = configuration;
@@ -67,25 +69,12 @@ public class stockDataService : IStockDataService
 
         return content_path;
     }
-    
 
-    public string SaveRawCSV(string symbol = "IBM")
+    public string GenerateCSV()
     {
+        symbolDataList = new List<SymbolData>();
         
-        string content = "";
-        string dateTime = symbol + "-" + DateTime.Now.ToString("dd-MM-yyyy");
-        string fileName = $"stockData-{dateTime}.csv";
-        string archiveDir = Path.Combine(Directory.GetCurrentDirectory(), "data_archives");
-
-        if (!Directory.Exists(archiveDir))
-        {
-            Directory.CreateDirectory(archiveDir);
-        }
-
-        content = Path.Combine(archiveDir, fileName);
-        
-        List<SymbolData> symbolDataList = new List<SymbolData>();
-        
+        //Console.WriteLine(Directory.GetCurrentDirectory() + "/" + "StockSymbolList.csv");
         using (StreamReader streamReader = new StreamReader(Directory.GetCurrentDirectory() + "/" + "StockSymbolList.csv", Encoding.UTF8))
         using (CsvReader csv = new CsvReader(streamReader, CultureInfo.InvariantCulture))
         {
@@ -101,31 +90,39 @@ public class stockDataService : IStockDataService
                 
                 symbolDataList.Add(symbolData);
                 fileName_scrapping = $"{symbolData.Name} ({symbolData.Symbol}).csv";
-
                 //Console.WriteLine($"{symbolData.Name} ({symbolData.Symbol})");
-
+                
             }
         }
-        
-
-        /*foreach (var value in symbolDataList)
-        {
-            Console.WriteLine(value.Symbol);
-        }*/
-
-        
         
         string dateTime_scrapping = DateTime.Now.ToString("yyyy-MM-dd");
         string archiveDir_scrapping = Path.Combine(Directory.GetCurrentDirectory(), $"Scrapping/StockData/{dateTime_scrapping}");
         
-        
-        Console.WriteLine(fileName_scrapping);
+        //Console.WriteLine(fileName_scrapping);
         
         string content_scrapping = Path.Combine(archiveDir_scrapping, $"{fileName_scrapping[0]}");
-        Console.WriteLine(content_scrapping);
+        //Console.WriteLine(content_scrapping);
         
         File.WriteAllText("testing", content_scrapping);
+
+
+        return content_scrapping;
+    }
+
+    public string SaveRawCSV(string symbol = "IBM")
+    {
         
+        string content = "";
+        string dateTime = symbol + "-" + DateTime.Now.ToString("dd-MM-yyyy");
+        string fileName = $"stockData-{dateTime}.csv";
+        string archiveDir = Path.Combine(Directory.GetCurrentDirectory(), "data_archives");
+
+        if (!Directory.Exists(archiveDir))
+        {
+            Directory.CreateDirectory(archiveDir);
+        }
+
+        content = Path.Combine(archiveDir, fileName);
         
         if (!File.Exists(content))
         {
@@ -187,6 +184,7 @@ public class stockDataService : IStockDataService
     public async Task <List<StockData>> GetStockData()
     {
         var loader =  parametersStock();
+        var gen_scrapper = GenerateCSV();
         return stockDataList;
     }
     
