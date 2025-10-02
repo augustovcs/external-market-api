@@ -1,5 +1,6 @@
 import ast
 import os
+import pathlib
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -105,9 +106,26 @@ def scrape():
 
     
     rows_added = driver_firefox.find_elements(By.XPATH, '//table[contains(@class, "yf-1jecxey")]//tr')
-    stock_symbol = driver_firefox.find_element(By.CLASS_NAME, "yf-4vbjci").text
+    #stock_symbol = driver_firefox.find_element(By.CLASS_NAME, "yf-4vbjci").text
     
+    
+    dir_stocklist = pathlib.Path("/home/augustoviegascs/Documents/dotnet/api_external_scrapper/StockSymbolList.csv")
+    dir_read = pd.read_csv(dir_stocklist)
+    
+    
+    StockSymbolList = []
+    for index, row in dir_read.iterrows():
+        StockSymbolList.append({
+            "symbol": row["symbol"],
+            "name": row["name"]
+        })
+        
+    
+    stock_symbol = StockSymbolList[0]["symbol"]
+    stock_name = StockSymbolList[0]["name"]
 
+
+    print(stock_symbol)
     
     data_list = {
         "STOCK SYMBOL": stock_symbol,
@@ -138,8 +156,7 @@ def scrape():
                 "volume": volume_total
             }
 
- 
-
+     
     dictionary_frame = pd.DataFrame.from_dict(data_list["timestamp"], orient='index')
     dictionary_frame.index.name = "timestamp"
     
@@ -147,7 +164,7 @@ def scrape():
     if create_dir == False:
         print(f'Directory creation failed! {OSError}')
     
-    dictionary_frame.to_csv(f"StockData/{datetime.date.today()}/{stock_symbol[0]}.csv")
+    dictionary_frame.to_csv(f"StockData/{datetime.date.today()}/{stock_symbol}.csv")
             
     
             

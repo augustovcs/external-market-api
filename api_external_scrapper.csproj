@@ -11,6 +11,7 @@
     <ItemGroup>
       <Folder Include="data_archives\" />
       <Folder Include="Scrapping\StockData\" />
+      <Folder Include="Scrapping\StockData\2025-09-30\" />
     </ItemGroup>
 
     <ItemGroup>
