@@ -11,14 +11,20 @@ import time
 import datetime
 from tqdm import tqdm
 import os as operations
+from topSymbols import returnTopSymbols
 
 """
 URL FONTS
 """
 
+topSymbolList = returnTopSymbols()
+print(topSymbolList)
+
+
 def get_websites():
     
     website_url = []
+    
 
     try:
         with open('/home/augustoviegascs/Documents/dotnet/api_external_scrapper/StockSymbolList.csv', 'r') as f:
@@ -42,7 +48,7 @@ def get_websites():
     
     len_website = len(website_index_list)
 
-
+    yahoo_url_topsymbol = [f"https://finance.yahoo.com/quote/{symbol}/history/?period1=1601252877&period2=1759012790" for symbol in topSymbolList]
     yahoo_url_list = [f"https://finance.yahoo.com/quote/{symbol}/history/?period1=1601252877&period2=1759012790" for symbol in website_index_list]
     
     
@@ -78,22 +84,15 @@ def get_websites():
             loop_true = False
             
         
-    return yahoo_url_list
+    return yahoo_url_topsymbol
             
        
-
-
-def scrape():
-
-    options = Options()
-    options.add_argument("--headless") 
+def init_scrape(driver, site_url):
     
-    driver_firefox = webdriver.Firefox(options=options)
+    
     yahoo_website = get_websites()
-    print(yahoo_website[0])
-
     
-    driver_firefox.get(yahoo_website[0])
+    driver.get(site_url)
     time.sleep(5.5)
 
     """
@@ -105,7 +104,7 @@ def scrape():
     volume_total = 0 """
 
     
-    rows_added = driver_firefox.find_elements(By.XPATH, '//table[contains(@class, "yf-1jecxey")]//tr')
+    rows_added = driver.find_elements(By.XPATH, '//table[contains(@class, "yf-1jecxey")]//tr')
     #stock_symbol = driver_firefox.find_element(By.CLASS_NAME, "yf-4vbjci").text
     
     
@@ -121,8 +120,8 @@ def scrape():
         })
         
     
-    stock_symbol = StockSymbolList[0]["symbol"]
-    stock_name = StockSymbolList[0]["name"]
+    stock_symbol = StockSymbolList[value]["symbol"]
+    stock_name = StockSymbolList[value]["name"]
 
 
     print(stock_symbol)
@@ -166,11 +165,17 @@ def scrape():
     
     dictionary_frame.to_csv(f"StockData/{datetime.date.today()}/{stock_symbol}.csv")
             
+    driver.quit()
+
+def scrapper():
     
-            
-    driver_firefox.quit()
-    driver_chrome = webdriver.Chrome
+    options = Options()
+    options.add_argument("--headless")
+    driver_firefox = webdriver.Firefox(options=options)
     
+    yahoo_website = get_websites()
+    for site_url in yahoo_website:
+        init_scrape(driver_firefox, site_url)
     
     
     

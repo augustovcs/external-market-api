@@ -5,6 +5,7 @@ using api_external_scrapper.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 
+
 builder.Services.AddControllers()
 	.AddJsonOptions(options =>
 	{
@@ -18,7 +19,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IStockDataService, stockDataService>();
 builder.Services.AddScoped<IGeneratedData, generated_data>();
 builder.Services.AddScoped<IPrintDataService, printDataService>();
-
 
 
 
@@ -56,6 +56,5 @@ using (var scope = app.Services.CreateScope())
 	service.SaveStockListSymbol();
 }
 
+
 app.Run();
-
-
