@@ -51,43 +51,11 @@ def get_websites():
     yahoo_url_topsymbol = [f"https://finance.yahoo.com/quote/{symbol}/history/?period1=1601252877&period2=1759012790" for symbol in topSymbolList]
     yahoo_url_list = [f"https://finance.yahoo.com/quote/{symbol}/history/?period1=1601252877&period2=1759012790" for symbol in website_index_list]
     
-    
-    loop_true = False
-    while loop_true:
-
-        print("\n --- EM SCRAPPER API MENU 1.1.2 --- ")
-        print("1 - START EM SCRAPPER API ")
-        print("2 - YAHOO FULL STOCK LIST URLS ")
-        print("3 - API FULL STOCK SYMBOL LIST ")
-        print("4 - ANALYZE A SYMBOL ")
-        print("5 - EXIT \n")
-        
-        choice_01 = input("Your choice: ")
-        if choice_01 == "1":
-            for i in tqdm(range(len_website), desc="Loading... ", colour='green', total=len_website):
-                time.sleep(0.00010)
-            print("AVAILABLE SOON!!!!!")
             
-    
-        if choice_01 == "2":
-            for i in tqdm(range(len_website), desc="Loading... ", colour='green', total=len_website):
-                time.sleep(0.00001)
-            for url in yahoo_url_list[:]:
-                print(url)
-                
-        if choice_01 == "3":
-            for i in tqdm(range(len_website), desc="Loading... ", colour='green', total=len_website):
-                time.sleep(0.00001)
-            print(f"\nFULL STOCK LIST SYMBOLS: {website_url}")
-        
-        if choice_01 == "5":
-            loop_true = False
-            
-        
     return yahoo_url_topsymbol
             
        
-def init_scrape(driver, site_url):
+def init_scrape(driver, site_url, index):
     
     
     yahoo_website = get_websites()
@@ -120,8 +88,8 @@ def init_scrape(driver, site_url):
         })
         
     
-    stock_symbol = StockSymbolList[value]["symbol"]
-    stock_name = StockSymbolList[value]["name"]
+    stock_symbol = StockSymbolList[index]["symbol"]
+    stock_name = StockSymbolList[index]["name"]
 
 
     print(stock_symbol)
@@ -172,10 +140,12 @@ def scrapper():
     options = Options()
     options.add_argument("--headless")
     driver_firefox = webdriver.Firefox(options=options)
+    value = topSymbolList
+    
     
     yahoo_website = get_websites()
-    for site_url in yahoo_website:
-        init_scrape(driver_firefox, site_url)
+    for index, site_url in enumerate(yahoo_website):
+        init_scrape(driver_firefox, site_url, index)
     
     
     
