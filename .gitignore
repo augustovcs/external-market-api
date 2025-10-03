@@ -4,3 +4,7 @@ C#
 /bin
 /.idea
 /data_archives
+
+Scrapping/StockData/2025-10-03
+Scrapping/__pycache__
+Scrapping/data_test.csv

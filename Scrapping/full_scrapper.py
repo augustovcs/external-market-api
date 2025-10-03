@@ -1,7 +1,4 @@
-import ast
-import os
 import pathlib
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options
@@ -55,23 +52,12 @@ def get_websites():
     return yahoo_url_topsymbol
             
        
-def init_scrape(driver, site_url, index):
+def init_scrape(driver, site_url, stock_symbol):
     
-    
-    yahoo_website = get_websites()
     
     driver.get(site_url)
     time.sleep(5.5)
 
-    """
-    date_history = 0
-    open_price = 0
-    high_price = 0
-    low_price = 0
-    close_price = 0
-    volume_total = 0 """
-
-    
     rows_added = driver.find_elements(By.XPATH, '//table[contains(@class, "yf-1jecxey")]//tr')
     #stock_symbol = driver_firefox.find_element(By.CLASS_NAME, "yf-4vbjci").text
     
@@ -87,11 +73,8 @@ def init_scrape(driver, site_url, index):
             "name": row["name"]
         })
         
-    
-    stock_symbol = StockSymbolList[index]["symbol"]
-    stock_name = StockSymbolList[index]["name"]
-
-
+    #stock_symbol = StockSymbolList[index]["symbol"]
+    #stock_name = StockSymbolList[index]["name"]
     print(stock_symbol)
     
     data_list = {
@@ -99,7 +82,7 @@ def init_scrape(driver, site_url, index):
         "timestamp": {}
     }
     
-    for row in rows_added:
+    for row in tqdm(rows_added, desc=f"Downloading {stock_symbol} data", leave=False, colour="green"):
         cols = row.find_elements(By.TAG_NAME, 'td')
         if len(cols) > 5:
             date_history = cols[0].text
@@ -133,7 +116,6 @@ def init_scrape(driver, site_url, index):
     
     dictionary_frame.to_csv(f"StockData/{datetime.date.today()}/{stock_symbol}.csv")
             
-    driver.quit()
 
 def scrapper():
     
@@ -142,10 +124,10 @@ def scrapper():
     driver_firefox = webdriver.Firefox(options=options)
     value = topSymbolList
     
-    
     yahoo_website = get_websites()
-    for index, site_url in enumerate(yahoo_website):
-        init_scrape(driver_firefox, site_url, index)
+    for index, site_url in enumerate(tqdm(yahoo_website, desc="Starting Data Process", colour="blue")):
+        stock_symbol = topSymbolList[index]
+        init_scrape(driver_firefox, site_url, stock_symbol)
     
-    
+    driver_firefox.quit()
     
