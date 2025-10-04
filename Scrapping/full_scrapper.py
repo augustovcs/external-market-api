@@ -10,12 +10,16 @@ from tqdm import tqdm
 import os as operations
 from topSymbols import returnTopSymbols
 from dateutil.relativedelta import relativedelta
+import json
 
 """
 URL FONTS
 """
 
 topSymbolList = returnTopSymbols()
+
+
+
 
 def get_websites():
     

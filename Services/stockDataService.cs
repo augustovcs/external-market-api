@@ -54,7 +54,7 @@ public class stockDataService : IStockDataService
     }
 
     
-    // to implement
+    // GET THE OLD API CONNECTION AND DATA
     public string GetRawCSV(string symbol = "IBM")
     {
         string API_KEY = _configuration.GetValue<string>("API_ALPHA");
@@ -69,6 +69,8 @@ public class stockDataService : IStockDataService
         
     }
 
+    
+    //CREATE A STOCK SYMBOL + NAME LIST BASED ON ALPHAVANTAGE API
     public string SaveStockListSymbol()
     {
         string API_KEY = _configuration.GetValue<string>("API_ALPHA");
@@ -98,10 +100,16 @@ public class stockDataService : IStockDataService
 
         return content_path;
     }
-
-    public string GenerateCSV()
+    
+    
+    // THE NEW WAY TO DOWNLOAD DATA + READ CSV ALREADY SCRAPPED
+    public string NewSaveRawCSV()
     {
         symbolDataList = new List<SymbolData>();
+        
+        // ***************
+        //THIS READS THE SYMBOL + NAME FROM STOCK SYMBOL LIST ONLY!!!!
+        // ***************
         
         //Console.WriteLine(Directory.GetCurrentDirectory() + "/" + "StockSymbolList.csv");
         using (StreamReader streamReader = new StreamReader(Directory.GetCurrentDirectory() + "/" + "StockSymbolList.csv", Encoding.UTF8))
@@ -120,6 +128,7 @@ public class stockDataService : IStockDataService
         
                 //Console.WriteLine($"{symbolData.Name} ({symbolData.Symbol})");
                 
+                //ADD TO THE LIST ALL THE SYMBOLS AND NAMES FROM STOCKSYMBOLLIST.CSV
                 symbolDataList.Add(symbolData);
             }
         }
@@ -127,22 +136,18 @@ public class stockDataService : IStockDataService
         
         //GEN THE INDEX SYMBOL 
         symbolIndexData = symbolDataList[25].Symbol;
-      
-        
-        
-        
+        //Console.WriteLine(symbolIndexData);
+
         
         //test if the symbols are downloading
         //File.WriteAllLines("all_symbols.txt", symbolDataList.Select(s => $"{s.Name} {s.Symbol}"));
         
-        
-        fileName_scrapping = $"{symbolDataList[25].Symbol}";
-        //Console.WriteLine(fileName_scrapping);
         string dateTime_scrapping = DateTime.Now.ToString("yyyy-MM-dd");
         string archiveDir_scrapping = Path.Combine(Directory.GetCurrentDirectory(), $"Scrapping/StockData/{dateTime_scrapping}");
         
-        //Console.WriteLine(fileName_scrapping);
-        string content_scrapping = Path.Combine(archiveDir_scrapping, $"{fileName_scrapping}.csv");
+        
+        string content_scrapping = Path.Combine(archiveDir_scrapping, $"{symbolIndexData}.csv");
+        //TEST THE PATH
         //Console.WriteLine(content_scrapping);
         
         if (!File.Exists(content_scrapping))
@@ -196,7 +201,7 @@ public class stockDataService : IStockDataService
         stockDataList = new List<StockData>();
         
         //using (StreamReader reader = new StreamReader(SaveRawCSV()))
-        using (StreamReader reader = new StreamReader(GenerateCSV()))
+        using (StreamReader reader = new StreamReader(NewSaveRawCSV()))
         using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
         {
             csv.Context.RegisterClassMap<StockMap>();
@@ -217,30 +222,6 @@ public class stockDataService : IStockDataService
                 stockDataList.Add(stockData);
             }
             
-            /*csv.Read();
-            csv.ReadHeader();
-            while (csv.Read())
-            {
-                
-                
-                StockData stockData = new StockData
-                {
-                    
-                    Date = DateTime.Parse(csv.GetField<string>("timestamp")),
-                    //Symbol = symbol,
-                    Open = csv.GetField<double>("open"),
-                    High = csv.GetField<double>("high"),
-                    Low = csv.GetField<double>("low"),
-                    Close = csv.GetField<double>("close"),
-                    Volume = csv.GetField<int>("volume"),
-                };
-                
-                DateTime limit = DateTime.Now.AddMonths(-60);
-                if (stockData.Date >= limit && !stockDataList.Any(s => s.Date == stockData.Date))
-                {
-                    stockDataList.Add(stockData);
-                }
-            }*/
         }
         
         return stockDataList;
@@ -257,7 +238,7 @@ public class stockDataService : IStockDataService
     public async Task <List<StockData>> GetStockData()
     {
         var loader =  parametersStock();
-        var gen_scrapper = GenerateCSV();
+        //var gen_scrapper = GenerateCSV();
         return stockDataList;
     }
     

@@ -8,7 +8,7 @@ def sandbox():
     SandboxPython.unitTesting()
     
 if __name__ == "__main__":
-    main()
+    sandbox()
     
     
 else:

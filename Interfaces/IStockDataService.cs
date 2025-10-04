@@ -7,7 +7,7 @@ public interface IStockDataService
     
     
     public string GetRawCSV(string symbol);
-    public string GenerateCSV();
+    public string NewSaveRawCSV();
     public string SaveRawCSV(string symbol);
     public List<StockData> ParsingRaw();
     public List<StockData> parametersStock();

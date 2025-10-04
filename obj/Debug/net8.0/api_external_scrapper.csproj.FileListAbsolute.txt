@@ -34,3 +34,4 @@
 /home/augustoviegascs/Documents/dotnet/api_external_scrapper/obj/Debug/net8.0/api_external_scrapper.pdb
 /home/augustoviegascs/Documents/dotnet/api_external_scrapper/obj/Debug/net8.0/api_external_scrapper.genruntimeconfig.cache
 /home/augustoviegascs/Documents/dotnet/api_external_scrapper/obj/Debug/net8.0/ref/api_external_scrapper.dll
+/home/augustoviegascs/Documents/dotnet/api_external_scrapper/bin/Debug/net8.0/Scrapping/topSymbols.json
