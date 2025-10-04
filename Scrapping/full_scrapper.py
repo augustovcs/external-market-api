@@ -9,14 +9,13 @@ import datetime
 from tqdm import tqdm
 import os as operations
 from topSymbols import returnTopSymbols
+from dateutil.relativedelta import relativedelta
 
 """
 URL FONTS
 """
 
 topSymbolList = returnTopSymbols()
-print(topSymbolList)
-
 
 def get_websites():
     
@@ -45,8 +44,13 @@ def get_websites():
     
     len_website = len(website_index_list)
 
-    yahoo_url_topsymbol = [f"https://finance.yahoo.com/quote/{symbol}/history/?period1=1601252877&period2=1759012790" for symbol in topSymbolList]
-    yahoo_url_list = [f"https://finance.yahoo.com/quote/{symbol}/history/?period1=1601252877&period2=1759012790" for symbol in website_index_list]
+
+    convert_period01 = datetime.datetime.now() - relativedelta(years=5)
+    period01_timedate = int(convert_period01.timestamp())
+    period02_timedate = int(datetime.datetime.now().timestamp())
+
+    yahoo_url_topsymbol = [f"https://finance.yahoo.com/quote/{symbol}/history/?period1={period01_timedate}&period2={period02_timedate}" for symbol in topSymbolList]
+    yahoo_url_list = [f"https://finance.yahoo.com/quote/{symbol}/history/?period1={period01_timedate}&period2={period02_timedate}" for symbol in website_index_list]
     
             
     return yahoo_url_topsymbol
@@ -121,6 +125,23 @@ def scrapper():
     
     options = Options()
     options.add_argument("--headless")
+    options.add_argument("--headless")  # roda sem interface gráfica
+    options.add_argument("--disable-gpu")  # desativa GPU (não precisa pra texto)
+    options.add_argument("--disable-extensions")  # sem extensões
+    options.add_argument("--disable-dev-shm-usage")  # evita gargalos de memória compartilhada
+    options.add_argument("--no-sandbox")  # libera algumas restrições (cuidado em prod)
+    
+    # reduzir uso de recursos
+    options.set_preference("permissions.default.image", 2)  # bloqueia imagens
+    options.set_preference("dom.ipc.plugins.enabled.libflashplayer.so", "false")  # sem flash
+    options.set_preference("media.autoplay.default", 1)  # não carrega áudio/vídeo
+    options.set_preference("javascript.enabled", True)  # mantém JS (se a página precisar renderizar)
+    options.set_preference("network.http.pipelining", True)  # melhora requisições
+    options.set_preference("network.http.proxy.pipelining", True)
+    options.set_preference("network.http.max-connections", 96)
+    options.set_preference("network.http.max-persistent-connections-per-server", 48)    
+    
+
     driver_firefox = webdriver.Firefox(options=options)
     value = topSymbolList
     

@@ -28,29 +28,29 @@ public class stockDataService : IStockDataService
     
 
     
-public class IntWithCommasConverter : Int32Converter
-{
-    public override object ConvertFromString(string text, IReaderRow row, MemberMapData memberMapData)
+    public class IntWithCommasConverter : Int32Converter
     {
-        if (string.IsNullOrWhiteSpace(text))
-            return 0;
-        text = text.Replace(",", "");
-        return base.ConvertFromString(text, row, memberMapData);
+        public override object ConvertFromString(string text, IReaderRow row, MemberMapData memberMapData)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return 0;
+            text = text.Replace(",", "");
+            return base.ConvertFromString(text, row, memberMapData);
+        }
     }
-}
-    
-public sealed class StockMap : ClassMap<StockData>
-{
-    public StockMap()
+        
+    public sealed class StockMap : ClassMap<StockData>
     {
-        Map(m => m.Date).Name("timestamp");
-        Map(m => m.Open).Name("open");
-        Map(m => m.High).Name("high");
-        Map(m => m.Low).Name("low");
-        Map(m => m.Close).Name("close");
-        Map(m => m.Volume).TypeConverter<IntWithCommasConverter>().Name("volume");
+        public StockMap()
+        {
+            Map(m => m.Date).Name("timestamp");
+            Map(m => m.Open).Name("open");
+            Map(m => m.High).Name("high");
+            Map(m => m.Low).Name("low");
+            Map(m => m.Close).Name("close");
+            Map(m => m.Volume).TypeConverter<IntWithCommasConverter>().Name("volume");
+        }
     }
-}
 
     
     // to implement
@@ -190,7 +190,6 @@ public sealed class StockMap : ClassMap<StockData>
         using (StreamReader reader = new StreamReader(GenerateCSV()))
         using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
         {
-            
             csv.Context.RegisterClassMap<StockMap>();
             var records = csv.GetRecords<StockData>();
             foreach (var record in records)
