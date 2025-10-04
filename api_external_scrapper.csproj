@@ -9,7 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="data_archives\" />
       <Folder Include="Scrapping\StockData\" />
       <Folder Include="Scrapping\StockData\2025-10-03\" />
     </ItemGroup>

@@ -26,6 +26,18 @@ public interface IGeneratedData
     public Task<List<StockData>> CloseValuesData();
     public Task<List<StockData>> Mid30DaysData();
     public Task<List<StockData>> PercentualData();
+    /*
+     TO IMPLEMENT
+    public Task<List<StockData>> DailyAverageReturn();
+    public Task<List<StockData>> WeeklyAverageReturn();
+    public Task<List<StockData>> MonthlyAverageReturn();
+    public Task<List<StockData>> YearlyAverageReturn();
+    public Task<List<StockData>> CumulativeReturnLastYear();
+    public Task<List<StockData>> CumulativeReturnLastMonth();
+    public Task<List<StockData>> SharpeRatio();
+    public Task<List<StockData>> AnnualizedReturn();
+    public Task<List<StockData>> MaxDrawdown();
+    */
     
     public Task<List<PercentualReturnData>> CalcPercentualReturn();
     //public Task<List<GeneralCalculusData>> CalcVolatility();

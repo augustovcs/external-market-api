@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace api_external_scrapper.DTO;
 
 /*public class ClosesStockData

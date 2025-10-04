@@ -19,6 +19,7 @@ public class stockDataService : IStockDataService
     private string fileName_scrapping;
     private List<SymbolData> symbolDataList;
     private SymbolData symbolData;
+    private string symbolIndexData;
 
     public stockDataService(IConfiguration configuration)
     {
@@ -115,7 +116,6 @@ public class stockDataService : IStockDataService
                     Symbol = csv.GetField("symbol"),
                     Name = csv.GetField("name")
                     
-                    
                 };
         
                 //Console.WriteLine($"{symbolData.Name} ({symbolData.Symbol})");
@@ -125,12 +125,19 @@ public class stockDataService : IStockDataService
         }
         
         
+        //GEN THE INDEX SYMBOL 
+        symbolIndexData = symbolDataList[25].Symbol;
+      
+        
+        
+        
+        
         //test if the symbols are downloading
         //File.WriteAllLines("all_symbols.txt", symbolDataList.Select(s => $"{s.Name} {s.Symbol}"));
         
         
-        fileName_scrapping = $"{symbolDataList[0].Symbol}";
-        Console.WriteLine(fileName_scrapping);
+        fileName_scrapping = $"{symbolDataList[25].Symbol}";
+        //Console.WriteLine(fileName_scrapping);
         string dateTime_scrapping = DateTime.Now.ToString("yyyy-MM-dd");
         string archiveDir_scrapping = Path.Combine(Directory.GetCurrentDirectory(), $"Scrapping/StockData/{dateTime_scrapping}");
         
@@ -150,7 +157,9 @@ public class stockDataService : IStockDataService
         
         return content_scrapping;
     }
-
+    
+    
+    //OLD METHOD
     public string SaveRawCSV(string symbol = "IBM")
     {
         
@@ -197,6 +206,7 @@ public class stockDataService : IStockDataService
                 StockData stockData = new StockData()
                 {
                     Date = record.Date,
+                    Symbol = symbolIndexData,
                     Open = record.Open,
                     High = record.High,
                     Low = record.Low,
