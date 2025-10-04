@@ -1,11 +1,10 @@
-using api_external_scrapper.Interfaces;
-using api_external_scrapper.Services;
+using EMAnalysisWeb.Interfaces;
+using EMAnalysisWeb.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace api_external_scrapper.Controllers;
+namespace EMAnalysisWeb.Controllers;
 
 [ApiController]
-[Route("[controller]")] 
 public class stockDataController : ControllerBase
 {
     private IStockDataService _stockdataservice;
@@ -20,8 +19,8 @@ public class stockDataController : ControllerBase
         
     }
     
-
-    [HttpGet("/get/crudedata")]
+    
+    [HttpGet("crudedata")]
     public async Task<IActionResult> GetCrudeData()
     {
         

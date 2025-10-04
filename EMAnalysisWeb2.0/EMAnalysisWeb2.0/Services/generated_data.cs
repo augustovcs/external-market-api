@@ -1,12 +1,12 @@
 using System.Globalization;
-using api_external_scrapper.DTO;
-using api_external_scrapper.Services;
+using EMAnalysisWeb.DTO;
+using EMAnalysisWeb.Services;
 using CsvHelper;
 using System.Linq;
 using System.Text;
-using api_external_scrapper.Interfaces;
+using EMAnalysisWeb.Interfaces;
 
-namespace api_external_scrapper.Services;
+namespace EMAnalysisWeb.Services;
 
 public class generated_data : IGeneratedData
 {

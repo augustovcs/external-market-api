@@ -2,13 +2,13 @@ using System.Globalization;
 using System.Net;
 using System.Runtime.InteropServices.JavaScript;
 using System.Text;
-using api_external_scrapper.DTO;
+using EMAnalysisWeb.DTO;
 using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
-using api_external_scrapper.Interfaces;
+using EMAnalysisWeb.Interfaces;
 
-namespace api_external_scrapper.Services;
+namespace EMAnalysisWeb.Services;
 
 public class stockDataService : IStockDataService
 {
@@ -144,7 +144,6 @@ public class stockDataService : IStockDataService
         
         string dateTime_scrapping = DateTime.Now.ToString("yyyy-MM-dd");
         string archiveDir_scrapping = Path.Combine(Directory.GetCurrentDirectory(), $"Scrapping/StockData/{dateTime_scrapping}");
-        
         
         string content_scrapping = Path.Combine(archiveDir_scrapping, $"{symbolIndexData}.csv");
         //TEST THE PATH

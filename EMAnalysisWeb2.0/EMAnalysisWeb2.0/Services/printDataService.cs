@@ -1,7 +1,7 @@
-using api_external_scrapper.DTO;
-using api_external_scrapper.Interfaces;
+using EMAnalysisWeb.DTO;
+using EMAnalysisWeb.Interfaces;
 
-namespace api_external_scrapper.Services;
+namespace EMAnalysisWeb.Services;
 
 public class printDataService : IPrintDataService
 

@@ -1,7 +1,7 @@
 using System.Net;
 using System.Text.Json;
 
-namespace api_external_scrapper.Classes;
+namespace EMAnalysisWeb.Classes;
 
 public class connectionAPI
 {

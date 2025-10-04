@@ -14,4 +14,8 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.14"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\EMAnalysisWeb2.0.Shared\EMAnalysisWeb2.0.Shared.csproj" />
+    </ItemGroup>
+
 </Project>

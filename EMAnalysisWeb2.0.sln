@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMAnalysisWeb2.0", "EMAnaly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMAnalysisWeb2.0.Client", "EMAnalysisWeb2.0\EMAnalysisWeb2.0.Client\EMAnalysisWeb2.0.Client.csproj", "{B40B41B5-C322-435A-AC4D-884B585D1078}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMAnalysisWeb2.0.Shared", "EMAnalysisWeb2.0.Shared\EMAnalysisWeb2.0.Shared.csproj", "{B618B9C1-7308-46EA-9799-7D932D87064E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{B40B41B5-C322-435A-AC4D-884B585D1078}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B40B41B5-C322-435A-AC4D-884B585D1078}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B40B41B5-C322-435A-AC4D-884B585D1078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B618B9C1-7308-46EA-9799-7D932D87064E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B618B9C1-7308-46EA-9799-7D932D87064E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B618B9C1-7308-46EA-9799-7D932D87064E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B618B9C1-7308-46EA-9799-7D932D87064E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

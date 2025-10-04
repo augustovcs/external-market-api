@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
-using api_external_scrapper.DTO;
+using EMAnalysisWeb.DTO;
 
-namespace api_external_scrapper.Classes;
+namespace EMAnalysisWeb.Classes;
 
 
 //DTO JSON SERIALIZER HEREEEEE

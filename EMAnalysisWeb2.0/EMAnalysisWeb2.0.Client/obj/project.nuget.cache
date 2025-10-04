@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "J6plXpg5se4=",
+  "dgSpecHash": "zfG1+Ra47a8=",
   "success": true,
   "projectFilePath": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/EMAnalysisWeb2.0.Client.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "/root/.nuget/packages/microsoft.jsinterop.webassembly/8.0.14/microsoft.jsinterop.webassembly.8.0.14.nupkg.sha512",
     "/root/.nuget/packages/microsoft.net.illink.tasks/8.0.14/microsoft.net.illink.tasks.8.0.14.nupkg.sha512",
     "/root/.nuget/packages/microsoft.net.sdk.webassembly.pack/8.0.20/microsoft.net.sdk.webassembly.pack.8.0.20.nupkg.sha512",
+    "/root/.nuget/packages/newtonsoft.json/13.0.4/newtonsoft.json.13.0.4.nupkg.sha512",
     "/root/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512"
   ],
   "logs": []

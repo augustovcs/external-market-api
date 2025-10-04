@@ -1,6 +1,6 @@
-using api_external_scrapper.DTO;
+using EMAnalysisWeb.DTO;
 
-namespace api_external_scrapper.Interfaces;
+namespace EMAnalysisWeb.Interfaces;
 
 public interface IStockDataService
 {
