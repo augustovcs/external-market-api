@@ -9,7 +9,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
         <ProjectReference Include="..\EMAnalysisWeb2.0.Client\EMAnalysisWeb2.0.Client.csproj"/>
+        <PackageReference Include="CsvHelper" Version="33.1.0" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.14"/>
     </ItemGroup>
 

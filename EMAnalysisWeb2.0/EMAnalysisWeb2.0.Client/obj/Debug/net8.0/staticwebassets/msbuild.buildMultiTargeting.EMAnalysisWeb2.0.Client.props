@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/EMAnalysisWeb2.0.Client.props" />
+</Project>
