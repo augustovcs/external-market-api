@@ -2,7 +2,7 @@ using EMAnalysisWeb.Classes;
 using EMAnalysisWeb.Interfaces;
 using EMAnalysisWeb.Services;
 using EMAnalysisWeb2._0.Client.Pages;
-using EMAnalysisWeb2._0.Components;
+using EMAnalysisWeb2._0.Client.Components;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -76,8 +76,7 @@ app.UseAntiforgery();
 
 
 app.MapRazorComponents<App>()
-    .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(EMAnalysisWeb2._0.Client._Imports).Assembly);
+    .AddInteractiveWebAssemblyRenderMode();
 
 app.MapControllers();
 

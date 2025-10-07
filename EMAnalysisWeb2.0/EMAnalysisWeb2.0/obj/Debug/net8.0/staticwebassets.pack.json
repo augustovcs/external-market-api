@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/scopedcss/projectbundle/EMAnalysisWeb2.0.bundle.scp.css",
-      "PackagePath": "staticwebassets/EMAnalysisWeb2.0.g513er16or.bundle.scp.css"
-    },
-    {
       "Id": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/wwwroot/app.css",
       "PackagePath": "staticwebassets/app.css"
     },

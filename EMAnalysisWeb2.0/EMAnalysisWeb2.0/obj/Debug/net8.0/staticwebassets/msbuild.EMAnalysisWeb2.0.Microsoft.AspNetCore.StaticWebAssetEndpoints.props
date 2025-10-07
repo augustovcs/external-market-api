@@ -36,18 +36,6 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"449111"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\u0022"},{"Name":"Last-Modified","Value":"Sat, 04 Oct 2025 20:44:20 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/EMAnalysisWeb2.0/EMAnalysisWeb2.0.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\EMAnalysisWeb2.0.g513er16or.bundle.scp.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-bC0vwN6dDDeDvFjrJQtPGzQZ1Nw0NvIaapX\u002BcaI0D/w="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5712"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022bC0vwN6dDDeDvFjrJQtPGzQZ1Nw0NvIaapX\u002BcaI0D/w=\u0022"},{"Name":"Last-Modified","Value":"Sat, 04 Oct 2025 22:34:55 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/EMAnalysisWeb2.0/EMAnalysisWeb2.0.g513er16or.bundle.scp.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\EMAnalysisWeb2.0.g513er16or.bundle.scp.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"g513er16or"},{"Name":"integrity","Value":"sha256-bC0vwN6dDDeDvFjrJQtPGzQZ1Nw0NvIaapX\u002BcaI0D/w="},{"Name":"label","Value":"_content/EMAnalysisWeb2.0/EMAnalysisWeb2.0.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5712"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022bC0vwN6dDDeDvFjrJQtPGzQZ1Nw0NvIaapX\u002BcaI0D/w=\u0022"},{"Name":"Last-Modified","Value":"Sat, 04 Oct 2025 22:34:55 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/EMAnalysisWeb2.0/favicon.ifv42okdf2.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.png'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

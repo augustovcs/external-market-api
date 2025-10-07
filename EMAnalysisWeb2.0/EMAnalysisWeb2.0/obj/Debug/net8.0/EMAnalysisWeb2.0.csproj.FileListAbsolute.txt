@@ -61,10 +61,7 @@
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.EMAnalysisWeb2.0.props
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.EMAnalysisWeb2.0.props
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets.pack.json
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/scopedcss/Components/Layout/MainLayout.razor.rz.scp.css
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/scopedcss/Components/Layout/NavMenu.razor.rz.scp.css
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/scopedcss/bundle/EMAnalysisWeb2.0.styles.css
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/scopedcss/projectbundle/EMAnalysisWeb2.0.bundle.scp.css
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/EMAnalys.ED4726A5.Up2Date
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/EMAnalysisWeb2.0.dll
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/refint/EMAnalysisWeb2.0.dll
@@ -75,3 +72,4 @@
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/EMAnalysisWeb2.0.staticwebassets.endpoints.json
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets.build.endpoints.json
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets/msbuild.EMAnalysisWeb2.0.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/Radzen.Blazor.dll

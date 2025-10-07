@@ -5,12 +5,32 @@
       "PackagePath": "staticwebassets/_framework/blazor.webassembly.js"
     },
     {
+      "Id": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/scopedcss/projectbundle/EMAnalysisWeb2.0.Client.bundle.scp.css",
+      "PackagePath": "staticwebassets/EMAnalysisWeb2.0.Client.1uugw0exkj.bundle.scp.css"
+    },
+    {
+      "Id": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
       "Id": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/wwwroot/appsettings.Development.json",
       "PackagePath": "staticwebassets/appsettings.Development.json"
     },
     {
       "Id": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/wwwroot/appsettings.json",
       "PackagePath": "staticwebassets/appsettings.json"
+    },
+    {
+      "Id": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.EMAnalysisWeb2.0.Client.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

@@ -12,10 +12,30 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.14"/>
+        <PackageReference Include="Radzen.Blazor" Version="8.0.3" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\EMAnalysisWeb2.0.Shared\EMAnalysisWeb2.0.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Components\App.razor" />
+      <_ContentIncludedByDefault Remove="Components\Layout\MainLayout.razor" />
+      <_ContentIncludedByDefault Remove="Components\Layout\NavMenu.razor" />
+      <_ContentIncludedByDefault Remove="Components\Routes.razor" />
+      <_ContentIncludedByDefault Remove="Components\_Imports.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Layout\MainLayout.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Layout\NavMenu.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Layout\Routes.razor" />
+      <_ContentIncludedByDefault Remove="Components\Layout\Routes.razor" />
+      <_ContentIncludedByDefault Remove="wwwroot\bootstrap\bootstrap.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\bootstrap\bootstrap.min.css.map" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Components\Layout\MainLayout.razor" />
+      <UpToDateCheckInput Remove="Components\Layout\NavMenu.razor" />
     </ItemGroup>
 
 </Project>
