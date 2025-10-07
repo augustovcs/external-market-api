@@ -1,21 +1,22 @@
 {
   "mainAssemblyName": "EMAnalysisWeb2.0.Client",
   "resources": {
-    "hash": "sha256-qOW25XXccoOEdtzGE+Q052IaMrMayQ1ZE5gLFKH+mrU=",
+    "hash": "sha256-oa3L5doLLMvNP5y+mdng/nypj054Yuu/o/IPqUgpexI=",
     "jsModuleNative": {
-      "dotnet.native.8.0.20.cyg27gb24a.js": "sha256-D0bzod5lwwSzPR43JC8TTCcZKw+3jIHOk8CZFCRj5is="
+      "dotnet.native.js": "sha256-DTUQS6Jc6BNnS7sYYezFfaUKVmQq0/lanhQuJfygH/k="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.8.0.20.85vr2fvjs9.js": "sha256-OH8zlJkheyf8H9oAbu0wu1oQm9FKy/BKjDk4Bj/va3s="
+      "dotnet.runtime.js": "sha256-44Vu7OSX4JP89eoc3oTYbYfC5C7USoIWuCw1W9IG6N4="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-1FiXHTP4dewtkVEvJ/s93FNwgKHgjajc/MAN3sofq6Q="
+      "dotnet.native.wasm": "sha256-mICh/Z0HwmHNDnkBnBbRTyDkRYBu3OBkhmuy2F7aUSU="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
       "icudt_EFIGS.dat": "sha256-8fItetYY8kQ0ww6oxwTLiT3oXlBwHKumbeP2pRF4yTc=",
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
+    "coreAssembly": {},
     "assembly": {
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-8ofzUl971/DaUkiDED+dHwV16p+NZPuEzF3Y4A1Clgs=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-3ZnWnV9CFg/n5MPZcel1oAz5AqMFFLECWxn7NYlDzLY=",
@@ -209,12 +210,12 @@
       "mscorlib.wasm": "sha256-8qWtIcy8fV43tlcx4DxsF45RlkcfK6588vVoxF7be2E=",
       "netstandard.wasm": "sha256-eOgz2RiO4YaPLOMIGgVLNrcfsQhmLQJzR0N7Pu2teXc=",
       "System.Private.CoreLib.wasm": "sha256-F8T63QCIbMPXPQPqTcuyBAw+oVvZSrWjy88j7fiJQZ4=",
-      "EMAnalysisWeb2.0.Shared.wasm": "sha256-1spVM7GNn2PpvRK5ASGiSQwg3VyqatcVMWTefAWvICg=",
-      "EMAnalysisWeb2.0.Client.wasm": "sha256-1euTjk4D7vfYgqnLqSKfBxBGRcNsgpmb5T0yRGgso8s="
+      "EMAnalysisWeb2.0.Shared.wasm": "sha256-iopakfy+2eEKMT1bhlXVWCXugRnfRGjFK3zUwSNQQWk=",
+      "EMAnalysisWeb2.0.Client.wasm": "sha256-PFS/dWKVbdOi1sVMf/9YAE6FKbalPPF8Oq6rhdUCbjw="
     },
     "pdb": {
-      "EMAnalysisWeb2.0.Shared.pdb": "sha256-cSHAV3A6wM5k0V9z7YNdjVdAuY5ouy94+fiMECr26pg=",
-      "EMAnalysisWeb2.0.Client.pdb": "sha256-1S57wVh1Dxw536DxqIdoSNJ5+Vfb72UuFkRfiqm74zM="
+      "EMAnalysisWeb2.0.Shared.pdb": "sha256-tzip0kwi4q8ChT2vJ4YVqozvyFTz96uf2fzHegPp2ak=",
+      "EMAnalysisWeb2.0.Client.pdb": "sha256-woX+XJ4hOCwHA7resQ7auZnXCNzz6b1aff0pqyoM94E="
     }
   },
   "cacheBootResources": true,

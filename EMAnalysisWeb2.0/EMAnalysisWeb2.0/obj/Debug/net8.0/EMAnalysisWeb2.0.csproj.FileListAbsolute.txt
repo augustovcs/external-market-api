@@ -71,3 +71,7 @@
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/EMAnalysisWeb2.0.pdb
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/EMAnalysisWeb2.0.genruntimeconfig.cache
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/ref/EMAnalysisWeb2.0.dll
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/EMAnalysisWeb2.0.Client.staticwebassets.endpoints.json
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/EMAnalysisWeb2.0.staticwebassets.endpoints.json
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets.build.endpoints.json
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets/msbuild.EMAnalysisWeb2.0.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

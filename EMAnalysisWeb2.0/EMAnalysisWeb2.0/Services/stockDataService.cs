@@ -159,7 +159,13 @@ public class stockDataService : IStockDataService
             Console.WriteLine("INTERN API DATA DOWNLOADED OFFLINE!! NO API REQUEST NEEDED :)");
         }
         
-        return content_scrapping;
+        
+        //TEST FIXED STOCK DATA
+        var TestDir =
+            "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/Scrapping/StockData/2025-10-04/AAPL.csv";
+
+        
+        return TestDir;
     }
     
     
@@ -189,6 +195,9 @@ public class stockDataService : IStockDataService
             Console.WriteLine("API DATA DOWNLOADED OFFLINE!! NO API REQUEST NEEDED :)");
         }
 
+        var TestDir =
+            "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/Scrapping/StockData/2025-10-04/AAPL.csv";
+        
         return content;
     }
     

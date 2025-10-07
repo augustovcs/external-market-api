@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EMAnalysisWeb2.0")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7b3d56e3828f29de5d6f436f6924b482fb6dea9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71f3c3c461a1193cce03e1e2254deaffdebc2f29")]
 [assembly: System.Reflection.AssemblyProductAttribute("EMAnalysisWeb2.0")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EMAnalysisWeb2.0")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
