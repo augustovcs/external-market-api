@@ -235,6 +235,36 @@ public class stockDataService : IStockDataService
         return stockDataList;
     }
 
+    public async Task<List<SymbolData>> ReturnSymbolDataList()
+    {
+        
+        List<SymbolData> symbolDataList = new List<SymbolData>();
+        using (StreamReader streamReader = new StreamReader(Directory.GetCurrentDirectory() + "/" + "StockSymbolList.csv", Encoding.UTF8))
+        using (CsvReader csv = new CsvReader(streamReader, CultureInfo.InvariantCulture))
+        {
+            csv.Read();
+            csv.ReadHeader();
+            while (csv.Read())
+            {
+                symbolData = new SymbolData()
+                {
+                    Symbol = csv.GetField("symbol"),
+                    Name = csv.GetField("name")
+                    
+                };
+        
+                //Console.WriteLine($"{symbolData.Name} ({symbolData.Symbol})");
+                
+                //ADD TO THE LIST ALL THE SYMBOLS AND NAMES FROM STOCKSYMBOLLIST.CSV
+                symbolDataList.Add(symbolData);
+            }
+        }
+        
+        
+        return symbolDataList;
+    }
+    
+
     public List<StockData> parametersStock()
     {
         

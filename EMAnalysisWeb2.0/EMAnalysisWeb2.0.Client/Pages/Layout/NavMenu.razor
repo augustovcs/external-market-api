@@ -1,10 +1,20 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using __Blazor.Radzen.Blazor;
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">EM Analysis - Web Version.</a>
     </div>
 </div>
 
 <input type="checkbox" title="Navigation menu" class="navbar-toggler"/>
+
+@code {
+    bool sidebarExpanded = true;
+}
+
+
+
+
 
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
     <nav class="flex-column">

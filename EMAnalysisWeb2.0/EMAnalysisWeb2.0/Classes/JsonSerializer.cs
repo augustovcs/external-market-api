@@ -11,4 +11,7 @@ namespace EMAnalysisWeb.Classes;
 [JsonSerializable(typeof(List<Mid30DaysDataInfo>))]
 [JsonSerializable(typeof(List<FullData>))]
 [JsonSerializable(typeof(List<MinMaxData>))]
+[JsonSerializable(typeof(List<StockData>))]
+[JsonSerializable(typeof(List<SymbolData>))]
+
 public partial class AppJsonContext : JsonSerializerContext { }

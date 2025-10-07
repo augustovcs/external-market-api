@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EMAnalysisWeb2.0.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e91929b07c76ca40844f1f7e5b95a26f5795b71")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+378acb824585b7f94a43e91acd090657543a7fb3")]
 [assembly: System.Reflection.AssemblyProductAttribute("EMAnalysisWeb2.0.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EMAnalysisWeb2.0.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

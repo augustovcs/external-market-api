@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "EMAnalysisWeb2.0.Client",
   "resources": {
-    "hash": "sha256-gGfa8gB9Y2+z7xfMDES9ZxSSl60F7LheyqrM5RToik4=",
+    "hash": "sha256-04lyJWc/iH4WIvPew+vJHjVyTCe+th2OeI+egimkyZM=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-DTUQS6Jc6BNnS7sYYezFfaUKVmQq0/lanhQuJfygH/k="
     },
@@ -211,12 +211,12 @@
       "mscorlib.wasm": "sha256-8qWtIcy8fV43tlcx4DxsF45RlkcfK6588vVoxF7be2E=",
       "netstandard.wasm": "sha256-eOgz2RiO4YaPLOMIGgVLNrcfsQhmLQJzR0N7Pu2teXc=",
       "System.Private.CoreLib.wasm": "sha256-F8T63QCIbMPXPQPqTcuyBAw+oVvZSrWjy88j7fiJQZ4=",
-      "EMAnalysisWeb2.0.Shared.wasm": "sha256-/T4cn9HSq2H1079//nBifkBjkIMlOy1Eab3aEQ/ndQs=",
-      "EMAnalysisWeb2.0.Client.wasm": "sha256-c7iXWvPE30/2G8E2sGDEOqxGyy1zfBSO6s01aSNans4="
+      "EMAnalysisWeb2.0.Shared.wasm": "sha256-dbdEetNUbvWmT72hwedeQqxvmPMhF74Asc/xwRMyxu0=",
+      "EMAnalysisWeb2.0.Client.wasm": "sha256-PRbpdhxQZ5gc/PvbBeBNJXNMxbEoSjKVia+xrGa2TBw="
     },
     "pdb": {
-      "EMAnalysisWeb2.0.Shared.pdb": "sha256-WA+bRTqj2sEUoY2dxhqBJtSmlzfnXk/ta0jPqQ2utuw=",
-      "EMAnalysisWeb2.0.Client.pdb": "sha256-ZA46OW6uUYWxqCzFMcNJozPmJQMj8gGAejqvhmgg0tQ="
+      "EMAnalysisWeb2.0.Shared.pdb": "sha256-I8Tj5qIIhMhSZOHnDDOQnnNN3vLj87EBTxBYqS6BRQs=",
+      "EMAnalysisWeb2.0.Client.pdb": "sha256-mhU4EeH/7FNsCi2j/B67e5R8cxRkeXO91WLyRJsAOuc="
     }
   },
   "cacheBootResources": true,

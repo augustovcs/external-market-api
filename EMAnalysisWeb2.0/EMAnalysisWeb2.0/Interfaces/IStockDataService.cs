@@ -12,6 +12,8 @@ public interface IStockDataService
     public List<StockData> ParsingRaw();
     public List<StockData> parametersStock();
     public Task <List<StockData>> GetStockData();
+    public Task <List<SymbolData>> ReturnSymbolDataList();
+
     //List<ClosesStockData> GetClosesStockData();
     public string SaveStockListSymbol();
 
