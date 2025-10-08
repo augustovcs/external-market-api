@@ -1051,8 +1051,9 @@
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/scopedcss/Pages/Layout/MainLayout.razor.rz.scp.css
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/scopedcss/Pages/Layout/NavMenu.razor.rz.scp.css
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/scopedcss/projectbundle/EMAnalysisWeb2.0.Client.bundle.scp.css
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/jn5pwh1det-r8pnlhxhcz.gz
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/i4ymx1s6wm-fptblpq2vt.gz
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/ier9p5tbcf-la0fz5r6ck.gz
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/u04tdueuxs-u7s7rkod35.gz
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/1cfk6065io-okrofikdnr.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/scopedcss/Pages/Home.razor.rz.scp.css
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/jn5pwh1det-3ub8qnro03.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/i4ymx1s6wm-uqet3npi76.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/ier9p5tbcf-jlh6vkwdi9.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/u04tdueuxs-33hu6bzdyu.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/1cfk6065io-0mm0l2kw5b.gz

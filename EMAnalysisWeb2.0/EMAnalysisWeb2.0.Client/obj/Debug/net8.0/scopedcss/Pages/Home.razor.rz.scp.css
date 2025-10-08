@@ -1,0 +1,36 @@
+/* ====== STOCK CARDS DESIGN ====== */
+
+.stock-card[b-ea0hpc22hk] {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 12px;
+}
+
+.stock-card:hover[b-ea0hpc22hk] {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.score-box[b-ea0hpc22hk] {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-title[b-ea0hpc22hk] {
+    font-weight: 600;
+}
+
+.card-text[b-ea0hpc22hk] {
+    font-size: 1.1rem;
+}
+
+/* Responsividade extra */
+@media (max-width: 576px) {
+    .score-box[b-ea0hpc22hk] {
+        width: 60px;
+        height: 60px;
+    }
+}
