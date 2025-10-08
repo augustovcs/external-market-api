@@ -64,6 +64,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        ResponseStock = await Http.GetFromJsonAsync<List<SymbolData>>("/data-symbols");
+        ResponseStock = await Http.GetFromJsonAsync<List<SymbolData>>("/basic-data-symbols");
     }
 }

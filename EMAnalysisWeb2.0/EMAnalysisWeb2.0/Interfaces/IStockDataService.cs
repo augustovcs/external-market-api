@@ -14,6 +14,8 @@ public interface IStockDataService
     public Task <List<StockData>> GetStockData();
     public Task <List<SymbolData>> ReturnSymbolDataList();
 
+    public Task<List<SymbolData>> ReturnBasicSymbolData();
+
     //List<ClosesStockData> GetClosesStockData();
     public string SaveStockListSymbol();
 

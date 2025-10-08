@@ -1,4 +1,5 @@
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/EMAnalysisWeb2.0.Client.staticwebassets.runtime.json
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/EMAnalysisWeb2.0.Client.staticwebassets.endpoints.json
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/appsettings.Development.json
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/appsettings.json
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/Scrapping/topSymbols.json
@@ -14,6 +15,7 @@
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/BlazorDebugProxy/Microsoft.SymbolStore.dll
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/BlazorDebugProxy/Newtonsoft.Json.dll
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/EMAnalysisWeb2.0.staticwebassets.runtime.json
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/EMAnalysisWeb2.0.staticwebassets.endpoints.json
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/EMAnalysisWeb2.0
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/EMAnalysisWeb2.0.deps.json
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/EMAnalysisWeb2.0.runtimeconfig.json
@@ -39,6 +41,7 @@
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/Microsoft.JSInterop.WebAssembly.dll
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/Microsoft.OpenApi.dll
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/Newtonsoft.Json.dll
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/Radzen.Blazor.dll
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -54,22 +57,19 @@
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/EMAnalysisWeb2.0.MvcApplicationPartsAssemblyInfo.cs
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/EMAnalysisWeb2.0.MvcApplicationPartsAssemblyInfo.cache
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/EMAnalysisWeb2.0.sourcelink.json
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/scopedcss/bundle/EMAnalysisWeb2.0.styles.css
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets.build.json
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets.development.json
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets.build.endpoints.json
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets/msbuild.EMAnalysisWeb2.0.Microsoft.AspNetCore.StaticWebAssets.props
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets/msbuild.EMAnalysisWeb2.0.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets/msbuild.build.EMAnalysisWeb2.0.props
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.EMAnalysisWeb2.0.props
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.EMAnalysisWeb2.0.props
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets.pack.json
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/scopedcss/bundle/EMAnalysisWeb2.0.styles.css
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/EMAnalys.ED4726A5.Up2Date
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/EMAnalysisWeb2.0.dll
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/refint/EMAnalysisWeb2.0.dll
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/EMAnalysisWeb2.0.pdb
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/EMAnalysisWeb2.0.genruntimeconfig.cache
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/ref/EMAnalysisWeb2.0.dll
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/EMAnalysisWeb2.0.Client.staticwebassets.endpoints.json
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/EMAnalysisWeb2.0.staticwebassets.endpoints.json
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets.build.endpoints.json
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/obj/Debug/net8.0/staticwebassets/msbuild.EMAnalysisWeb2.0.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0/bin/Debug/net8.0/Radzen.Blazor.dll

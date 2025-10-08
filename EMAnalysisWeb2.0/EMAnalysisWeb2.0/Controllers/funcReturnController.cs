@@ -24,6 +24,14 @@ public class funcReturnController : ControllerBase
         return Ok(response);
 
     }
+
+    [HttpGet("basic-data-symbols")]
+    public async Task<IActionResult> GetBasicDataStocks()
+    {
+        var response = await _stockdataservice.ReturnBasicSymbolData();
+        return Ok(response);
+
+    }
     
     
 }

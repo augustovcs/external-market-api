@@ -2,9 +2,11 @@ using System.Globalization;
 using System.Net;
 using System.Runtime.InteropServices.JavaScript;
 using System.Text;
+using System.Text.Json;
 using EMAnalysisWeb.DTO;
 using CsvHelper;
 using CsvHelper.Configuration;
+using CsvHelper.Configuration.Attributes;
 using CsvHelper.TypeConversion;
 using EMAnalysisWeb.Interfaces;
 
@@ -237,7 +239,6 @@ public class stockDataService : IStockDataService
 
     public async Task<List<SymbolData>> ReturnSymbolDataList()
     {
-        
         List<SymbolData> symbolDataList = new List<SymbolData>();
         using (StreamReader streamReader = new StreamReader(Directory.GetCurrentDirectory() + "/" + "StockSymbolList.csv", Encoding.UTF8))
         using (CsvReader csv = new CsvReader(streamReader, CultureInfo.InvariantCulture))
@@ -262,6 +263,24 @@ public class stockDataService : IStockDataService
         
         
         return symbolDataList;
+    }
+
+    public async Task<List<SymbolData>> ReturnBasicSymbolData()
+    {
+        var jsonPath = Path.Combine(Directory.GetCurrentDirectory(), "Scrapping", "topSymbols.json");
+
+        if (!File.Exists(jsonPath))
+            throw new FileNotFoundException($"File not found: {jsonPath}");
+
+        var jsonContent = await File.ReadAllTextAsync(jsonPath);
+
+        var symbolDataList = JsonSerializer.Deserialize<List<SymbolData>>(jsonContent, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        });
+
+        return symbolDataList;
+        
     }
     
 
