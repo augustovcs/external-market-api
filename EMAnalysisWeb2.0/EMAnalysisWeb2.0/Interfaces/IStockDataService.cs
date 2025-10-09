@@ -1,3 +1,4 @@
+using System.Collections;
 using EMAnalysisWeb.DTO;
 
 namespace EMAnalysisWeb.Interfaces;
@@ -30,9 +31,11 @@ public interface IGeneratedData
     public Task<List<StockData>> CloseValuesData();
     public Task<List<StockData>> Mid30DaysData();
     public Task<List<StockData>> PercentualData();
-    /*
-     TO IMPLEMENT
-    public Task<List<StockData>> DailyAverageReturn();
+    
+   
+    public Task<IEnumerable<DailyAverageReturnData>> DailyAverageReturn();
+    
+    /* TO IMPLEMENT 
     public Task<List<StockData>> WeeklyAverageReturn();
     public Task<List<StockData>> MonthlyAverageReturn();
     public Task<List<StockData>> YearlyAverageReturn();
@@ -42,6 +45,7 @@ public interface IGeneratedData
     public Task<List<StockData>> AnnualizedReturn();
     public Task<List<StockData>> MaxDrawdown();
     */
+    
     
     public Task<List<PercentualReturnData>> CalcPercentualReturn();
     //public Task<List<GeneralCalculusData>> CalcVolatility();

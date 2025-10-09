@@ -17,6 +17,8 @@ public class printDataService : IPrintDataService
 
     }
 
+    
+    
 
     public async Task<List<StockData>> GetCrudeData()
     {

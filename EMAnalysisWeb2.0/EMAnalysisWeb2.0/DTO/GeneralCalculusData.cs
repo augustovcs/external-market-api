@@ -72,3 +72,10 @@ public class FullData
     public List<Mid30DaysData> Mid30Days { get; set; }
     public List<MinMaxData> BasicValuesData { get; set; }
 }
+
+public class DailyAverageReturnData
+{
+    public DateTime Date { get; set; }
+    public string Symbol { get; set; } = string.Empty;
+    public double PercentualDaily { get; set; }
+}

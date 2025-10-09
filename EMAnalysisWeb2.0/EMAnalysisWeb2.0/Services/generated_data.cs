@@ -1,8 +1,10 @@
+using System.Collections;
 using System.Globalization;
 using EMAnalysisWeb.DTO;
 using EMAnalysisWeb.Services;
 using CsvHelper;
 using System.Linq;
+using System.Runtime.InteropServices.JavaScript;
 using System.Text;
 using EMAnalysisWeb.Interfaces;
 
@@ -368,8 +370,68 @@ public class generated_data : IGeneratedData
         
         return fullDataList;
         
-        
     }
+
+    public async Task<IEnumerable<DailyAverageReturnData>> DailyAverageReturn()
+    {
+
+        var loaderStockData = await _stockDataService.GetStockData();
+        var dailyAverageDate = loaderStockData
+            .Where(daily => daily.Date >= DateTime.Today.AddYears(-1));
+
+        var dailyAverageDateList = dailyAverageDate
+            .OrderBy(r => r.Date)
+            .ToList();
+        
+        var calcDailyAverageReturn1Y = dailyAverageDateList
+            .Select((r, index) => new DailyAverageReturnData
+            {
+                Date = r.Date,
+                Symbol = r.Symbol,
+                PercentualDaily = index == 0
+                    ? 0
+                    : (r.Close - dailyAverageDateList[index - 1].Close) / dailyAverageDateList[index - 1].Close * 100
+            })
+            .Skip(1)
+            .ToList();
+
+
+        return calcDailyAverageReturn1Y;
+    }
+    public async Task<List<StockData>> WeeklyAverageReturn()
+    {
+        throw  new NotImplementedException();
+    }
+    public async Task<List<StockData>> MonthlyAverageReturn()
+    {
+        throw  new NotImplementedException();
+    }
+    public async Task<List<StockData>> YearlyAverageReturn()
+    {
+        throw  new NotImplementedException();
+    }
+    public async Task<List<StockData>> CumulativeReturnLastYear()
+    {
+        throw  new NotImplementedException();
+    }
+    public async Task<List<StockData>> CumulativeReturnLastMonth()
+    {
+        throw  new NotImplementedException();
+    }
+    public async Task<List<StockData>> SharpeRatio()
+    {
+        throw  new NotImplementedException();
+    }
+    public async Task<List<StockData>> AnnualizedReturn()
+    {
+        throw  new NotImplementedException();
+    }
+    public async Task<List<StockData>> MaxDrawdown()
+    {
+        throw  new NotImplementedException();
+    }
+    
+    
     
     
 }

@@ -8,11 +8,15 @@ namespace EMAnalysisWeb.Controllers;
 public class stockDataController : ControllerBase
 {
     private IPrintDataService _printdataservice;
+    private IStockDataService _stockdataservice;
+    private IGeneratedData _generateddataservice;
     
     public stockDataController(IStockDataService stockdataservice, IGeneratedData generatedData, IPrintDataService printDataService)
     {
         
         _printdataservice = printDataService;
+        _stockdataservice = stockdataservice;
+        _generateddataservice = generatedData;
         
     }
     
@@ -57,6 +61,13 @@ public class stockDataController : ControllerBase
         var response = await _printdataservice.GetMid30Days();
         return Ok(response);
 
+    }
+
+    [HttpGet("/get/AvgDailyReturn1Year")]
+    public async Task<IActionResult> GetAvgDailyReturn1Year()
+    {
+        var response = await _generateddataservice.DailyAverageReturn();
+        return Ok(response);
     }
     
 }
