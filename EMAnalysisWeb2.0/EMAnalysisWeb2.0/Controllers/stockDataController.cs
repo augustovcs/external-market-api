@@ -1,3 +1,4 @@
+using EMAnalysisWeb.DTO;
 using EMAnalysisWeb.Interfaces;
 using EMAnalysisWeb.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -68,6 +69,30 @@ public class stockDataController : ControllerBase
     {
         var response = await _generateddataservice.DailyAverageReturn();
         return Ok(response);
+    }
+    
+    
+    [HttpGet("/get/AvgReturn{type}")]
+    public async Task<IActionResult> GetAvgReturnGeneral(TypeAvgSwitch type)
+    {
+        var DailyResponse = await _generateddataservice.DailyAverageReturn();
+        var WeeklyResponse = await _generateddataservice.WeeklyAverageReturn();
+        var MonthlyResponse = await _generateddataservice.MonthlyAverageReturn();
+        var YearlyResponse = await _generateddataservice.YearlyAverageReturn();
+
+        switch (type)
+        {
+            case TypeAvgSwitch.Daily:
+                return Ok(DailyResponse);
+            case TypeAvgSwitch.Weekly:
+                return Ok(WeeklyResponse);
+            case TypeAvgSwitch.Monthly:
+                return Ok(MonthlyResponse);
+            case TypeAvgSwitch.Yearly:
+                return Ok(YearlyResponse);
+            default:
+                return BadRequest();
+        }
     }
     
 }

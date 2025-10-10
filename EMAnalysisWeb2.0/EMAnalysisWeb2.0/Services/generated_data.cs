@@ -60,7 +60,8 @@ public class generated_data : IGeneratedData
     private List<VolatilityData> volatilitiesList;
     private PercentualReturnData percentualreturnData;
     private List<PercentualReturnData> percentualreturnList;
- 
+    private IEnumerable<StockData> elements7days;
+
 
     public generated_data(IStockDataService stockDataService, IConfiguration configuration)
     {
@@ -398,18 +399,104 @@ public class generated_data : IGeneratedData
 
         return calcDailyAverageReturn1Y;
     }
-    public async Task<List<StockData>> WeeklyAverageReturn()
+    public async Task<IEnumerable<DailyAverageReturnData>> WeeklyAverageReturn()
     {
-        throw  new NotImplementedException();
+        var loaderStockData = await _stockDataService.GetStockData();
+
+        var weeklyAverageDateList = loaderStockData
+            .Where(d => d.Date >= DateTime.Today.AddYears(-1))
+            .OrderBy(d => d.Date)
+            .ToList();
+
+        var calcWeeklyAverageReturn1Y = weeklyAverageDateList
+            .Select((r, index) =>
+            {
+                var last7Days = weeklyAverageDateList
+                    .Skip(Math.Max(0, index - 7))
+                    .Take(Math.Min(7, index))
+                    .Select(x => x.Close);
+
+                var avgLast7Days = last7Days.Any() ? last7Days.Average() : r.Close;
+
+                var percentual = last7Days.Any() ? (r.Close - avgLast7Days) / avgLast7Days * 100 : 0;
+
+                return new DailyAverageReturnData
+                {
+                    Date = r.Date,
+                    Symbol = r.Symbol,
+                    PercentualDaily = percentual
+                };
+            })
+            .ToList();
+
+        return calcWeeklyAverageReturn1Y;
     }
-    public async Task<List<StockData>> MonthlyAverageReturn()
+
+    public async Task<IEnumerable<DailyAverageReturnData>> MonthlyAverageReturn()
     {
-        throw  new NotImplementedException();
+        var loaderStockData = await _stockDataService.GetStockData();
+
+        var monthlyAverageDateList = loaderStockData
+            .Where(d => d.Date >= DateTime.Today.AddYears(-1))
+            .OrderBy(d => d.Date)
+            .ToList();
+
+        var result = new List<DailyAverageReturnData>();
+        int daysBack = 30;
+
+        var calcMonthlyAverageReturn1Y = monthlyAverageDateList
+            .Select((r, index) =>
+            {
+                var last30Days = monthlyAverageDateList
+                    .Skip(Math.Max(0, index - daysBack))
+                    .Take(Math.Min(daysBack, index))
+                    .Select(x => x.Close);
+
+                var avgLast30Days = last30Days.Any() ? last30Days.Average() : r.Close;
+
+                var percentual = last30Days.Any() ? (r.Close - avgLast30Days) / avgLast30Days * 100 : 0;
+
+                return new DailyAverageReturnData
+                {
+                    Date = r.Date,
+                    Symbol = r.Symbol,
+                    PercentualDaily = percentual
+                };
+            })
+            .ToList();
+
+        return calcMonthlyAverageReturn1Y;
     }
-    public async Task<List<StockData>> YearlyAverageReturn()
+
+    public async Task<IEnumerable<DailyAverageReturnData>> YearlyAverageReturn()
     {
-        throw  new NotImplementedException();
+        var loaderStockData = await _stockDataService.GetStockData();
+
+        var yearlyData = loaderStockData
+            .Where(d => d.Date >= DateTime.Today.AddYears(-1))
+            .OrderBy(d => d.Date)
+            .ToList();
+
+        if (!yearlyData.Any())
+            return new List<DailyAverageReturnData>();
+
+        var averageClose = yearlyData.Average(x => x.Close);
+        var lastDay = yearlyData.Last();
+
+        var percentual = (lastDay.Close - averageClose) / averageClose * 100;
+
+        return new List<DailyAverageReturnData>
+        {
+            new DailyAverageReturnData
+            {
+                Date = lastDay.Date,
+                Symbol = lastDay.Symbol,
+                PercentualDaily = percentual
+            }
+        };
     }
+
+
     public async Task<List<StockData>> CumulativeReturnLastYear()
     {
         throw  new NotImplementedException();

@@ -34,11 +34,11 @@ public interface IGeneratedData
     
    
     public Task<IEnumerable<DailyAverageReturnData>> DailyAverageReturn();
+    public Task<IEnumerable<DailyAverageReturnData>> WeeklyAverageReturn();
     
-    /* TO IMPLEMENT 
-    public Task<List<StockData>> WeeklyAverageReturn();
-    public Task<List<StockData>> MonthlyAverageReturn();
-    public Task<List<StockData>> YearlyAverageReturn();
+    public Task<IEnumerable<DailyAverageReturnData>> MonthlyAverageReturn();
+    public Task<IEnumerable<DailyAverageReturnData>> YearlyAverageReturn();
+    /* TO IMPLEMENT
     public Task<List<StockData>> CumulativeReturnLastYear();
     public Task<List<StockData>> CumulativeReturnLastMonth();
     public Task<List<StockData>> SharpeRatio();

@@ -15,6 +15,7 @@ namespace EMAnalysisWeb.Classes;
 [JsonSerializable(typeof(List<SymbolData>))]
 [JsonSerializable(typeof(DailyAverageReturnData))]
 [JsonSerializable(typeof(List<DailyAverageReturnData>))]
+[JsonSerializable(typeof(TypeAvgSwitch))]
 
 
 public partial class AppJsonContext : JsonSerializerContext { }
