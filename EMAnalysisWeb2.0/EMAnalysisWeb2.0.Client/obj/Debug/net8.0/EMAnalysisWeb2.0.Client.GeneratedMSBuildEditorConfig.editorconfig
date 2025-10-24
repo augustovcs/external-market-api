@@ -40,10 +40,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTmV3c01haW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/Pages/StuguruMain.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3R1Z3VydU1haW4ucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -59,3 +55,7 @@ build_metadata.AdditionalFiles.CssScope = b-tt71r0r0ov
 [/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/Pages/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTGF5b3V0L05hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-7vqfywwlbw
+
+[/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/Pages/StuguruMain.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3R1Z3VydU1haW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-za74aqadtn

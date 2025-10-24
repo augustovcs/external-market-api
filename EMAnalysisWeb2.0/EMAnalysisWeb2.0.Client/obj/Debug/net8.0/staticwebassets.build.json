@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "meuMPIMUFcWOOIBlLos9WcPrFrXmg2uD8MaoVo7Hp2Y=",
+  "Hash": "fHVQ531JD5/GZiLOdLN3HznN/3khEP31+BXwobkHfWk=",
   "Source": "EMAnalysisWeb2.0.Client",
   "BasePath": "/",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "3279raof5p",
-      "Integrity": "BdFyAifi91TjqjoeA7RPHL3D5VANq6jHrZ57+imAgVg=",
+      "Fingerprint": "wrc1xltfs4",
+      "Integrity": "FERLJlE2dBnsuGSLj6pUOOf14i0+AuF+Pg3CN107J3g=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj/Debug/net8.0/blazor.boot.json"
@@ -199,8 +199,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "4n1jk1tbx3",
-      "Integrity": "8KhIpw27vfahgm9GD0SmEORi2woFS34HOZSUl1AuUZ4=",
+      "Fingerprint": "khxx1ospy3",
+      "Integrity": "ONdW1JDkseDlKN4HUk99Gq+EHiYnc5/TS8vFcEcxZjQ=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj/Debug/net8.0/EMAnalysisWeb2.0.Client.pdb"
@@ -220,8 +220,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "uefyg2pqke",
-      "Integrity": "ehWxkBGu6reZITOUjYFie37kr/ieEmIgFf40sgSRy1s=",
+      "Fingerprint": "upkoovjt2s",
+      "Integrity": "Hh1g17KZlDysfsEYwkL7AThF+OGhQ2SW/FWVRneZPQo=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/webcil/EMAnalysisWeb2.0.Client.wasm"
@@ -241,8 +241,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "vqnnbpnn78",
-      "Integrity": "9/b9MtdOIsR9BUDcCP/U1woynIcYwXeQ/73P6y92oY0=",
+      "Fingerprint": "r8n0du72ii",
+      "Integrity": "q8pczWd0K0IT0ii/H0Z699DRaGmEKsu7ykjBOle+rQ4=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Shared/bin/Debug/net8.0/EMAnalysisWeb2.0.Shared.pdb"
@@ -262,8 +262,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "o3nd1psv3o",
-      "Integrity": "NNv/iw0JXtMuMvFClBexgJm0OsLqcfpnFgP8LydNopU=",
+      "Fingerprint": "px7sjqya0i",
+      "Integrity": "LVL2WO5Ap48d6ehdozN8AAUPoOdJF4/Ba2rk9b+HfnY=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/webcil/EMAnalysisWeb2.0.Shared.wasm"
@@ -4637,7 +4637,7 @@
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/System.Net.ServicePoint.wasm"
     },
     {
-      "Identity": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/1cfk6065io-3279raof5p.gz",
+      "Identity": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/1cfk6065io-wrc1xltfs4.gz",
       "SourceId": "EMAnalysisWeb2.0.Client",
       "SourceType": "Computed",
       "ContentRoot": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/",
@@ -4651,8 +4651,8 @@
       "RelatedAsset": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "uge92i6p8i",
-      "Integrity": "guR3LOqWchaXlR6cwZVktQRjGUk4x+zG0A+3BP6yfn4=",
+      "Fingerprint": "8s930wqsu6",
+      "Integrity": "uItsUdPb2jWLda+sUq2sdTdl4tC/ozH2/Jg4vLG2Lz4=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json"
@@ -6527,7 +6527,7 @@
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/System.Windows.wasm"
     },
     {
-      "Identity": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/i4ymx1s6wm-vqnnbpnn78.gz",
+      "Identity": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/i4ymx1s6wm-r8n0du72ii.gz",
       "SourceId": "EMAnalysisWeb2.0.Client",
       "SourceType": "Computed",
       "ContentRoot": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/",
@@ -6541,8 +6541,8 @@
       "RelatedAsset": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/EMAnalysisWeb2.0.Shared.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "rnpe3mcs0k",
-      "Integrity": "mcvK4uxmpDfr0CIv4tk6RMtSjvreKB+dlZ8KkCi6cxg=",
+      "Fingerprint": "cg6y7d7v07",
+      "Integrity": "LECVyf6ji0dnhhwUio7hW5aaWAE6YmAW0rXEzWTgdNg=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/EMAnalysisWeb2.0.Shared.pdb"
@@ -6590,7 +6590,7 @@
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/System.wasm"
     },
     {
-      "Identity": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/ier9p5tbcf-uefyg2pqke.gz",
+      "Identity": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/ier9p5tbcf-upkoovjt2s.gz",
       "SourceId": "EMAnalysisWeb2.0.Client",
       "SourceType": "Computed",
       "ContentRoot": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/",
@@ -6604,8 +6604,8 @@
       "RelatedAsset": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/EMAnalysisWeb2.0.Client.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "72nbpwlz26",
-      "Integrity": "f5KWi9kjQV4/0EDCtJ3Ikxakl0ntpKIIhjjI1obdSh8=",
+      "Fingerprint": "g0j374t9ak",
+      "Integrity": "AHagziWjmLChUgOQolxM3qMYbfVWqE/da3U/mu3UcrE=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/EMAnalysisWeb2.0.Client.wasm"
@@ -6779,7 +6779,7 @@
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/System.Diagnostics.StackTrace.wasm"
     },
     {
-      "Identity": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/jn5pwh1det-o3nd1psv3o.gz",
+      "Identity": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/jn5pwh1det-px7sjqya0i.gz",
       "SourceId": "EMAnalysisWeb2.0.Client",
       "SourceType": "Computed",
       "ContentRoot": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/",
@@ -6793,8 +6793,8 @@
       "RelatedAsset": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/EMAnalysisWeb2.0.Shared.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "bo4upd3h89",
-      "Integrity": "K/A7wtoyhrZkgr2L5c72jTEObIyynx16w0D0SCdqtmk=",
+      "Fingerprint": "b6ynvgyswl",
+      "Integrity": "PRT3DA+GpXHbpIQRXFtH5TXVKNW4DFOEA44V8Pn6v4o=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/EMAnalysisWeb2.0.Shared.wasm"
@@ -8060,7 +8060,7 @@
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/System.Security.Principal.Windows.wasm"
     },
     {
-      "Identity": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/u04tdueuxs-4n1jk1tbx3.gz",
+      "Identity": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/u04tdueuxs-khxx1ospy3.gz",
       "SourceId": "EMAnalysisWeb2.0.Client",
       "SourceType": "Computed",
       "ContentRoot": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/",
@@ -8074,8 +8074,8 @@
       "RelatedAsset": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/EMAnalysisWeb2.0.Client.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ppu6mwls6d",
-      "Integrity": "/YYSLq7++VQ6iBgggpa2l/E0qy+LSe4lR0ScbiqeduE=",
+      "Fingerprint": "8twm5c1rd6",
+      "Integrity": "nPQEpB5CnacZRf6lc24zdQEKyy+IBkjVt+M7VmE3ULY=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/bin/Debug/net8.0/wwwroot/_framework/EMAnalysisWeb2.0.Client.pdb"
@@ -8809,8 +8809,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "wgkb8jp9fj",
-      "Integrity": "YECT4WpkRwsi0IZjZaBNod+s7wiD+RqdZ7+QhhOBHO0=",
+      "Fingerprint": "v0udpwmoea",
+      "Integrity": "wY054Drp0BzHpYsyQ5dHC3ZkQ9med2Dc03EdfNW2EWQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/scopedcss/bundle/EMAnalysisWeb2.0.Client.styles.css"
@@ -8830,8 +8830,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "wgkb8jp9fj",
-      "Integrity": "YECT4WpkRwsi0IZjZaBNod+s7wiD+RqdZ7+QhhOBHO0=",
+      "Fingerprint": "v0udpwmoea",
+      "Integrity": "wY054Drp0BzHpYsyQ5dHC3ZkQ9med2Dc03EdfNW2EWQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/scopedcss/projectbundle/EMAnalysisWeb2.0.Client.bundle.scp.css"
@@ -13515,11 +13515,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"BdFyAifi91TjqjoeA7RPHL3D5VANq6jHrZ57+imAgVg=\""
+          "Value": "\"FERLJlE2dBnsuGSLj6pUOOf14i0+AuF+Pg3CN107J3g=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 01:19:44 GMT"
+          "Value": "Fri, 24 Oct 2025 01:26:39 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13529,18 +13529,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-BdFyAifi91TjqjoeA7RPHL3D5VANq6jHrZ57+imAgVg="
+          "Value": "sha256-FERLJlE2dBnsuGSLj6pUOOf14i0+AuF+Pg3CN107J3g="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json",
-      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/1cfk6065io-3279raof5p.gz",
+      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/1cfk6065io-wrc1xltfs4.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000112220851"
+          "Quality": "0.000112183083"
         }
       ],
       "ResponseHeaders": [
@@ -13550,15 +13550,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8910"
+          "Value": "8913"
         },
         {
           "Name": "ETag",
-          "Value": "\"guR3LOqWchaXlR6cwZVktQRjGUk4x+zG0A+3BP6yfn4=\""
+          "Value": "\"uItsUdPb2jWLda+sUq2sdTdl4tC/ozH2/Jg4vLG2Lz4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 00:40:44 GMT"
+          "Value": "Fri, 24 Oct 2025 01:09:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13578,19 +13578,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"BdFyAifi91TjqjoeA7RPHL3D5VANq6jHrZ57+imAgVg=\""
+          "Value": "W/\"FERLJlE2dBnsuGSLj6pUOOf14i0+AuF+Pg3CN107J3g=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-BdFyAifi91TjqjoeA7RPHL3D5VANq6jHrZ57+imAgVg="
+          "Value": "sha256-FERLJlE2dBnsuGSLj6pUOOf14i0+AuF+Pg3CN107J3g="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/1cfk6065io-3279raof5p.gz",
+      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/1cfk6065io-wrc1xltfs4.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -13599,7 +13599,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8910"
+          "Value": "8913"
         },
         {
           "Name": "Content-Type",
@@ -13607,11 +13607,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"guR3LOqWchaXlR6cwZVktQRjGUk4x+zG0A+3BP6yfn4=\""
+          "Value": "\"uItsUdPb2jWLda+sUq2sdTdl4tC/ozH2/Jg4vLG2Lz4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 00:40:44 GMT"
+          "Value": "Fri, 24 Oct 2025 01:09:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13629,7 +13629,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-guR3LOqWchaXlR6cwZVktQRjGUk4x+zG0A+3BP6yfn4="
+          "Value": "sha256-uItsUdPb2jWLda+sUq2sdTdl4tC/ozH2/Jg4vLG2Lz4="
         }
       ]
     },
@@ -14603,7 +14603,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "29192"
+          "Value": "30052"
         },
         {
           "Name": "Content-Type",
@@ -14611,11 +14611,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"8KhIpw27vfahgm9GD0SmEORi2woFS34HOZSUl1AuUZ4=\""
+          "Value": "\"ONdW1JDkseDlKN4HUk99Gq+EHiYnc5/TS8vFcEcxZjQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 01:19:43 GMT"
+          "Value": "Fri, 24 Oct 2025 01:26:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14625,18 +14625,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-8KhIpw27vfahgm9GD0SmEORi2woFS34HOZSUl1AuUZ4="
+          "Value": "sha256-ONdW1JDkseDlKN4HUk99Gq+EHiYnc5/TS8vFcEcxZjQ="
         }
       ]
     },
     {
       "Route": "_framework/EMAnalysisWeb2.0.Client.pdb",
-      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/u04tdueuxs-4n1jk1tbx3.gz",
+      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/u04tdueuxs-khxx1ospy3.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000044432596"
+          "Quality": "0.000044230174"
         }
       ],
       "ResponseHeaders": [
@@ -14646,15 +14646,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22505"
+          "Value": "22608"
         },
         {
           "Name": "ETag",
-          "Value": "\"/YYSLq7++VQ6iBgggpa2l/E0qy+LSe4lR0ScbiqeduE=\""
+          "Value": "\"nPQEpB5CnacZRf6lc24zdQEKyy+IBkjVt+M7VmE3ULY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 00:40:44 GMT"
+          "Value": "Fri, 24 Oct 2025 01:09:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14674,19 +14674,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"8KhIpw27vfahgm9GD0SmEORi2woFS34HOZSUl1AuUZ4=\""
+          "Value": "W/\"ONdW1JDkseDlKN4HUk99Gq+EHiYnc5/TS8vFcEcxZjQ=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-8KhIpw27vfahgm9GD0SmEORi2woFS34HOZSUl1AuUZ4="
+          "Value": "sha256-ONdW1JDkseDlKN4HUk99Gq+EHiYnc5/TS8vFcEcxZjQ="
         }
       ]
     },
     {
       "Route": "_framework/EMAnalysisWeb2.0.Client.pdb.gz",
-      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/u04tdueuxs-4n1jk1tbx3.gz",
+      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/u04tdueuxs-khxx1ospy3.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -14695,7 +14695,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "22505"
+          "Value": "22608"
         },
         {
           "Name": "Content-Type",
@@ -14703,11 +14703,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/YYSLq7++VQ6iBgggpa2l/E0qy+LSe4lR0ScbiqeduE=\""
+          "Value": "\"nPQEpB5CnacZRf6lc24zdQEKyy+IBkjVt+M7VmE3ULY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 00:40:44 GMT"
+          "Value": "Fri, 24 Oct 2025 01:09:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14725,7 +14725,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/YYSLq7++VQ6iBgggpa2l/E0qy+LSe4lR0ScbiqeduE="
+          "Value": "sha256-nPQEpB5CnacZRf6lc24zdQEKyy+IBkjVt+M7VmE3ULY="
         }
       ]
     },
@@ -14740,7 +14740,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "26389"
+          "Value": "28437"
         },
         {
           "Name": "Content-Type",
@@ -14748,11 +14748,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ehWxkBGu6reZITOUjYFie37kr/ieEmIgFf40sgSRy1s=\""
+          "Value": "\"Hh1g17KZlDysfsEYwkL7AThF+OGhQ2SW/FWVRneZPQo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 01:19:43 GMT"
+          "Value": "Fri, 24 Oct 2025 01:26:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14762,18 +14762,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ehWxkBGu6reZITOUjYFie37kr/ieEmIgFf40sgSRy1s="
+          "Value": "sha256-Hh1g17KZlDysfsEYwkL7AThF+OGhQ2SW/FWVRneZPQo="
         }
       ]
     },
     {
       "Route": "_framework/EMAnalysisWeb2.0.Client.wasm",
-      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/ier9p5tbcf-uefyg2pqke.gz",
+      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/ier9p5tbcf-upkoovjt2s.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000088880988"
+          "Quality": "0.000087865741"
         }
       ],
       "ResponseHeaders": [
@@ -14783,15 +14783,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11250"
+          "Value": "11380"
         },
         {
           "Name": "ETag",
-          "Value": "\"f5KWi9kjQV4/0EDCtJ3Ikxakl0ntpKIIhjjI1obdSh8=\""
+          "Value": "\"AHagziWjmLChUgOQolxM3qMYbfVWqE/da3U/mu3UcrE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 00:40:44 GMT"
+          "Value": "Fri, 24 Oct 2025 01:09:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14811,19 +14811,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"ehWxkBGu6reZITOUjYFie37kr/ieEmIgFf40sgSRy1s=\""
+          "Value": "W/\"Hh1g17KZlDysfsEYwkL7AThF+OGhQ2SW/FWVRneZPQo=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ehWxkBGu6reZITOUjYFie37kr/ieEmIgFf40sgSRy1s="
+          "Value": "sha256-Hh1g17KZlDysfsEYwkL7AThF+OGhQ2SW/FWVRneZPQo="
         }
       ]
     },
     {
       "Route": "_framework/EMAnalysisWeb2.0.Client.wasm.gz",
-      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/ier9p5tbcf-uefyg2pqke.gz",
+      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/ier9p5tbcf-upkoovjt2s.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -14832,7 +14832,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11250"
+          "Value": "11380"
         },
         {
           "Name": "Content-Type",
@@ -14840,11 +14840,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"f5KWi9kjQV4/0EDCtJ3Ikxakl0ntpKIIhjjI1obdSh8=\""
+          "Value": "\"AHagziWjmLChUgOQolxM3qMYbfVWqE/da3U/mu3UcrE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 00:40:44 GMT"
+          "Value": "Fri, 24 Oct 2025 01:09:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14862,7 +14862,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-f5KWi9kjQV4/0EDCtJ3Ikxakl0ntpKIIhjjI1obdSh8="
+          "Value": "sha256-AHagziWjmLChUgOQolxM3qMYbfVWqE/da3U/mu3UcrE="
         }
       ]
     },
@@ -14885,11 +14885,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"9/b9MtdOIsR9BUDcCP/U1woynIcYwXeQ/73P6y92oY0=\""
+          "Value": "\"q8pczWd0K0IT0ii/H0Z699DRaGmEKsu7ykjBOle+rQ4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 00:40:42 GMT"
+          "Value": "Fri, 24 Oct 2025 01:09:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14899,18 +14899,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-9/b9MtdOIsR9BUDcCP/U1woynIcYwXeQ/73P6y92oY0="
+          "Value": "sha256-q8pczWd0K0IT0ii/H0Z699DRaGmEKsu7ykjBOle+rQ4="
         }
       ]
     },
     {
       "Route": "_framework/EMAnalysisWeb2.0.Shared.pdb",
-      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/i4ymx1s6wm-vqnnbpnn78.gz",
+      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/i4ymx1s6wm-r8n0du72ii.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000140075641"
+          "Quality": "0.000140095265"
         }
       ],
       "ResponseHeaders": [
@@ -14920,15 +14920,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7138"
+          "Value": "7137"
         },
         {
           "Name": "ETag",
-          "Value": "\"mcvK4uxmpDfr0CIv4tk6RMtSjvreKB+dlZ8KkCi6cxg=\""
+          "Value": "\"LECVyf6ji0dnhhwUio7hW5aaWAE6YmAW0rXEzWTgdNg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 00:40:42 GMT"
+          "Value": "Fri, 24 Oct 2025 01:09:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14948,19 +14948,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"9/b9MtdOIsR9BUDcCP/U1woynIcYwXeQ/73P6y92oY0=\""
+          "Value": "W/\"q8pczWd0K0IT0ii/H0Z699DRaGmEKsu7ykjBOle+rQ4=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-9/b9MtdOIsR9BUDcCP/U1woynIcYwXeQ/73P6y92oY0="
+          "Value": "sha256-q8pczWd0K0IT0ii/H0Z699DRaGmEKsu7ykjBOle+rQ4="
         }
       ]
     },
     {
       "Route": "_framework/EMAnalysisWeb2.0.Shared.pdb.gz",
-      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/i4ymx1s6wm-vqnnbpnn78.gz",
+      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/i4ymx1s6wm-r8n0du72ii.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -14969,7 +14969,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7138"
+          "Value": "7137"
         },
         {
           "Name": "Content-Type",
@@ -14977,11 +14977,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"mcvK4uxmpDfr0CIv4tk6RMtSjvreKB+dlZ8KkCi6cxg=\""
+          "Value": "\"LECVyf6ji0dnhhwUio7hW5aaWAE6YmAW0rXEzWTgdNg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 00:40:42 GMT"
+          "Value": "Fri, 24 Oct 2025 01:09:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14999,7 +14999,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-mcvK4uxmpDfr0CIv4tk6RMtSjvreKB+dlZ8KkCi6cxg="
+          "Value": "sha256-LECVyf6ji0dnhhwUio7hW5aaWAE6YmAW0rXEzWTgdNg="
         }
       ]
     },
@@ -15022,11 +15022,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NNv/iw0JXtMuMvFClBexgJm0OsLqcfpnFgP8LydNopU=\""
+          "Value": "\"LVL2WO5Ap48d6ehdozN8AAUPoOdJF4/Ba2rk9b+HfnY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 00:40:44 GMT"
+          "Value": "Fri, 24 Oct 2025 01:09:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15036,13 +15036,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NNv/iw0JXtMuMvFClBexgJm0OsLqcfpnFgP8LydNopU="
+          "Value": "sha256-LVL2WO5Ap48d6ehdozN8AAUPoOdJF4/Ba2rk9b+HfnY="
         }
       ]
     },
     {
       "Route": "_framework/EMAnalysisWeb2.0.Shared.wasm",
-      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/jn5pwh1det-o3nd1psv3o.gz",
+      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/jn5pwh1det-px7sjqya0i.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -15061,11 +15061,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"K/A7wtoyhrZkgr2L5c72jTEObIyynx16w0D0SCdqtmk=\""
+          "Value": "\"PRT3DA+GpXHbpIQRXFtH5TXVKNW4DFOEA44V8Pn6v4o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 00:40:44 GMT"
+          "Value": "Fri, 24 Oct 2025 01:09:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15085,19 +15085,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"NNv/iw0JXtMuMvFClBexgJm0OsLqcfpnFgP8LydNopU=\""
+          "Value": "W/\"LVL2WO5Ap48d6ehdozN8AAUPoOdJF4/Ba2rk9b+HfnY=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NNv/iw0JXtMuMvFClBexgJm0OsLqcfpnFgP8LydNopU="
+          "Value": "sha256-LVL2WO5Ap48d6ehdozN8AAUPoOdJF4/Ba2rk9b+HfnY="
         }
       ]
     },
     {
       "Route": "_framework/EMAnalysisWeb2.0.Shared.wasm.gz",
-      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/jn5pwh1det-o3nd1psv3o.gz",
+      "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/jn5pwh1det-px7sjqya0i.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -15114,11 +15114,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"K/A7wtoyhrZkgr2L5c72jTEObIyynx16w0D0SCdqtmk=\""
+          "Value": "\"PRT3DA+GpXHbpIQRXFtH5TXVKNW4DFOEA44V8Pn6v4o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 23 Oct 2025 00:40:44 GMT"
+          "Value": "Fri, 24 Oct 2025 01:09:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15136,7 +15136,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-K/A7wtoyhrZkgr2L5c72jTEObIyynx16w0D0SCdqtmk="
+          "Value": "sha256-PRT3DA+GpXHbpIQRXFtH5TXVKNW4DFOEA44V8Pn6v4o="
         }
       ]
     },
@@ -42550,7 +42550,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6382"
+          "Value": "6845"
         },
         {
           "Name": "Content-Type",
@@ -42558,11 +42558,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YECT4WpkRwsi0IZjZaBNod+s7wiD+RqdZ7+QhhOBHO0=\""
+          "Value": "\"wY054Drp0BzHpYsyQ5dHC3ZkQ9med2Dc03EdfNW2EWQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Oct 2025 02:45:36 GMT"
+          "Value": "Fri, 24 Oct 2025 01:26:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -42572,7 +42572,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-YECT4WpkRwsi0IZjZaBNod+s7wiD+RqdZ7+QhhOBHO0="
+          "Value": "sha256-wY054Drp0BzHpYsyQ5dHC3ZkQ9med2Dc03EdfNW2EWQ="
         }
       ]
     },
@@ -42587,7 +42587,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6382"
+          "Value": "6845"
         },
         {
           "Name": "Content-Type",
@@ -42595,11 +42595,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YECT4WpkRwsi0IZjZaBNod+s7wiD+RqdZ7+QhhOBHO0=\""
+          "Value": "\"wY054Drp0BzHpYsyQ5dHC3ZkQ9med2Dc03EdfNW2EWQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Oct 2025 02:45:36 GMT"
+          "Value": "Fri, 24 Oct 2025 01:26:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -42609,12 +42609,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-YECT4WpkRwsi0IZjZaBNod+s7wiD+RqdZ7+QhhOBHO0="
+          "Value": "sha256-wY054Drp0BzHpYsyQ5dHC3ZkQ9med2Dc03EdfNW2EWQ="
         }
       ]
     },
     {
-      "Route": "EMAnalysisWeb2.0.Client.wgkb8jp9fj.bundle.scp.css",
+      "Route": "EMAnalysisWeb2.0.Client.v0udpwmoea.bundle.scp.css",
       "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/scopedcss/projectbundle/EMAnalysisWeb2.0.Client.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -42624,7 +42624,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6382"
+          "Value": "6845"
         },
         {
           "Name": "Content-Type",
@@ -42632,11 +42632,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YECT4WpkRwsi0IZjZaBNod+s7wiD+RqdZ7+QhhOBHO0=\""
+          "Value": "\"wY054Drp0BzHpYsyQ5dHC3ZkQ9med2Dc03EdfNW2EWQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Oct 2025 02:45:36 GMT"
+          "Value": "Fri, 24 Oct 2025 01:26:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -42646,7 +42646,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "wgkb8jp9fj"
+          "Value": "v0udpwmoea"
         },
         {
           "Name": "label",
@@ -42654,12 +42654,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-YECT4WpkRwsi0IZjZaBNod+s7wiD+RqdZ7+QhhOBHO0="
+          "Value": "sha256-wY054Drp0BzHpYsyQ5dHC3ZkQ9med2Dc03EdfNW2EWQ="
         }
       ]
     },
     {
-      "Route": "EMAnalysisWeb2.0.Client.wgkb8jp9fj.styles.css",
+      "Route": "EMAnalysisWeb2.0.Client.v0udpwmoea.styles.css",
       "AssetFile": "/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/scopedcss/bundle/EMAnalysisWeb2.0.Client.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -42669,7 +42669,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6382"
+          "Value": "6845"
         },
         {
           "Name": "Content-Type",
@@ -42677,11 +42677,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YECT4WpkRwsi0IZjZaBNod+s7wiD+RqdZ7+QhhOBHO0=\""
+          "Value": "\"wY054Drp0BzHpYsyQ5dHC3ZkQ9med2Dc03EdfNW2EWQ=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 09 Oct 2025 02:45:36 GMT"
+          "Value": "Fri, 24 Oct 2025 01:26:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -42691,7 +42691,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "wgkb8jp9fj"
+          "Value": "v0udpwmoea"
         },
         {
           "Name": "label",
@@ -42699,7 +42699,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-YECT4WpkRwsi0IZjZaBNod+s7wiD+RqdZ7+QhhOBHO0="
+          "Value": "sha256-wY054Drp0BzHpYsyQ5dHC3ZkQ9med2Dc03EdfNW2EWQ="
         }
       ]
     },

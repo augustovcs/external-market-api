@@ -1052,8 +1052,9 @@
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/refint/EMAnalysisWeb2.0.Client.dll
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/EMAnalysisWeb2.0.Client.pdb
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/ref/EMAnalysisWeb2.0.Client.dll
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/jn5pwh1det-o3nd1psv3o.gz
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/i4ymx1s6wm-vqnnbpnn78.gz
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/ier9p5tbcf-uefyg2pqke.gz
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/u04tdueuxs-4n1jk1tbx3.gz
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/1cfk6065io-3279raof5p.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/jn5pwh1det-px7sjqya0i.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/i4ymx1s6wm-r8n0du72ii.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/scopedcss/Pages/StuguruMain.razor.rz.scp.css
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/ier9p5tbcf-upkoovjt2s.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/u04tdueuxs-khxx1ospy3.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/1cfk6065io-wrc1xltfs4.gz

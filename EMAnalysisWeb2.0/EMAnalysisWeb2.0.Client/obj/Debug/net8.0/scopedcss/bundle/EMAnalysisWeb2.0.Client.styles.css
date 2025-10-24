@@ -238,3 +238,33 @@ main[b-tt71r0r0ov] {
         overflow-y: auto;
     }
 }
+/* /Pages/StuguruMain.razor.rz.scp.css */
+.button-form[b-za74aqadtn]  {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-wrap: wrap;
+}
+
+.btn btn primary[b-za74aqadtn] {
+    
+    color: red;
+    
+}
+
+.button-form button[b-za74aqadtn] {
+    transition: background-color 0.5s ease;
+    color: red;
+
+}
+
+@keyframes slide-b-za74aqadtn {
+    from { transform: translateX(0); }
+    to { transform: translateX(100px); }
+}
+
+.button-form button[b-za74aqadtn] { 
+    animation: slide-b-za74aqadtn 2s infinite;
+}
