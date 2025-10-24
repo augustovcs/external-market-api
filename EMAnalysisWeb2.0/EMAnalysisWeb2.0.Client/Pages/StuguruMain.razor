@@ -1,44 +1,64 @@
-﻿
+﻿@rendermode InteractiveWebAssembly
 @page "/counter"
 @using EMAnalysisWeb.DTO
+@using Radzen
+@using Radzen.Blazor;
 @inject HttpClient Http
-@rendermode InteractiveWebAssembly
 
 <PageTitle>Counter</PageTitle>
 
 <h1>Counter</h1>
 
 <p role="status">Current count: @currentCount</p>
-
-
 <h1> TEST VALUE  </h1>
-@*@if (data == null)
-{
-    <p> Loading </p>
-}
-else
-{
-    foreach (var item in data)
-    {
-        <p> @item.Date </p>
-    }
-    
-}@*@
-
-
-
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
-@code {
+<br/>
+<br/>
 
+<table border="1">
+    <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+    </tr>
+    <tr>
+        <td>João</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Maria</td>
+        <td>30</td>
+    </tr>
+</table>
+
+<br/>
+
+
+
+<EditForm Model="@formModel" FormName="MainForm">
+    <RadzenButton Click="IncrementCount"
+                  Text="Hello?" 
+                  ButtonStyle="ButtonStyle.Primary"
+                  ButtonType="ButtonType.Submit"/>
+    <input type="text" name="username" placeholder="Enter your name?!">
+</EditForm>
+
+
+@code {
+    
+    public class FormModel
+    {
+        public string? Username { get; set; }
+    }
+    private FormModel formModel = new();
+    
     protected override async Task OnInitializedAsync()
     {
         data = await Http.GetFromJsonAsync<List<StockData>>("/crudedata");
     }
-
     private List<StockData> data;
     private int currentCount = 0;
-
+    
     private void IncrementCount()
     {
         currentCount++;

@@ -1052,8 +1052,8 @@
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/refint/EMAnalysisWeb2.0.Client.dll
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/EMAnalysisWeb2.0.Client.pdb
 /home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/ref/EMAnalysisWeb2.0.Client.dll
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/jn5pwh1det-vh097yvph7.gz
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/i4ymx1s6wm-qnbw9uz6zd.gz
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/ier9p5tbcf-v64gpnjkf1.gz
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/u04tdueuxs-tnbxm97qaj.gz
-/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/1cfk6065io-rk2p4oghrh.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/jn5pwh1det-o3nd1psv3o.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/i4ymx1s6wm-vqnnbpnn78.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/ier9p5tbcf-uefyg2pqke.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/u04tdueuxs-4n1jk1tbx3.gz
+/home/augustoviegascs/Documents/dotnet/EMAnalysisWeb2.0/EMAnalysisWeb2.0/EMAnalysisWeb2.0.Client/obj/Debug/net8.0/compressed/1cfk6065io-3279raof5p.gz
